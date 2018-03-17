@@ -1,0 +1,41 @@
+{
+  "name": "portfolio-blog",
+  "description": "Heba El-Shimy's Portfolio & Blog",
+  "version": "1.0.0",
+  "author": "Heba El-Shimy <heba.n.elshimy@gmail.com>",
+  "dependencies": {
+    "autoprefixer": "^8.0.0",
+    "bulma": "^0.6.2",
+    "gatsby": "^1.9.202",
+    "gatsby-link": "^1.6.37",
+    "gatsby-plugin-catch-links": "^1.0.16",
+    "gatsby-plugin-manifest": "^1.0.14",
+    "gatsby-plugin-offline": "^1.0.14",
+    "gatsby-plugin-postcss-sass": "^1.0.17",
+    "gatsby-plugin-react-helmet": "^2.0.5",
+    "gatsby-plugin-react-next": "^1.0.11",
+    "gatsby-plugin-styled-components": "^2.0.7",
+    "gatsby-remark-images": "^1.5.46",
+    "gatsby-remark-prismjs": "^1.2.15",
+    "gatsby-source-filesystem": "^1.5.20",
+    "gatsby-transformer-remark": "^1.7.32",
+    "gsap": "^1.20.4",
+    "react-helmet": "^5.2.0",
+    "rucksack-css": "^1.0.2",
+    "styled-components": "^3.1.6"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
+  "main": "n/a",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"src/**/*.js\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "prettier": "^1.10.2"
+  }
+}
