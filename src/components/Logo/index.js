@@ -10,21 +10,22 @@ class Logo extends Component {
         
         let rightWingTimeline = new TimelineMax({repeat:1, repeatDelay:0})
         TweenMax.set(butterfly, {perspective:800})
-        let rightForwardAnimation = TweenMax.to(rightWing, 0.75, {rotation:"1rad", x:-10, y:0, z:200, skewX:"73deg", delay:0.1})
+        let rightForwardAnimation = TweenMax.to(rightWing, 1, {rotation:"1rad", x:-10, y:0, z:200, skewX:"73deg", delay:0.1})
         rightWingTimeline.add(rightForwardAnimation)
         rightWingTimeline.yoyo(true)
 
         let leftWingTimeline = new TimelineMax({repeat:1, repeatDelay:0})
         TweenMax.set(leftWing, {transformStyle:"preserve-3d"})
-        let leftForwardAnimation = TweenMax.to(leftWing, 0.75, {transformOrigin:"100% 40%", rotationZ:-20, x:0, y:0, scaleX:0.2, scaleY: 1.5})
+        let leftForwardAnimation = TweenMax.to(leftWing, 1, {transformOrigin:"100% 40%", rotationZ:-20, x:0, y:0, scaleX:0.2, scaleY: 1.5})
         leftWingTimeline.add(leftForwardAnimation)
         leftWingTimeline.yoyo(true)
 
-        const logoAnimation = new TimelineMax({repeat:-1, repeatDelay:2, ease: Circ.easeInOut})
+        const logoAnimation = new TimelineMax({repeat:-1, repeatDelay:10, ease: Circ.easeInOut})
         logoAnimation.add([rightWingTimeline, leftWingTimeline])
 
-        butterfly.addEventListener('click', (e) => {
+        butterfly.addEventListener('mouseenter', (e) => {
             e.preventDefault()
+            logoAnimation.add([rightWingTimeline, leftWingTimeline])
             logoAnimation.play()
         })
     }
