@@ -1,2 +1,0 @@
-webpackJsonp([0xefeaa6d1881d],{144:function(e,t,u){"use strict";function a(e){return e&&e.__esModule?e:{default:e}}t.__esModule=!0;var l=u(1),n=a(l),o=u(28),d=a(o),f=function(){return n.default.createElement("div",null,n.default.createElement("h1",null,"Hi from the About page"),n.default.createElement(d.default,{to:"/"},"Go back to the homepage"))};t.default=f,e.exports=t.default}});
-//# sourceMappingURL=component---src-pages-about-js-00d9ec2ea72ba5c1b5a1.js.map
