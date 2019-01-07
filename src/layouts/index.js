@@ -1,8 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
+//import { TypographyStyle, GoogleFont } from 'react-typography'
+import typography from '../utils/typography'
 
-//import Header from '../components/Header'
 import '../scss/main.scss'
 import Header from '../components/Header';
 
@@ -36,8 +37,10 @@ const Layout = ({ children }) => (
         { rel: 'apple-touch-icon', sizes: '114x114', href: '/images/touch/apple-touch-icon-114x114.png' },
         { rel: 'apple-touch-icon', sizes: '120x120', href: '/images/touch/apple-touch-icon-120x120.png' },
         { rel: 'apple-touch-icon', sizes: '144x144', href: '/images/touch/apple-touch-icon-144x144.png' },
-        { rel: 'apple-touch-icon', sizes: '152x152', href: '/images/touch/apple-touch-icon-152x152.png' }
+        { rel: 'apple-touch-icon', sizes: '152x152', href: '/images/touch/apple-touch-icon-152x152.png' },
       ]}
+      TypographyStyle={[ {typography: 'typography'} ]}
+      GoogleFont={[ {typography: 'typography'} ]}
     />
     <Header/>
     <div

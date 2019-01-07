@@ -1,10 +1,13 @@
 @charset "utf-8";
 
-@import "../../node_modules/bulma/sass/utilities/initial-variables";
+@import "../../node_modules/bulma/sass/utilities/_all";
 
-$dimensions: 16 24 32 48 64 96 128 256 512 !default;
+//$dimensions: 16 24 32 48 64 96 128 256 512 !default;
 
 $navbar-height: 5rem;
+$brand-color-pink: #d99e8e;
+$link: $brand-color-pink;
+$text: #dddddd;
 
 @import "../../node_modules/bulma/bulma";
 
@@ -15,4 +18,9 @@ body {
   background: url('/assets/blue-hue-bg.png') no-repeat 100% bottom,
   url('/assets/main-bg.png') no-repeat 100% top;
   background-size: cover, cover;
+  color: $text;
+}
+
+.margin-left-05rem {
+  margin-left: 0.5rem;
 }

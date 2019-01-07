@@ -1,3 +1,21 @@
+$brand-color-pink: #d99e8e;
+
 .is-transparent {
   background-color: rgba(0, 0, 0, 0) !important;
+}
+
+.brand-font {
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.navbar.is-black .navbar-end > a.navbar-item {
+  color: $brand-color-pink;
+}
+
+.navbar.is-black .navbar-end > a.navbar-item:hover {
+  color: lighten($brand-color-pink, 20%);
+  background: radial-gradient(70px 10px at center 78%,
+  rgba(255, 255, 255, 0.55) 1%,
+  rgba(0, 0, 0, 0) 40%);
 }
