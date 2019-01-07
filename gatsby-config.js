@@ -108,5 +108,13 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
+    {
+      resolve: 'gatsby-source-filesystem', 
+      options: { 
+        name: `pages`,
+        path: `${__dirname}/src/pages`,
+        ignore: `[**/.*]`,
+      },
+    },
   ],
 };
