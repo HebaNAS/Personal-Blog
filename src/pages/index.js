@@ -1,13 +1,11 @@
 import React from 'react'
 import Link from 'gatsby-link'
 
+import Animation from '../components/Animation'
+
 const IndexPage = () => (
   <div>
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <Link to="/about/">Go to About Page</Link>
-    <br/>
+    <Animation />
     <Link to="/blog/">Go to Blog Page</Link>
   </div>
 )
