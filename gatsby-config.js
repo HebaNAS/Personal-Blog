@@ -1,5 +1,6 @@
 const autoprefixer = require('autoprefixer')
 const rucksackCSS = require('rucksack-css')
+const config = require('./.config')
 
 module.exports = {
   siteMetadata: {
@@ -122,6 +123,13 @@ module.exports = {
         name: `blogposts`,
         path: `${__dirname}/src/blogposts`,
         ignore: `[**/.*]`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-nprogress`,
+      options: {
+        color: config.themeColor,
+        showSpinner: true,
       },
     },
   ],

@@ -6,6 +6,7 @@ import typography from '../utils/typography'
 
 import '../scss/main.scss'
 import Header from '../components/Header';
+import Loader from '../components/Loader';
 
 const Layout = ({ children }) => (
   <div>

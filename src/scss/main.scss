@@ -19,6 +19,11 @@ body {
   url('/assets/main-bg.png') no-repeat 100% top;
   background-size: cover, cover;
   color: $text;
+  background-color: #000000;
+}
+
+.page {
+  visibility: hidden;
 }
 
 .margin-left-05rem {
