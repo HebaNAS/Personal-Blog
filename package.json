@@ -6,7 +6,7 @@
   "dependencies": {
     "autoprefixer": "^8.6.5",
     "bulma": "^0.6.2",
-    "gatsby": "^1.9.279",
+    "gatsby": "^2.0",
     "gatsby-background-image": "^0.1.10",
     "gatsby-cli": "^2.4.8",
     "gatsby-link": "^1.6.46",
