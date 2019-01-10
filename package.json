@@ -4,38 +4,38 @@
   "version": "1.0.0",
   "author": "Heba El-Shimy <heba.n.elshimy@gmail.com>",
   "dependencies": {
-    "autoprefixer": "^8.0.0",
+    "autoprefixer": "^8.6.5",
     "bulma": "^0.6.2",
-    "gatsby": "^1.9.202",
+    "gatsby": "^1.9.279",
     "gatsby-background-image": "^0.1.10",
     "gatsby-cli": "^2.4.8",
-    "gatsby-link": "^1.6.37",
-    "gatsby-plugin-catch-links": "^1.0.16",
+    "gatsby-link": "^1.6.46",
+    "gatsby-plugin-catch-links": "^1.0.26",
     "gatsby-plugin-google-analytics": "^2.0.9",
-    "gatsby-plugin-manifest": "^1.0.14",
+    "gatsby-plugin-manifest": "^1.0.27",
     "gatsby-plugin-netlify": "^2.0.6",
     "gatsby-plugin-nprogress": "^2.0.7",
-    "gatsby-plugin-offline": "^1.0.14",
-    "gatsby-plugin-postcss-sass": "^1.0.17",
-    "gatsby-plugin-react-helmet": "^2.0.5",
+    "gatsby-plugin-offline": "^1.0.18",
+    "gatsby-plugin-postcss-sass": "^1.0.22",
+    "gatsby-plugin-react-helmet": "^2.0.11",
     "gatsby-plugin-react-next": "^1.0.11",
     "gatsby-plugin-sharp": "^2.0.17",
-    "gatsby-plugin-styled-components": "^2.0.7",
+    "gatsby-plugin-styled-components": "^2.0.11",
     "gatsby-plugin-typography": "^1.7.19",
     "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-remark-autolink-headers": "^2.0.12",
     "gatsby-remark-copy-linked-files": "^2.0.8",
-    "gatsby-remark-images": "^1.5.46",
-    "gatsby-remark-prismjs": "^1.2.15",
+    "gatsby-remark-images": "^1.5.67",
+    "gatsby-remark-prismjs": "^1.2.24",
     "gatsby-remark-responsive-iframe": "^2.0.8",
     "gatsby-source-filesystem": "^1.5.39",
-    "gatsby-transformer-remark": "^1.7.32",
+    "gatsby-transformer-remark": "^1.7.44",
     "gatsby-transformer-sharp": "^2.1.10",
-    "gsap": "^1.20.4",
+    "gsap": "^1.20.6",
     "react-helmet": "^5.2.0",
-    "react-typography": "^0.16.13",
+    "react-typography": "^0.16.18",
     "rucksack-css": "^1.0.2",
-    "styled-components": "^3.1.6"
+    "styled-components": "^3.4.10"
   },
   "keywords": [
     "gatsby"
@@ -49,6 +49,6 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "prettier": "^1.10.2"
+    "prettier": "^1.15.3"
   }
 }
