@@ -6,7 +6,6 @@ import typography from '../utils/typography'
 
 import '../scss/main.scss'
 import Header from '../components/Header';
-import Loader from '../components/Loader';
 
 const Layout = ({ children }) => (
   <div>
@@ -39,6 +38,13 @@ const Layout = ({ children }) => (
         { rel: 'apple-touch-icon', sizes: '120x120', href: '/images/touch/apple-touch-icon-120x120.png' },
         { rel: 'apple-touch-icon', sizes: '144x144', href: '/images/touch/apple-touch-icon-144x144.png' },
         { rel: 'apple-touch-icon', sizes: '152x152', href: '/images/touch/apple-touch-icon-152x152.png' },
+        { rel: 'preload', as: 'style', href: '/styles.css' },
+        { rel: 'preload', as: 'style', href: '/build-js-styles.css' },
+        { rel: 'preload', as: 'script', href: '/scripts/mobileMenu.js' },
+        { rel: 'preload', as: 'image', href: '/assets/main-bg.png' },
+        { rel: 'preload', as: 'image', href: '/assets/blue-hue-bg.png' },
+        { rel: 'preload', as: 'image', href: '/assets/logo.svg' },
+        { rel: 'preload', as: 'image', href: '/assets/brain.svg' }
       ]}
       TypographyStyle={[ {typography: 'typography'} ]}
       GoogleFont={[ {typography: 'typography'} ]}

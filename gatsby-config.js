@@ -23,8 +23,76 @@ module.exports = {
         plugins: [
           `gatsby-remark-prismjs`,
           `gatsby-remark-images`,
+          `gatsby-remark-responsive-iframe`,
+          `gatsby-remark-copy-linked-files`,
+          `gatsby-remark-autolink-headers`
         ]
       }
+    },
+    `gatsby-plugin-catch-links`,
+    `gatsby-plugin-styled-components`,
+    {
+      resolve: `gatsby-plugin-postcss-sass`,
+      options: {
+        postCssPlugins: [
+          autoprefixer(),
+          rucksackCSS(),
+        ],
+        precision: 8,
+      },
+    },
+    `gatsby-plugin-react-next`,
+    {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `src/utils/typography`,
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem', 
+      options: { 
+        name: `pages`,
+        path: `${__dirname}/src/pages`,
+        ignore: `[**/.*]`,
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem', 
+      options: { 
+        name: `blogposts`,
+        path: `${__dirname}/src/blogposts`,
+        ignore: `[**/.*]`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/static/assets`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-nprogress`,
+      options: {
+        color: config.themeColor,
+        showSpinner: true,
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        google: {
+          families: ['Sacramento', 'Dosis']
+        }
+      }
+    },
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    {
+      resolve: 'gatsby-plugin-google-analytics',
+      options: {
+        trackingId: 'UA-132211546-1',
+      },
     },
     {
       resolve: `gatsby-plugin-manifest`,
@@ -33,7 +101,7 @@ module.exports = {
         name: `Heba El-Shimy Porfolio & Blog`,
         start_url: `./index.html?launcher=true`,
         display: `standalone`,
-        theme_color: `#000000`,
+        theme_color: `#d99e8e`,
         background_color: `#000000`,
         icons: [
           {
@@ -90,47 +158,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-offline`,
-    `gatsby-plugin-catch-links`,
-    `gatsby-plugin-styled-components`,
-    {
-      resolve: `gatsby-plugin-postcss-sass`,
-      options: {
-        postCssPlugins: [
-          autoprefixer(),
-          rucksackCSS(),
-        ],
-        precision: 8,
-      },
-    },
-    `gatsby-plugin-react-next`,
-    {
-      resolve: `gatsby-plugin-typography`,
-      options: {
-        pathToConfigModule: `src/utils/typography`,
-      },
-    },
-    {
-      resolve: 'gatsby-source-filesystem', 
-      options: { 
-        name: `pages`,
-        path: `${__dirname}/src/pages`,
-        ignore: `[**/.*]`,
-      },
-    },
-    {
-      resolve: 'gatsby-source-filesystem', 
-      options: { 
-        name: `blogposts`,
-        path: `${__dirname}/src/blogposts`,
-        ignore: `[**/.*]`,
-      },
-    },
-    {
-      resolve: `gatsby-plugin-nprogress`,
-      options: {
-        color: config.themeColor,
-        showSpinner: true,
-      },
-    },
+    `gatsby-plugin-netlify`,
   ],
 };
