@@ -24,11 +24,11 @@ class Header extends Component {
 
   render() {
     return(
-      <nav className="navbar is-black is-transparent">
+      <nav className="navbar is-black is-transparent margin-top-minus-05rem">
         <div className="navbar-brand">
           <a className="navbar-item" href="/">
             <Logo/>
-            <h1 className="brand brand-font margin-left-05rem margin-top-05rem is-primary is-bold">Heba El-Shimy</h1>
+            <h1 className="brand brand-font margin-left-05rem margin-top-1-5rem is-primary is-bold">Heba El-Shimy</h1>
           </a>
           <div className="navbar-burger burger" data-target="navbarMobile">
             <span></span>

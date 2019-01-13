@@ -538,7 +538,7 @@ class Animation extends Component {
                       <g>
                         <circle id="Oval1" cx="72.878" cy="249.939" r="1.502" opacity="0" stroke="#000" strokeWidth="0.1" strokeOpacity="1">
                         </circle>
-                        <text id="skill1" x="76.0205" y="290.974" fontWeight="bold" fontSize="0.022em" fill="#000" opacity="0">Deep Learning</text>
+                        <text id="skill1" x="77.0205" y="290.974" fontWeight="bold" fontSize="0.025em" fill="#000" opacity="0">Deep Learning</text>
                       </g>
                       <circle id="Oval" cx="100.356" cy="205.686" r="1.301" opacity="0.6"></circle>
                       <circle id="Oval" cx="123.695" cy="210.295" r="1" opacity="0.6"></circle>
@@ -719,7 +719,7 @@ class Animation extends Component {
                       <g>
                         <circle id="Oval2" cx="92.52" cy="152.223" r="1.707" opacity="0" stroke="#000" strokeWidth="0.1" strokeOpacity="1">
                         </circle>
-                        <text id="skill2" x="102.52" y="200.223" fontWeight="bold" fontSize="0.025em" fill="#000" opacity="0">Data Science</text>
+                        <text id="skill2" x="109.52" y="200.223" fontWeight="bold" fontSize="0.025em" fill="#000" opacity="0">Data Science</text>
                       </g>
                       <circle id="Oval" cx="91.364" cy="99.253" r="1" opacity="0.6"></circle>
                       <circle id="Oval" cx="122.351" cy="75.461" r="1.424" opacity="0.6"></circle>
@@ -1084,7 +1084,7 @@ class Animation extends Component {
                       <g>
                         <circle id="Oval4" cx="365.764" cy="272.079" r="1.822" opacity="0" stroke="#000" strokeWidth="0.1" strokeOpacity="1">
                         </circle>
-                        <text id="skill4" x="369.764" y="322.079" fontWeight="bold" fontSize="0.022em" fill="#000" opacity="0">Machine Learning</text>
+                        <text id="skill4" x="369.764" y="322.079" fontWeight="bold" fontSize="0.025em" fill="#000" opacity="0">Machine Learning</text>
                       </g>
                       <circle id="Oval" cx="396.502" cy="261.206" r="1" opacity="0.6"></circle>
                       <circle id="Oval" cx="490.366" cy="284.017" r="1" opacity="0.6"></circle>
@@ -1094,7 +1094,7 @@ class Animation extends Component {
                       <g>
                         <circle id="Oval5" cx="419.305" cy="228.082" r="1.482" opacity="0" stroke="#000" strokeWidth="0.1" strokeOpacity="1">
                         </circle>
-                        <text id="skill5" x="426.305" y="270.082" fontWeight="bold" fontSize="0.022em" fill="#000" opacity="0">Visualization</text>
+                        <text id="skill5" x="428.305" y="270.082" fontWeight="bold" fontSize="0.025em" fill="#000" opacity="0">Visualization</text>
                       </g>
                       <circle id="Oval" cx="420.239" cy="238.736" r="1" opacity="0.6"></circle>
                       <circle id="Oval" cx="411.649" cy="292.71" r="1.13" opacity="0.6"></circle>
