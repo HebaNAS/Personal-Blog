@@ -28,7 +28,7 @@ class Header extends Component {
         <div className="navbar-brand">
           <a className="navbar-item" href="/">
             <Logo/>
-            <h1 className="brand brand-font margin-left-05rem is-primary is-bold">Heba El-Shimy</h1>
+            <h1 className="brand brand-font margin-left-05rem margin-top-05rem is-primary is-bold">Heba El-Shimy</h1>
           </a>
           <div className="navbar-burger burger" data-target="navbarMobile">
             <span></span>

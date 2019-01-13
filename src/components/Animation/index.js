@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { TweenMax, TimelineMax, Circ, Power4 } from 'gsap'
+import { TimelineMax } from 'gsap'
 
 class Animation extends Component { 
   componentDidMount() {

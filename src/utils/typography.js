@@ -24,5 +24,6 @@ const typography = new Typography({
   headerFontFamily: ['Sacramento', 'cursive'],
   bodyFontFamily: ['Dosis', 'sans-serif'],
 })
- 
-export default typography
+
+const { rhythm, scale } = typography
+export { rhythm, scale, typography as default }

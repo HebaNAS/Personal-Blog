@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { TweenMax, TimelineMax, Circ, Power4 } from 'gsap'
+import { TweenMax, TimelineMax, Circ } from 'gsap'
 
 // Butterfly Logo
 class Logo extends Component {

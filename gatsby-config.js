@@ -1,5 +1,3 @@
-const autoprefixer = require('autoprefixer')
-const rucksackCSS = require('rucksack-css')
 const config = require('./.config')
 
 module.exports = {
@@ -10,13 +8,6 @@ module.exports = {
   plugins: [
     `gatsby-plugin-catch-links`,
     `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/src/blogposts`,
-        name: `blogposts`,
-      },
-    },
     {
       resolve: `gatsby-transformer-remark`,
       options: {
@@ -30,22 +21,12 @@ module.exports = {
       }
     },
     `gatsby-plugin-catch-links`,
-    `gatsby-plugin-styled-components`,
-    {
-      resolve: `gatsby-plugin-postcss-sass`,
-      options: {
-        postCssPlugins: [
-          autoprefixer(),
-          rucksackCSS(),
-        ],
-        precision: 8,
-      },
-    },
-    `gatsby-plugin-react-next`,
+    `gatsby-plugin-sass`,
+    `gatsby-plugin-postcss`,
     {
       resolve: `gatsby-plugin-typography`,
       options: {
-        pathToConfigModule: `src/utils/typography`,
+        pathToConfigModule: `${__dirname}/src/utils/typography.js`,
       },
     },
     {
@@ -68,7 +49,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/static/assets`,
+        path: `${__dirname}/static/assets`,
       },
     },
     {
