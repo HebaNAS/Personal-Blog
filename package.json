@@ -30,7 +30,7 @@
     "gatsby-source-graphql": "latest",
     "gatsby-transformer-remark": "latest",
     "gatsby-transformer-sharp": "latest",
-    "gsap": "^1.20.6",
+    "gsap": "^2.0.2",
     "node-sass": "^4.11.0",
     "postcss-browser-reporter": "^0.5.0",
     "postcss-import": "^12.0.1",
