@@ -8,10 +8,11 @@ import About from '../components/About'
 
 //AOS.init()
 
-class IndexPage extends Component{
-  constructor(props) {
-    super(props)
-  }
+class IndexPage extends Component {
+  // constructor(props) {
+  //   super(props)
+  //   props = this.props
+  // }
   
   componentDidMount() {
     const isBrowser = typeof window !== 'undefined'
@@ -27,7 +28,7 @@ class IndexPage extends Component{
   
   render() {
     return(
-      <Layout location={props.location}>
+      <Layout location={this.props.location}>
         <Animation />
         <About />
         <Link to="/blog/">Go to Blog Page</Link>
