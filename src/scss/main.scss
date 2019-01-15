@@ -13,6 +13,7 @@ $text: #dddddd;
 
 html, body {
   min-height: 4400px;
+  scroll-behavior: smooth;
 }
 body {
   background: url('/assets/blue-hue-bg.png') no-repeat 100% bottom,
@@ -30,6 +31,19 @@ body {
   margin-top: 1.5rem;
 }
 
+.padding-top-1rem {
+  padding-top: 1rem;
+}
+
+.padding-bottom-1rem {
+  padding-bottom: 1rem;
+}
+
 .margin-top-minus-05rem {
   margin-top: -0.5rem;
+}
+
+#brain {
+  width: inherit;
+  height: 100%;
 }

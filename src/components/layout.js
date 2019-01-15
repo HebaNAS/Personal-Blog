@@ -1,8 +1,8 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 //import { TypographyStyle, GoogleFont } from 'react-typography'
+
 import typography from '../utils/typography'
 
 import '../scss/main.scss'
@@ -34,7 +34,8 @@ const Layout = ({ children, location }) => (
             { name: 'MobileOptimized', content: '320' },
             { name: 'apple-mobile-web-app-title', content: 'Portfolio'},
             { name: 'apple-mobile-web-app-capable', content: 'Yes'},
-            { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }
+            { name: 'apple-mobile-web-app-status-bar-style', content: 'black' },
+            { charSet: 'utf-8' }
           ]}
           link={[
             { rel: 'shortcut icon', href: '/favicon.ico' },
@@ -78,9 +79,5 @@ const Layout = ({ children, location }) => (
     )}
   />
 )
-
-Layout.propTypes = {
-  children: PropTypes.func,
-}
 
 export default Layout
