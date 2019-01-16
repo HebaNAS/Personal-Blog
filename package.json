@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "author": "Heba El-Shimy <heba.n.elshimy@gmail.com>",
   "dependencies": {
+    "anchorate": "^1.2.3",
     "aos": "^3.0.0-beta.6",
     "autoprefixer": "^8.6.5",
     "babel-plugin-styled-components": "^1.10.0",
@@ -64,6 +65,12 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.6.3",
+    "@fortawesome/fontawesome-svg-core": "^1.2.12",
+    "@fortawesome/free-brands-svg-icons": "^5.6.3",
+    "@fortawesome/free-regular-svg-icons": "^5.6.3",
+    "@fortawesome/free-solid-svg-icons": "^5.6.3",
+    "@fortawesome/react-fontawesome": "^0.1.4",
     "prettier": "^1.15.3"
   },
   "peerDependencies": {

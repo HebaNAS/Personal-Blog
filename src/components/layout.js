@@ -12,7 +12,7 @@ const Layout = ({ children, location }) => (
   <StaticQuery
     query={graphql`
       query LayoutQuery {
-        site {
+        info: site {
           siteMetadata {
             title
           }
@@ -23,8 +23,8 @@ const Layout = ({ children, location }) => (
         <>
         <Helmet
           title="Heba El-Shimy's Portfolio & Blog"
-          titleTemplate={`%s | ${data.site.siteMetadata.title}`}
-          defaultTitle={data.site.siteMetadata.title}
+          titleTemplate={`%s | ${data.info.siteMetadata.title}`}
+          defaultTitle={data.info.siteMetadata.title}
           meta={[
             { name: 'description', content: 'Portfolio' },
             { name: 'keywords', content: 'portfolio, blog' },
@@ -64,7 +64,7 @@ const Layout = ({ children, location }) => (
           TypographyStyle={[ {typography: typography} ]}
           GoogleFont={[ {typography: typography} ]}
         />
-        <Header menuLinks={data.site.siteMetadata.menuLinks}/>
+        <Header menuLinks={data.info.siteMetadata.menuLinks}/>
         <div
           style={{
             margin: '-1rem auto',

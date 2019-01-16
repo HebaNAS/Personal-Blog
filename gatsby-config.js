@@ -5,16 +5,18 @@ module.exports = {
   siteMetadata: {
     title: `Heba El-Shimy's Portfolio & Blog`,
     author: `Heba El-Shimy`,
+    siteUrl: `https://www.hebaelshimy.com`,
+    description: `Personal Portfolio & Blog`,
     menuLinks:[
       {
-        name:'home',
-        link:'/'
+        name:'about',
+        link:'/#about'
       },
       {
         name:'blog',
         link:'/blog'
       }
-    ]
+    ],
   },
   plugins: [
     `gatsby-plugin-catch-links`,

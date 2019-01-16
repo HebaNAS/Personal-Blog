@@ -45,21 +45,36 @@ class Header extends Component {
     function showNav() {
       $("[data-nav-status='toggle']").removeClass("is-hidden").addClass("is-visible")
     }
-    
-    $('.navbar-menu .navbar-end a.navbar-item')[0].click((e) => {
-      e.preventDefault()
-      document.getElementById('about').scrollIntoView({behavior: "smooth"})
-    });
+
+    // Hide arrow on scroll
+    $(window).scroll(function(){
+      let currentScroll = $(this).scrollTop()
+
+      if (currentScroll > $(this).height() - 200) {
+        window.setTimeout(showArrow, 300)
+      } else {
+        window.setTimeout(hideArrow, 300)
+      }
+
+      currentScroll = 0
+    })
+
+    function hideArrow() {
+      $(".up-arrow").removeClass("is-visible").addClass("is-hidden")
+    }
+    function showArrow() {
+      $(".up-arrow").removeClass("is-hidden").addClass("is-visible")
+    }
   }
 
   render() {
     return(
       <nav className="navbar is-black is-transparent margin-top-minus-05rem" id="nav">
         <div className="navbar-brand">
-          <a className="navbar-item" href="/">
+          <Link className="navbar-item" to="/">
             <Logo/>
             <h1 className="brand brand-font margin-left-05rem margin-top-1-5rem is-primary is-bold">Heba El-Shimy</h1>
-          </a>
+          </Link>
           <div className="navbar-burger burger" data-target="navbarMobile">
             <span></span>
             <span></span>
@@ -72,8 +87,8 @@ class Header extends Component {
             <a className="navbar-item" href="#about">
               About
             </a>
-            <a className="navbar-item" href="#portfolio">
-              Portfolio
+            <a className="navbar-item" href="#projects">
+              Projects
             </a>
             <Link className="navbar-item" to="/blog/">
               Blog

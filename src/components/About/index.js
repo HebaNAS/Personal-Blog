@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import Img from 'gatsby-image'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowAltCircleUp } from '@fortawesome/free-solid-svg-icons'
 
 import '../../scss/about.scss'
 import { StaticQuery, graphql } from 'gatsby'
@@ -104,6 +106,9 @@ class About extends Component {
               <br></br>
               among others
             </p>
+            <a href="/">
+              <FontAwesomeIcon icon={faArrowAltCircleUp} size="2x" className="up-arrow light is-hidden" />
+            </a>
         </section>
       )}
     />
