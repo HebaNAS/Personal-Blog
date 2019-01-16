@@ -1,9 +1,20 @@
 const config = require('./.config')
 
 module.exports = {
+  pathPrefix: `/`,
   siteMetadata: {
     title: `Heba El-Shimy's Portfolio & Blog`,
     author: `Heba El-Shimy`,
+    menuLinks:[
+      {
+        name:'home',
+        link:'/'
+      },
+      {
+        name:'blog',
+        link:'/blog'
+      }
+    ]
   },
   plugins: [
     `gatsby-plugin-catch-links`,

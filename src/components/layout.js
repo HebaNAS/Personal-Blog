@@ -64,7 +64,7 @@ const Layout = ({ children, location }) => (
           TypographyStyle={[ {typography: typography} ]}
           GoogleFont={[ {typography: typography} ]}
         />
-        <Header/>
+        <Header menuLinks={data.site.siteMetadata.menuLinks}/>
         <div
           style={{
             margin: '-1rem auto',
