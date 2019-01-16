@@ -41,3 +41,9 @@ $brand-color-pink: #d99e8e;
 .navbar-item, .navbar-link {
   padding: 1rem;
 }
+
+@media (max-width: 768px) {
+  .navbar-menu {
+    position: static;
+  }
+}
