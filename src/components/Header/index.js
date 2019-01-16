@@ -52,17 +52,19 @@ class Header extends Component {
     }
 
     // Hide arrow on scroll
-    $(window).scroll(function(){
-      let currentScroll = $(this).scrollTop()
+    if ($(window).width() > 768) {
+      $(window).scroll(function(){
+        let currentScroll = $(this).scrollTop()
 
-      if (currentScroll > $(this).height() - 200) {
-        window.setTimeout(showArrow, 300)
-      } else {
-        window.setTimeout(hideArrow, 300)
-      }
+        if (currentScroll > $(this).height() - 200) {
+          window.setTimeout(showArrow, 300)
+        } else {
+          window.setTimeout(hideArrow, 300)
+        }
 
-      currentScroll = 0
-    })
+        currentScroll = 0
+      })
+    }
 
     function hideArrow() {
       $(".up-arrow").removeClass("is-visible").addClass("is-hidden")
