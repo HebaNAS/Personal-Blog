@@ -9,13 +9,25 @@ module.exports = {
     description: `Personal Portfolio & Blog`,
     menuLinks:[
       {
-        name:'about',
-        link:'/#about'
+        name:'home',
+        link:'/'
+      },
+      {
+        name: 'about',
+        link: '/#about'
+      },
+      {
+        name: 'projects',
+        link: '/#projects'
       },
       {
         name:'blog',
-        link:'/blog'
-      }
+        link:'/blog/'
+      },
+      {
+        name: 'contact',
+        link: '/#contact'
+      },
     ],
   },
   plugins: [

@@ -3,6 +3,7 @@
   "description": "Heba El-Shimy's Portfolio & Blog",
   "version": "1.0.0",
   "author": "Heba El-Shimy <heba.n.elshimy@gmail.com>",
+  "homepage": "https://www.hebaelshimy.com",
   "dependencies": {
     "anchorate": "^1.2.3",
     "aos": "^3.0.0-beta.6",

@@ -7,6 +7,8 @@ import '../../scss/header.scss';
 
 class Header extends Component {
   componentDidMount() {
+
+    console.log(this.props)
     // Mobile menu functionality
     const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0)
 
@@ -71,7 +73,7 @@ class Header extends Component {
     return(
       <nav className="navbar is-black is-transparent margin-top-minus-05rem" id="nav">
         <div className="navbar-brand">
-          <Link className="navbar-item" to="/">
+          <Link className="navbar-item" to={this.props.menuLinks[0].link}>
             <Logo/>
             <h1 className="brand brand-font margin-left-05rem margin-top-1-5rem is-primary is-bold">Heba El-Shimy</h1>
           </Link>
@@ -84,16 +86,16 @@ class Header extends Component {
 
         <div id="navbarMobile" className="navbar-menu" data-nav-status="toggle">
           <div className="navbar-end">
-            <a className="navbar-item" href="#about">
+            <a className="navbar-item" href={this.props.menuLinks[1].link}>
               About
             </a>
-            <a className="navbar-item" href="#projects">
+            <a className="navbar-item" href={this.props.menuLinks[2].link}>
               Projects
             </a>
-            <Link className="navbar-item" to="/blog/">
+            <Link className="navbar-item" to={this.props.menuLinks[3].link}>
               Blog
             </Link>
-            <a className="navbar-item" href="#contact">
+            <a className="navbar-item" href={this.props.menuLinks[4].link}>
               Contact Me
             </a>
           </div>
