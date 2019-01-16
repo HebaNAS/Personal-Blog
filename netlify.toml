@@ -1,11 +1,17 @@
-[[headers]]
-  for = "/*"
-  [headers.values]
-    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
-
 [[redirects]]
-  from = "https://www.hebaelshimy.netlify.com"
-  to = "https://www.hebaelshimy.com"
+  from = "https://hebaelshimy.netlify.com/*"
+  to = "https://www.hebaelshimy.com/:splat"
   status = 301
   force = true
-  headers = {X-From = "Netlify"}
+
+[[redirects]]
+  from = "http://hebaelshimy.netlify.com/*"
+  to = "http://www.hebaelshimy.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.hebaelshimy.com/*"
+  to = "https://www.hebaelshimy.com/:splat"
+  status = 301
+  force = true
