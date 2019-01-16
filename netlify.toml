@@ -2,3 +2,10 @@
   for = "/*"
   [headers.values]
     Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+
+[[redirects]]
+  from = "/*"
+  to = "https://www.hebaelshimy.com"
+  status = 301
+  force = false
+  headers = {X-From = "Netlify"}
