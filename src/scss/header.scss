@@ -24,6 +24,7 @@ $brand-color-pink: #d99e8e;
   position: fixed;
   right: 1.0875rem;
   top: 0.5rem;
+  z-index: 4;
 
   &.is-hidden {
     opacity: 0;

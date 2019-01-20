@@ -6,7 +6,7 @@ class Animation extends Component {
     let toplevel = (new Promise(function(resolve, reject) {
         document.getElementById('brain').addEventListener('wheel', (event) => {
             if (event.deltaY > 0) {
-                document.getElementById('about').scrollIntoView({behavior: "smooth"})
+                document.getElementById('about').scrollIntoView({behavior: "smooth", block: "start"})
                 resolve()
             }
         })

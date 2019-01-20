@@ -33,6 +33,7 @@ const Layout = ({ children, location }) => (
             { name: 'description', content: 'Portfolio' },
             { name: 'keywords', content: 'portfolio, blog' },
             { name: 'theme-color', content: '#000000' },
+            { name: 'viewport', content: 'width=device-width, initial-scale=1'},
             { httpEquiv: 'cleartype', content: 'on' },
             { name: 'HandheldFriendly', content: 'True' },
             { name: 'MobileOptimized', content: '320' },

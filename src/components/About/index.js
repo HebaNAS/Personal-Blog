@@ -8,7 +8,7 @@ class About extends Component {
   componentDidMount() {
     document.getElementById('about').addEventListener('wheel', (event) => {
       if (event.deltaY < 0) {
-        document.getElementById('nav').scrollIntoView({behavior: "smooth"})
+        document.getElementById('nav').scrollIntoView({behavior: "smooth", block: "start"})
       }
     })
   }
