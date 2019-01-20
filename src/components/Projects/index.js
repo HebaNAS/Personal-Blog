@@ -96,35 +96,53 @@ class Project extends Component {
           <h1 className="branded-title title is-2">Projects</h1>
           <div className="columns">
             <div className="column">
-              <Img fixed={data.project1.childImageSharp.fixed} alt="Multilayer Perceptron" backgroundColor="lightgray" className="project overlay" />
+              <a href="https://github.com/HebaNAS/Multilayer-Perceptron/blob/master/MultilayerPerceptron.ipynb">
+                <Img fixed={data.project1.childImageSharp.fixed} alt="Multilayer Perceptron" backgroundColor="lightgray" className="project overlay" />
+              </a>
             </div>
             <div className="column">
-              <Img fixed={data.project2.childImageSharp.fixed} alt="Customer churn predictor" backgroundColor="lightgray" className="project" />
+              <a href="https://developer.ibm.com/patterns/predict-customer-churn-using-watson-studio-and-jupyter-notebooks/">
+                <Img fixed={data.project2.childImageSharp.fixed} alt="Customer churn predictor" backgroundColor="lightgray" className="project" />
+              </a>
             </div>
             <div className="column">
-              <Img fixed={data.project3.childImageSharp.fixed} alt="SPSS Tutorial" backgroundColor="lightgray" className="project overlay" />
-            </div>
-          </div>
-          <div className="columns">
-            <div className="column">
-              <Img fixed={data.project4.childImageSharp.fixed} alt="Multilayer Perceptron" backgroundColor="lightgray" className="project overlay" />
-            </div>
-            <div className="column">
-              <Img fixed={data.project5.childImageSharp.fixed} alt="Customer churn predictor" backgroundColor="lightgray" className="project overlay" />
-            </div>
-            <div className="column">
-              <Img fixed={data.project6.childImageSharp.fixed} alt="SPSS Tutorial" backgroundColor="lightgray" className="project" />
+              <a href="https://developer.ibm.com/tutorials/build-and-compare-models-using-ibm-spss-modeler/">
+                <Img fixed={data.project3.childImageSharp.fixed} alt="SPSS Tutorial" backgroundColor="lightgray" className="project overlay" />
+              </a>
             </div>
           </div>
           <div className="columns">
             <div className="column">
-              <Img fixed={data.project7.childImageSharp.fixed} alt="Multilayer Perceptron" backgroundColor="lightgray" className="project overlay" />
+              <a href="https://developer.ibm.com/tutorials/create-interactive-dashboards-on-watson-studio/">
+                <Img fixed={data.project4.childImageSharp.fixed} alt="Dashboards on IBM Watson Studio" backgroundColor="lightgray" className="project overlay" />
+              </a>
             </div>
             <div className="column">
-              <Img fixed={data.project8.childImageSharp.fixed} alt="Customer churn predictor" backgroundColor="lightgray" className="project overlay" />
+              <a href="https://developer.ibm.com/tutorials/create-and-experiment-with-dl-models-using-nn-modeler/">
+                <Img fixed={data.project5.childImageSharp.fixed} alt="Deep Learning on IBM Watson Studio" backgroundColor="lightgray" className="project overlay" />
+              </a>
             </div>
             <div className="column">
-              <Img fixed={data.project9.childImageSharp.fixed} alt="SPSS Tutorial" backgroundColor="lightgray" className="project overlay" />
+              <a href="https://hebanas.github.io/D3js-Dashboard/">
+                <Img fixed={data.project6.childImageSharp.fixed} alt="D3.js Dashboard" backgroundColor="lightgray" className="project" />
+              </a>
+            </div>
+          </div>
+          <div className="columns">
+            <div className="column">
+              <a href="https://github.com/HebaNAS/Gradient-Descent/blob/master/GradientDescent.ipynb">
+                <Img fixed={data.project7.childImageSharp.fixed} alt="Gradient Descent" backgroundColor="lightgray" className="project overlay" />
+              </a>
+            </div>
+            <div className="column">
+              <a href="https://github.com/HebaNAS/KNN-Classifier/blob/master/F21DM_CW1.ipynb">
+                <Img fixed={data.project8.childImageSharp.fixed} alt="K-Nearest Neighbor Classifier" backgroundColor="lightgray" className="project overlay" />
+              </a>
+            </div>
+            <div className="column">
+              <a href="https://github.com/HebaNAS/BreakIntoAI-Tools/blob/master/Break%20into%20AI.ipynb">
+                <Img fixed={data.project9.childImageSharp.fixed} alt="Machine Learning libraries tutorial" backgroundColor="lightgray" className="project overlay" />
+              </a>
             </div>
           </div>
         </section>
