@@ -1,0 +1,22 @@
+.projects-section {
+  min-width: 1024px;
+}
+
+.project {
+  border-radius: 5px;
+  border: 1px solid rgba(140, 140, 140, 0.35);
+  box-shadow: 3px 3px 7px rgba(140,140,140,0.25);
+  transition: all .3s ease-in-out;
+}
+
+.project:hover {
+  transform: scale(1.05);
+}
+
+.blur {
+  filter: blur(2px);
+}
+
+.overlay {
+  filter: invert(0.85);
+}

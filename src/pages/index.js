@@ -3,6 +3,7 @@ import 'aos/dist/aos.css'
 import Layout from '../components/layout'
 import Animation from '../components/Animation'
 import About from '../components/About'
+import Projects from '../components/Projects'
 
 class IndexPage extends Component {
   componentDidMount() {
@@ -22,6 +23,7 @@ class IndexPage extends Component {
       <Layout location={this.props.location}>
         <Animation />
         <About />
+        <Projects />
       </Layout>
     )
   }

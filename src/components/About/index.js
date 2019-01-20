@@ -22,7 +22,7 @@ class About extends Component {
       query {
         heba: file(relativePath: { eq: "heba.png" }) {
           childImageSharp {
-            fixed(width: 200, height: 200) {
+            fixed(width: 220, height: 220) {
               ...GatsbyImageSharpFixed
             }
           }

@@ -56,7 +56,7 @@ class Animation extends Component {
   render() {
     return(
     <div id="brain">
-      <svg style={{ width: "100%", height: "100%", margin: "-1.5rem auto 0 auto" }} width="872px" height="825px" viewBox="0 0 642 840" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+      <svg style={{ width: "100%", height: "100%", margin: "-1.5rem auto 0 auto" }} width="872px" height="725px" viewBox="0 0 642 840" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
       <defs>
           <radialGradient cx="50.000001%" cy="49.9996997%" fx="50.000001%" fy="49.9996997%" r="348.533183%" gradientTransform="translate(0.500000,0.499997),scale(0.135338,1.000000),rotate(180.000000),scale(1.000000,0.191508),translate(-0.500000,-0.499997)" id="radialGradient-1">
               <stop stopColor="#FFFFFF" stopOpacity="0.05" offset="0%"></stop>
