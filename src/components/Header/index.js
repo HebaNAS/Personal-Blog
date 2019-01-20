@@ -7,8 +7,6 @@ import '../../scss/header.scss';
 
 class Header extends Component {
   componentDidMount() {
-
-    console.log(this.props)
     // Mobile menu functionality
     const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0)
 

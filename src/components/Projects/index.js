@@ -1,17 +1,24 @@
 import React, { Component } from 'react'
 import Img from 'gatsby-image'
+import { StaticQuery, graphql } from 'gatsby'
+import { TweenMax } from 'gsap'
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { faArrowAltCircleUp } from '@fortawesome/free-solid-svg-icons'
 
 import '../../scss/projects.scss'
-import { StaticQuery, graphql } from 'gatsby'
 
 class Project extends Component {
   componentDidMount() {
-    document.getElementById('about').addEventListener('wheel', (event) => {
-      if (event.deltaY > 0) {
-        document.getElementById('projects').scrollIntoView({behavior: "smooth"})
-      }
+    let toplevel = (new Promise(function(resolve, reject) {
+      document.getElementById('about').addEventListener('wheel', (event) => {
+        if (event.deltaY > 0) {
+          document.getElementById('projects').scrollIntoView({behavior: "smooth"})
+          resolve()
+        }
+      })
+    }))
+    toplevel.then(() => {
+      TweenMax.fromTo(document.getElementById('projects'), 0.6, {opacity:0, scale:0.75, delay:0.35}, {opacity:1, scale:1, delay:1.3})
     })
 
     document.getElementById('projects').addEventListener('wheel', (event) => {

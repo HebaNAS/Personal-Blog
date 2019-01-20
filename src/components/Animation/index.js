@@ -1,12 +1,18 @@
 import React, { Component } from 'react'
-import { TimelineMax } from 'gsap'
+import { TimelineMax, TweenMax } from 'gsap'
 
 class Animation extends Component { 
   componentDidMount() {
-    document.getElementById('brain').addEventListener('wheel', (event) => {
-        if (event.deltaY > 0) {
-            document.getElementById('about').scrollIntoView({behavior: "smooth"})
-        }
+    let toplevel = (new Promise(function(resolve, reject) {
+        document.getElementById('brain').addEventListener('wheel', (event) => {
+            if (event.deltaY > 0) {
+                document.getElementById('about').scrollIntoView({behavior: "smooth"})
+                resolve()
+            }
+        })
+    }))
+    toplevel.then(() => {
+        TweenMax.fromTo(document.getElementById('about'), 0.6, {opacity:0, scale:0.75, delay:0.35}, {opacity:1, scale:1, delay:1.3})
     })
 
     const dots = document.querySelectorAll('circle')
