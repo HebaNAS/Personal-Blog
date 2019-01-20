@@ -104,6 +104,7 @@ class About extends Component {
               <br></br>
               among others
             </p>
+          <hr className="separator"></hr>
         </section>
       )}
     />

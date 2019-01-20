@@ -179,6 +179,7 @@ class Project extends Component {
               </a>
             </div>
           </div>
+          <hr className="separator"></hr>
         </section>
         )}
       />
