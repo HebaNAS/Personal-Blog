@@ -1,14 +1,10 @@
 import React, { Component } from 'react'
 import { TweenMax } from 'gsap'
 import detectIt from 'detect-it'
-//import axios from 'axios'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faTwitter, faYoutube, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 
 import '../../scss/contact.scss'
-
-// populate environment variables locally.
-require('dotenv').config()
 
 const encode = (data) => {
   return Object.keys(data)

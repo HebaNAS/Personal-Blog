@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-//import $ from 'jquery'
 import '../scss/thankyou.scss'
 
 class ThankYou extends Component {
@@ -40,7 +39,7 @@ class ThankYou extends Component {
         </div>
         <p className="redirect is-size-6 has-text-centered is-fullwidth">You will be redirected in <span className="timer" ref={this.counter}>{
           setInterval(() => {
-            if (t >= 0) {
+            if (t >= 0 && this.counter.current) {
               this.counter.current.innerHTML = t
               t--
             }
