@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import detectIt from 'detect-it'
 import { TimelineMax, TweenMax } from 'gsap'
 
 class Animation extends Component { 
@@ -9,7 +10,7 @@ class Animation extends Component {
                 document.getElementById('about').scrollIntoView({behavior: "smooth", block: "start"})
                 resolve()
             }
-        })
+        }, detectIt.passiveEvents ? {passive:true} : false)
     }))
     toplevel.then(() => {
         TweenMax.fromTo(document.getElementById('about'), 0.6, {opacity:0, scale:0.75, delay:0.35}, {opacity:1, scale:1, delay:1.3})

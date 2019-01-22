@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Img from 'gatsby-image'
+import detectIt from 'detect-it'
 import { StaticQuery, graphql } from 'gatsby'
 
 import '../../scss/about.scss'
@@ -10,7 +11,7 @@ class About extends Component {
       if (event.deltaY < 0) {
         document.getElementById('nav').scrollIntoView({behavior: "smooth", block: "start"})
       }
-    })
+    }, detectIt.passiveEvents ? {passive:true} : false)
   }
 
   render() {
@@ -21,7 +22,7 @@ class About extends Component {
         heba: file(relativePath: { eq: "heba.png" }) {
           childImageSharp {
             fixed(width: 220, height: 220) {
-              ...GatsbyImageSharpFixed
+              ...GatsbyImageSharpFixed_withWebp
             }
           }
         }

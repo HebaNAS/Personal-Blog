@@ -9,6 +9,7 @@
     "autoprefixer": "^8.6.5",
     "babel-plugin-styled-components": "^1.10.0",
     "bulma": "^0.6.2",
+    "detect-it": "^3.0.5",
     "gatsby": "^2.0.91",
     "gatsby-cli": "latest",
     "gatsby-image": "^2.0.26",

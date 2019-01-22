@@ -1,6 +1,9 @@
-// .projects-section {
-//   min-width: 1024px;
-// }
+$brand-color-pink: #d99e8e;
+$text: #dddddd;
+
+.column {
+  margin-bottom: 0.35rem auto;
+}
 
 .project {
   border-radius: 5px;
@@ -10,13 +13,19 @@
 }
 
 .project:hover {
-  transform: scale(1.05);
-}
-
-.blur {
-  filter: blur(2px);
+  transform: scale(1.03);
 }
 
 .overlay {
   filter: invert(0.85);
+}
+
+.project + .label {
+  color: darken($text, 30);
+  margin-top: 0.35rem;
+  transition: all .3s ease-in-out;
+}
+
+.project:hover + .label, .label:hover {
+  color: $text;
 }

@@ -6,7 +6,8 @@ import { StaticQuery, graphql } from 'gatsby'
 import typography from '../utils/typography'
 
 import '../scss/main.scss'
-import Header from './Header';
+import Header from './Header'
+import Footer from './Footer'
 
 const Layout = ({ children, location }) => (
   <StaticQuery
@@ -80,6 +81,7 @@ const Layout = ({ children, location }) => (
         >
           {children}
         </div>
+        <Footer />
       </>
     )}
   />

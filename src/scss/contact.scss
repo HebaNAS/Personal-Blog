@@ -1,0 +1,287 @@
+@charset "utf-8";
+
+$brand-color-pink: #d99e8e;
+$text: #dddddd;
+
+.contact-section {
+	color: $text;
+}
+
+.contact-section a {
+  color: darken($text, 20);
+}
+
+.contact-section .columns {
+  margin-top: 2rem;
+}
+
+.contact-section .social {
+  transition: all .3s ease-in-out;
+}
+
+.contact-section .social:hover {
+  transform: scale(1.15);
+  color: $text;
+}
+
+.contact-section textarea {
+	top: 0;
+	opacity: 1;
+  min-width: 75%;
+  min-height: 100px;
+  max-width: 75%; 
+  max-height: 200px;
+}
+
+.form-main {
+	width:100%;
+  padding-top: 0px;
+	font-size: 1rem;
+	display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.form-message, #contactform {
+	width: 100%;
+}
+
+.form-div.active {
+	background-color:rgba(255, 255, 255, 0.1);
+	padding-left: 35px;
+	padding-right: 35px;
+	padding-top: 55px;
+	padding-bottom: 0;
+	width: 50%;
+	height: 100%;
+	border: 0px solid $brand-color-pink;
+  border-radius: 7px;
+	animation: openForm 1.4s;
+  animation-timing-function: cubic-bezier(.9, .1, .1, .9);
+}
+
+.form-div.active * {
+  top: 0;
+  opacity: 1;
+}
+
+.form-div.active {
+	max-width: 95%;
+}
+
+.feedback-input {
+	width: 75%;
+}
+
+.form-div.active::after,
+.form-div.active::before {
+  opacity: 0;
+}
+
+.form-div.active .feedback-input {
+	top: 0;
+	color:rgba(40, 40, 40, 1);
+	line-height: 18px;
+	background-color: rgba(255, 255, 255, 0.8);
+	padding: 13px 13px 13px 54px;
+	margin-bottom: 10px;
+	box-sizing: inherit;
+  border: 1px solid rgba(0, 0, 0, 0);
+  border-radius: 3px;
+}
+
+.form-div.active .feedback-input:focus {
+	background: rgba(255, 255, 255, 0.9);
+	box-shadow: 0;
+	border: 1px solid $brand-color-pink;
+	color: rgba(40, 40, 40, 1);
+	outline: none;
+  padding: 13px 13px 13px 54px;
+}
+
+.form-div.active .feedback-input:invalid {
+  border: 1px solid rgb(139, 11, 11);
+}
+
+.form-div.active .feedback-input:valid {
+  border: 1px solid rgb(166, 230, 140);
+}
+
+.form-div.active .feedback-input:nth-child(1) {
+  transition: all 0.5s 1s ease;
+}
+.form-div.active .feedback-input:nth-child(2) {
+  transition: all 0.7s 1s ease;
+}
+
+.focused {
+	background: rgba(255, 255, 255, 0.9);
+	color: $brand-color-pink;
+	border: 3px solid $brand-color-pink;
+}
+
+#name {
+	background-image: url(../../node_modules/@fortawesome/fontawesome-free/svgs/solid/user.svg);
+	background-size: 30px 30px;
+	background-position: 11px 8px;
+  background-repeat: no-repeat;
+}
+
+#name:focus {
+	background-image: url(../../node_modules/@fortawesome/fontawesome-free/svgs/solid/user.svg);
+	background-size: 30px 30px;
+	background-position: 8px 5px;
+  background-position: 11px 8px;
+  background-repeat: no-repeat;
+}
+
+#email {
+	background-image: url(../../node_modules/@fortawesome/fontawesome-free/svgs/solid/envelope.svg);
+	background-size: 30px 30px;
+	background-position: 11px 8px;
+	background-repeat: no-repeat;
+}
+
+#email:focus {
+	background-image: url(../../node_modules/@fortawesome/fontawesome-free/svgs/solid/envelope.svg);
+	background-size: 30px 30px;
+  background-position: 11px 8px;
+	background-repeat: no-repeat;
+}
+
+#message {
+	background-image: url(../../node_modules/@fortawesome/fontawesome-free/svgs/solid/pen.svg);
+	background-size: 30px 30px;
+	background-position: 11px 8px;
+	background-repeat: no-repeat;
+}
+
+input:hover, textarea:hover,
+input:focus, textarea:focus {
+	background-color: rgba(255, 255, 255, 0.9);
+}
+
+#button-brand {
+	cursor: pointer;
+  background-color: $brand-color-pink;
+	max-width: 80%;
+	min-width: 35%;
+  color:rgba(255, 255, 255, 1);
+  text-shadow: 1px 1px 0px rgba(40, 40, 40, 0.7);
+	font-size: 1.25rem;
+	transition: all 0.3s;
+  border: 1px solid rgba(0, 0, 0, 0);
+  border-radius: 3px;
+	transition: all 1.1s 1s ease;
+}
+
+#button-brand:hover {
+  color: rgba(40, 40, 40, 1);
+  text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.5);
+}
+
+.form-div {
+  width: 64px;
+	height: 64px;
+	position: relative;
+  background: $brand-color-pink;
+	border: 5px solid darken($brand-color-pink, 10);
+	border-radius: 3px;
+  box-shadow: 0px 10px 20px -5px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  overflow: hidden;
+	box-sizing: content-box;
+}
+.form-div * {
+	opacity: 0;
+}
+.form-div::before,
+.form-div::after {
+  content: '';
+	display: inline-block;
+	position: absolute;
+  width: 0px;
+  height: 0px;
+	opacity: 0;
+	left: 50%;
+	transform: translateX(-50%);
+  z-index: 100;
+  transition: all 0.1s linear;
+  transform: scale(0.9999, 0.9999);
+}
+.form-div::before {
+	left: 25%;
+	transform: translateX(-25%);
+	top: 29%;
+	transform: translateY(-29%);
+  transform: perspective(1000) rotateX(0deg);
+  transform-origin: 50% 0;
+  border-top: 11px solid rgba(255, 255, 255, 1);
+  border-right: 16px solid transparent;
+  border-bottom: 11px solid transparent;
+  border-left: 16px solid transparent;
+}
+.form-div::after {
+	left: 25%;
+	transform: translateX(-25%);
+	top: 50%;
+	transform: translateY(-50%);
+  border-top: 11px solid transparent;
+  border-right: 16px solid rgba(255, 255, 255, 1);
+  border-bottom: 11px solid rgba(255, 255, 255, 1);
+  border-left: 16px solid rgba(255, 255, 255, 1);
+}
+.form-div:hover::before {
+  transform: perspective(1000) rotateX(180deg);
+  transform-origin: 50% 0;
+}
+
+.ok-message {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -32px;
+  margin-top: -32px;
+  width: 64px;
+  height: 64px;
+	background: $brand-color-pink;
+	border-radius: 3px;
+  z-index: 100;
+  transform: scale(0, 0) rotate(-90deg);
+  transition: all 0.5s 0.3s cubic-bezier(0.9, 0.1, 0.1, 0.9);
+	text-align: center;
+	line-height: 64px;
+  text-shadow: 1px 1px 0px rgba(40, 40, 40, 0.7);
+  box-shadow: 0px 10px 20px -5px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+.ok-message span {
+  color: rgba(255, 255, 255, 1);
+  opacity: 0;
+  transform: scale(0.2, 0.2);
+  transition: all 0.6s 0.4s ease;
+}
+.ok-message.active {
+  width: 320px;
+  margin-left: -8.9rem;
+  transform: scale(1, 1) rotate(0deg);
+}
+.ok-message.active span {
+  opacity: 1;
+  transform: scale(1, 1);
+  left: 0rem;
+}
+
+@keyframes openForm {
+  0% {
+    width: 64px;
+    height: 64px;
+  }
+  100% {
+    width: 50%;
+    height: 100%;
+  }
+}
