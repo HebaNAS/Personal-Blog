@@ -7,21 +7,28 @@ class ThankYou extends Component {
     super(props)
     this.timer = this.timer.bind(this)
     this.counter = React.createRef()
+    this.t = 10
+  }
+
+  componentDidMount() {
+    setInterval(() => {
+      if (this.t >= 0 && this.counter.current) {
+        this.counter.current.innerHTML = this.t
+        this.t--
+      }
+    }, 1000)
   }
 
   timer(time) {
     if (typeof window !== 'undefined') {
       let timer = time
       setTimeout(() => {
-        //window.location='/'
         navigate(`/`)
       }, timer)
     }
   }
 
   render() {
-    let t = 10
-
     return(
       <div>
         {this.timer(10000)}
@@ -41,14 +48,7 @@ class ThankYou extends Component {
             <a href="/" className="box__button">Go back</a>
           </div>
         </div>
-        <p className="redirect is-size-6 has-text-centered is-fullwidth">You will be redirected in <span className="timer" ref={this.counter}>{
-          setInterval(() => {
-            if (t >= 0 && this.counter.current) {
-              this.counter.current.innerHTML = t
-              t--
-            }
-          }, 1000)
-        }</span> seconds.</p>
+        <p className="redirect is-size-6 has-text-centered is-fullwidth">You will be redirected in <span className="timer" ref={this.counter}>{this.t}</span> seconds.</p>
       </div>
     )
   }
