@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { navigate } from '@reach/router'
 import '../scss/thankyou.scss'
 
 class ThankYou extends Component {
@@ -12,7 +13,8 @@ class ThankYou extends Component {
     if (typeof window !== 'undefined') {
       let timer = time
       setTimeout(() => {
-        window.location='/'
+        //window.location='/'
+        navigate(`/`)
       }, timer)
     }
   }
