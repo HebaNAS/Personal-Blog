@@ -1,0 +1,262 @@
+@charset "utf-8";
+
+$brand-color-pink: #d99e8e;
+$text: #dddddd;
+
+html, body {
+  min-height: 100%;
+  scroll-behavior: smooth;
+  background-color: #000000;
+}
+body {
+  background: url('/assets/blue-hue-bg.png') no-repeat 100% bottom,
+  url('/assets/main-bg.png') no-repeat 100% top;
+  background-size: cover, cover;
+  color: $text;
+  background-color: #000000;
+}
+
+.thanks-message {
+  position: absolute;
+  top: 60%;
+  width: 100%;
+  color: $text;
+}
+
+.redirect {
+  position: absolute;
+  top: 95%;
+  width: 100%;
+  color: $text;
+}
+
+#mail-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  animation: mail-move 3s;
+
+}
+
+#line-container {
+  position: absolute;
+  left: -70px;
+  width: 60px;
+  overflow: hidden;
+  .line {
+    margin-top: 5px;
+    width: 70px;
+    height: 5px;
+    background: $text;
+    border-radius: 6px;
+
+  }
+}
+
+#mail {
+  width: 60px;
+  height: 45px;
+  border: solid 5px #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  &:before {
+    content: '';
+    display: inline-block;
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border-top: solid 5px $text;
+    border-left: solid 5px $text;
+    transform: rotate(45deg);
+    top: 18px;
+    left: 12px;
+  }
+  &:after {
+    content: '';
+    display: inline-block;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border: solid 5px $text;
+    transform: rotate(45deg);
+    top: -70px;
+    border-radius: 15px;
+  }
+}
+
+.box {
+  width: 350px;
+  height: 100%;
+  max-height: 600px;
+  min-height: 450px;
+  background: transparent;
+  border-radius: 20px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 30px 50px;
+  z-index: -2;
+}
+
+.box__description {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.box__button {
+  display: block;
+  position: relative;
+  background: $brand-color-pink;
+  border: 1px solid transparent;
+  border-radius: 50px;
+  height: 50px;
+  text-align: center;
+  text-decoration: none;
+  color: $text;
+  line-height: 50px;
+  font-size: 18px;
+  padding: 0 70px;
+  white-space: nowrap;
+  margin-top: 25px;
+  transition: background .5s ease;
+  overflow: hidden;
+  
+  &:before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 100px;
+    background: $text;
+    bottom: -25px;
+    left: 0;
+    border: 2px solid $text;
+    transform: translateX(-50px) rotate(45deg);
+    transition: transform .5s ease;
+  }
+  
+  &:hover {
+    background: transparent;
+    border-color: $text;
+    
+    &:before {
+      transform: translateX(250px) rotate(45deg);
+    }
+  }
+}
+
+@for $i from 1 through 3 {
+  .line-#{$i} {
+    animation: line-#{$i}-move 3s
+  }
+  @keyframes line-#{$i}-move {
+    0% {
+      transform: translateX(-100%);
+    }
+    20% {
+      transform: translateX(100%);
+    }
+    20.0001% {
+      transform: translateX(-100%);
+    }
+    40% {
+      transform: translateX(20% * $i);
+    }
+    60% {
+      transform: translateX(20% * $i);
+    }
+    80% {
+      transform: translateX(-100%);
+    }
+    80.1% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+}
+
+@for $i from 4 through 5 {
+  .line-#{$i} {
+    animation: line-#{$i}-move 3s
+  }
+  @keyframes line-#{$i}-move {
+    0% {
+      transform: translateX(-80%);
+    }
+    20% {
+      transform: translateX(100%);
+    }
+    20.0001% {
+      transform: translateX(-100%);
+    }
+    40% {
+      transform: translateX(30% * $i);
+    }
+    60% {
+      transform: translateX(30% * $i);
+    }
+    80% {
+      transform: translateX(-80%);
+    }
+    80.1% {
+      transform: translateX(80%);
+    }
+    100% {
+      transform: translateX(-120%);
+    }
+  }
+}
+
+@keyframes mail-move {
+  0% {
+    opacity: 0;
+    left: 3%
+  }
+  40% {
+    opacity: 1;
+    left: 50%;
+  }
+  40.001% {
+    opacity: 1;
+    left: 50%;
+  }
+  49.999% {
+    opacity: 1;
+    left: 50%;
+  }
+  50% {
+    opacity: 1;
+    left: 50%;
+  }
+  50.001% {
+    opacity: 1;
+    left: 50%;
+  }
+  59.999% {
+    opacity: 1;
+    left: 50%;
+  }
+  60% {
+    left: 50%;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    left: 95%;
+  }
+}
+
+@keyframes shine {
+  0% {opacity: .2;}
+  25% {opacity: .1;}
+  50% {opacity: .2;}
+  100% {opacity: .2;}
+}

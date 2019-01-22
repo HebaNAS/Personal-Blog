@@ -124,7 +124,6 @@ class Contact extends Component {
       .catch(error => alert(error))
 
     e.preventDefault()
-    return false
   }
 
   handleChange(e) {
@@ -165,7 +164,7 @@ class Contact extends Component {
 
         <div className="form-main">
           <div className="form-div">
-            <form name="contact" id="contactform" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+            <form name="contact" id="contactform" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thankyou">
               <input type="hidden" name="form-name" value="contact" />
               <p className="is-hidden">
                 <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
