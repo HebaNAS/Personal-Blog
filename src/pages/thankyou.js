@@ -9,10 +9,12 @@ class ThankYou extends Component {
   }
 
   timer(time) {
-    let timer = time
-    setTimeout(() => {
-      window.location='/'
-    }, timer)
+    if (typeof window !== 'undefined') {
+      let timer = time
+      setTimeout(() => {
+        window.location='/'
+      }, timer)
+    }
   }
 
   render() {
