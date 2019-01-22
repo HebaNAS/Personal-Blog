@@ -129,7 +129,10 @@ class Contact extends Component {
 
         <div className="form-main">
           <div className="form-div">
-            <form name="contact" id="contactform" method="POST" data-netlify="true">
+            <form name="contact" id="contactform" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+              <p class="hidden">
+                <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+              </p>
               <p className="form-name">
                 <input type="text" className="feedback-input" placeholder="Name" id="name" name="name" required />
               </p>
