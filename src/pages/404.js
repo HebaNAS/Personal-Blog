@@ -4,23 +4,22 @@ import '../scss/error.scss'
 
 class NotFoundPage extends Component {
   componentDidMount() {
-    var pageX = $(document).width();
-    var pageY = $(document).height();
-    var mouseY=0;
-    var mouseX=0;
-    var yAxis = 0;
-    var xAxis = 0;
+    let pageX = $(document).width()
+    let pageY = $(document).height()
+    let mouseY = 0
+    let mouseX = 0
+    let yAxis = 0
+    let xAxis = 0
 
     $(document).mousemove(function( event ) {
-      //verticalAxis
-      mouseY = event.pageY;
-      yAxis = (pageY/2-mouseY)/pageY*300; 
-      //horizontalAxis
-      mouseX = event.pageX / -pageX;
-      xAxis = -mouseX * 100 - 100;
+      mouseY = event.pageY
+      yAxis = (pageY / 2 - mouseY) / pageY * 300
 
-      $('.box__ghost-eyes').css({ 'transform': 'translate('+ xAxis +'%,-'+ yAxis +'%)' }); 
-    });
+      mouseX = event.pageX / -pageX
+      xAxis = -mouseX * 100 - 100
+
+      $('.box__ghost-eyes').css({ 'transform': 'translate(' + xAxis + '%,-' + yAxis + '%)' }) 
+    })
   }
 
   render() {

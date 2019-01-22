@@ -7,9 +7,13 @@
   "dependencies": {
     "anchorate": "^1.2.3",
     "autoprefixer": "^8.6.5",
+    "axios": "^0.18.0",
     "babel-plugin-styled-components": "^1.10.0",
     "bulma": "^0.6.2",
     "detect-it": "^3.0.5",
+    "dot-env": "^0.0.1",
+    "dotenv": "^6.2.0",
+    "fs": "^0.0.1-security",
     "gatsby": "^2.0.91",
     "gatsby-cli": "latest",
     "gatsby-image": "^2.0.26",
@@ -36,6 +40,7 @@
     "gatsby-transformer-sharp": "latest",
     "gsap": "^2.0.2",
     "jquery": "^3.3.1",
+    "net": "^1.0.2",
     "node-sass": "^4.11.0",
     "postcss-browser-reporter": "^0.5.0",
     "postcss-import": "^12.0.1",
@@ -46,6 +51,7 @@
     "react-helmet": "^5.2.0",
     "react-next": "^0.0.1",
     "react-typography": "^0.16.18",
+    "tls": "^0.0.1",
     "typography": "^0.16.18"
   },
   "keywords": [

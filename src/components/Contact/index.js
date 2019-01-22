@@ -1,12 +1,29 @@
 import React, { Component } from 'react'
 import { TweenMax } from 'gsap'
 import detectIt from 'detect-it'
+//import axios from 'axios'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faTwitter, faYoutube, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 
 import '../../scss/contact.scss'
 
+// populate environment variables locally.
+require('dotenv').config()
+
+const encode = (data) => {
+  return Object.keys(data)
+      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&")
+}
+
 class Contact extends Component {
+  constructor(props) {
+    super(props)
+    this.state = { name: "", email: "", message: "" }
+    this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleChange = this.handleChange.bind(this)
+  }
+
   componentDidMount() {
     let toplevel = (new Promise(function(resolve, reject) {
       document.getElementById('projects').addEventListener('wheel', (event) => {
@@ -97,7 +114,26 @@ class Contact extends Component {
     // })
   }
 
+  handleSubmit(e) {
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "contact", ...this.state })
+    })
+      .then(() => alert("Success!"))
+      .catch(error => alert(error))
+
+    e.preventDefault()
+    return false
+  }
+
+  handleChange(e) {
+    this.setState({ [e.target.name]: e.target.value })
+  }
+
   render() {
+    const { name, email, message } = this.state
+
     return (
       <section className="contact-section has-text-centered is-size-5 padding-top-1rem padding-bottom-1rem" id="contact">
         <h1 className="branded-title title is-2">Let's Connect</h1>
@@ -130,17 +166,18 @@ class Contact extends Component {
         <div className="form-main">
           <div className="form-div">
             <form name="contact" id="contactform" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-              <p class="hidden">
+              <input type="hidden" name="form-name" value="contact" />
+              <p className="is-hidden">
                 <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
               </p>
               <p className="form-name">
-                <input type="text" className="feedback-input" placeholder="Name" id="name" name="name" required />
+                <input type="text" className="feedback-input" placeholder="Name" id="name" name="name" value={name} onChange={this.handleChange} required />
               </p>
               <p className="form-email">
-                <input type="email" className="feedback-input" id="email" placeholder="Email" name="email" required />
+                <input type="email" className="feedback-input" id="email" placeholder="Email" name="email" value={email} onChange={this.handleChange} required />
               </p>
               <p className="form-message">
-                  <textarea type="message" name="message" className="feedback-input" id="message" rows="3" cols="40" maxLength="500" placeholder="Maximum of 500 characters" required
+                  <textarea type="message" name="message" className="feedback-input" id="message" rows="3" cols="40" maxLength="500" placeholder="Maximum of 500 characters" value={message} onChange={this.handleChange} required
                   ></textarea>
               </p>
               <div className="submit">

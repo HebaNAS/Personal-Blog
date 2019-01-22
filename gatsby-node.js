@@ -17,6 +17,14 @@ exports.onCreatePage = async ({ page, actions }) => {
   }
 }
 
+exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    node : {
+      fs : "empty"
+    }
+  })
+}
+
 // exports.onCreateWebpackConfig = ({ getConfig, actions }) => {
 //   const config = getConfig()
 
