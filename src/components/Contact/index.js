@@ -129,7 +129,7 @@ class Contact extends Component {
 
         <div className="form-main">
           <div className="form-div">
-            <form name="contact" id="contactform" netlify="true">
+            <form name="contact" id="contactform" method="POST" data-netlify="true">
               <p className="form-name">
                 <input type="text" className="feedback-input" placeholder="Name" id="name" name="name" required />
               </p>
