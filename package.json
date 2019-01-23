@@ -49,6 +49,7 @@
     "postcss-reporter": "^6.0.1",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
+    "react-head": "^3.0.2",
     "react-helmet": "^5.2.0",
     "react-next": "^0.0.1",
     "react-typography": "^0.16.18",
