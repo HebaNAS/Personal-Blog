@@ -9,8 +9,6 @@ import React from 'react'
 import { renderToString } from 'react-dom/server'
 
 const helmet = Helmet.renderStatic()
-renderToString(<Handler />)
-
 export const onRenderBody = ({ setHeadComponents, replaceBodyHTMLString }) => {
   const helmet = Helmet.renderStatic()
 
