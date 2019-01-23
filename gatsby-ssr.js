@@ -4,7 +4,7 @@
  * See: https://www.gatsbyjs.org/docs/ssr-apis/
  */
 
-import Helmet from 'react-helmet'
+const Helmet = require('react-helmet')
 
 exports.onRenderBody = ({ setHeadComponents }) => {
   const Head = Helmet.Helmet.rewind()
