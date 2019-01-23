@@ -183,6 +183,7 @@ const SEO = ({ title, description, image, pathname, article, node }) => (
         <>
           <Helmet title={seo.title} titleTemplate={titleTemplate}>
             <html lang={siteLanguage} />
+            <meta name="google-site-verification" content="PPalbOeBMAS2iLy3RzXw8fh0sYm3d5kzH1U1Hny-YpQ" />
             <meta name="image" content={seo.image} />
             <meta name="description" content={seo.description} />
             <meta name="image" content={seo.image} />
@@ -233,7 +234,6 @@ const SEO = ({ title, description, image, pathname, article, node }) => (
             <link rel={data.site.siteMetadata.touchIcons[4].type} size={data.site.siteMetadata.touchIcons[4].size} href={data.site.siteMetadata.touchIcons[4].href} />
             <link rel={data.site.siteMetadata.touchIcons[5].type} size={data.site.siteMetadata.touchIcons[5].size} href={data.site.siteMetadata.touchIcons[5].href} />
             <link rel={data.site.siteMetadata.touchIcons[6].type} size={data.site.siteMetadata.touchIcons[6].size} href={data.site.siteMetadata.touchIcons[6].href} />
-            <meta name="google-site-verification" content="PPalbOeBMAS2iLy3RzXw8fh0sYm3d5kzH1U1Hny-YpQ" />
             <link rel="preload" as="script" href="/scripts/mobileMenu.js" />
             <link rel="preload" as="image" href="/assets/main-bg.png" />
             <link rel="preload" as="image" href="/assets/blue-hue-bg.png" />
