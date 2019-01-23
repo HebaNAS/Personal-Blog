@@ -8,6 +8,10 @@ import Helmet from 'react-helmet'
 import React from 'react'
 import { renderToString } from 'react-dom/server'
 
+import About from '../components/About'
+import Projects from '../components/Projects'
+import Contact from '../components/Contact'
+
 const helmet = Helmet.renderStatic()
 export const onRenderBody = ({ setHeadComponents, replaceBodyHTMLString }) => {
   const helmet = Helmet.renderStatic()
