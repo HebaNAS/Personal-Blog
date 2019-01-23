@@ -17,6 +17,7 @@ const SEO = (props) => {
     image = postMeta.cover.childImageSharp.resize.src
     postURL = config.siteUrl + realPrefix + postPath
   } else {
+    console.log(title)
     title = config.siteTitle
     description = config.siteDescription
     image = config.siteLogo

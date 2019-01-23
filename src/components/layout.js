@@ -8,6 +8,7 @@ import typography from '../utils/typography'
 import '../scss/main.scss'
 import Header from './Header'
 import Footer from './Footer'
+//import SEO from './SEO/SEO'
 
 const Layout = ({ children, location }) => (
   <StaticQuery
