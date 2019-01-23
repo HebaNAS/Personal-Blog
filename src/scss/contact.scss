@@ -65,7 +65,7 @@ $text: #dddddd;
 
 .form-div.active * {
   top: 0;
-  opacity: 1;
+  visibility: visible;
 }
 
 .form-div.active {
@@ -78,7 +78,7 @@ $text: #dddddd;
 
 .form-div.active::after,
 .form-div.active::before {
-  opacity: 0;
+  visibility: hidden;
 }
 
 .form-div.active .feedback-input {
@@ -196,7 +196,7 @@ input:focus, textarea:focus {
 	box-sizing: content-box;
 }
 .form-div * {
-	opacity: 0;
+	visibility: hidden;
 }
 .form-div::before,
 .form-div::after {
@@ -205,7 +205,7 @@ input:focus, textarea:focus {
 	position: absolute;
   width: 0px;
   height: 0px;
-	opacity: 0;
+	visibility: hidden;
 	left: 50%;
 	transform: translateX(-50%);
   z-index: 100;
@@ -239,6 +239,7 @@ input:focus, textarea:focus {
   transform-origin: 50% 0;
 }
 
+/*
 .ok-message {
   position: absolute;
   left: 50%;
@@ -274,6 +275,7 @@ input:focus, textarea:focus {
   transform: scale(1, 1);
   left: 0rem;
 }
+*/
 
 @keyframes openForm {
   0% {

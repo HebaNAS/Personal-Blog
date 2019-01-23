@@ -74,11 +74,11 @@ class Contact extends Component {
       let formDiv = document.querySelector('.form-div')
       
       if((scrollObject.y > 1500) || (document.documentElement.clientWidth <= 768 && scrollObject.y > 3200)) {
-        formDiv.pseudoStyle('after', 'opacity', 1)
-        formDiv.pseudoStyle('before', 'opacity', 1)
+        formDiv.pseudoStyle('after', 'visibility', 'visible')
+        formDiv.pseudoStyle('before', 'visibility', 'visible')
       } else {
-        formDiv.pseudoStyle('after', 'opacity', 0)
-        formDiv.pseudoStyle('before', 'opacity', 0)
+        formDiv.pseudoStyle('after', 'visibility', 'hidden')
+        formDiv.pseudoStyle('before', 'visibility', 'hidden')
       }
     }
 
@@ -98,9 +98,9 @@ class Contact extends Component {
         && (message.value !== '' && message.checkValidity() === true)) {
         event.target.parentNode.parentNode.parentNode.style.visibility = 'hidden'
       }
-      setTimeout(() => {
-        document.getElementsByClassName('ok-message')[0].classList.add('active')
-      }, 1200)
+      // setTimeout(() => {
+      //   document.getElementsByClassName('ok-message')[0].classList.add('active')
+      // }, 1200)
     }, detectIt.passiveEvents ? {passive:true} : false)
     
     // document.getElementsByClassName('ok-message')[0].addEventListener('click', (event) => {
@@ -181,8 +181,8 @@ class Contact extends Component {
             </form>
           </div>
         </div>
-        <div className="ok-message">
-        <span>Your message was sent!</span></div>
+        {/*<div className="ok-message">
+        <span>Your message was sent!</span></div>*/}
       </section>
       )
   }
