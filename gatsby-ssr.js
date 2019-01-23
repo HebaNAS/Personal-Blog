@@ -12,8 +12,7 @@ import About from './src/components/About'
 import Projects from './src/components/Projects'
 import Contact from './src/components/Contact'
 
-const helmet = Helmet.renderStatic()
-export const onRenderBody = ({ setHeadComponents, replaceBodyHTMLString }) => {
+export const onRenderBody = ({ setHeadComponents }) => {
   const helmet = Helmet.renderStatic()
 
   setHeadComponents([
@@ -27,6 +26,9 @@ export const onRenderBody = ({ setHeadComponents, replaceBodyHTMLString }) => {
   ])
 
   renderToString(<Helmet />)
+}
+
+export const replaceRenderer = ({ replaceBodyHTMLString }) => {
   replaceBodyHTMLString(renderToString(<About />))
   replaceBodyHTMLString(renderToString(<Projects />))
   replaceBodyHTMLString(renderToString(<Contact />))
