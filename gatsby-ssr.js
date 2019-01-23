@@ -4,4 +4,10 @@
  * See: https://www.gatsbyjs.org/docs/ssr-apis/
  */
 
- // You can delete this file if you're not using it
+import Helmet from 'react-helmet'
+
+exports.onRenderBody = ({ setHeadComponents }) => {
+  const Head = Helmet.Helmet.rewind()
+  const regexp = /data-react-helmet="true"/g
+  setHeadComponents([Head.meta.toString().replace(regexp, '')])
+}
