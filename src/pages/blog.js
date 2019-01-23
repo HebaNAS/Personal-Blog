@@ -4,7 +4,11 @@ import { Link } from 'gatsby'
 import Layout from '../components/layout'
 import '../scss/blog.scss'
 
-const Blog = () => (
+const Blog = (props) => {
+  const post = props.data.markdownRemark
+  const { title } = post.frontmatter
+
+  return(
   <Layout>
     <div className="blog-page hero is-fullheight">
       <div className="hero-head">
@@ -18,6 +22,18 @@ const Blog = () => (
       </div>
     </div>
   </Layout>
-)
+  )
+}
 
 export default Blog
+
+const query = graphql`
+ query PostQuery($slug: String!) {
+     markdownRemark(fields: { slug: { eq: $slug } }) {
+       html
+       frontmatter {
+        title
+        description
+       }
+   }
+`

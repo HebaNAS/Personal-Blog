@@ -187,6 +187,7 @@ const SEO = ({ title, description, image, pathname, article, node }) => (
             <meta name="image" content={seo.image} />
             <meta name="description" content={seo.description} />
             <meta name="image" content={seo.image} />
+            <link rel="canonical" href="https://www.hebaelshimy.com/blog" />
             {seo.url && <meta property="og:url" content={seo.url} />}
             {(article ? true : null) && (
               <meta property="og:type" content="article" />
