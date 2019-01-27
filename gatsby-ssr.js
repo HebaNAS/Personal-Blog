@@ -19,7 +19,8 @@ export const onRenderBody = ({ setHeadComponents }) => {
       rel="dns-prefetch"
       key="dns-prefetch-google-analytics"
       href="https://www.google-analytics.com"
-    />
+    />,
+    ])
 }
 
 /*export const replaceRenderer = ({ replaceBodyHTMLString }) => {
