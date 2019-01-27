@@ -23,7 +23,7 @@ const Layout = ({ children, location }) => (
       }
     `}
     render={ data => (
-      <div>
+      <>
         <SEO />
         <Header menuLinks={data.site.siteMetadata.menuLinks}/>
         <div
@@ -37,7 +37,7 @@ const Layout = ({ children, location }) => (
           {children}
         </div>
         <Footer />
-      </div>
+      </>
     )}
   />
 )
