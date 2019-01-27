@@ -28,8 +28,8 @@ export const onRenderBody = ({ setHeadComponents }) => {
   renderToString(<Helmet />)
 }
 
-export const replaceRenderer = ({ replaceBodyHTMLString }) => {
+/*export const replaceRenderer = ({ replaceBodyHTMLString }) => {
   replaceBodyHTMLString(renderToString(<About />))
   replaceBodyHTMLString(renderToString(<Projects />))
   replaceBodyHTMLString(renderToString(<Contact />))
-}
+}*/
