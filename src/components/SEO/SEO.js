@@ -181,7 +181,7 @@ const SEO = ({ title, description, image, pathname, article, node }) => (
       }
 
       return (
-        <>
+       
           <Helmet title={seo.title} titleTemplate={titleTemplate}>
             <html lang={siteLanguage} />
             <meta name="google-site-verification" content="PPalbOeBMAS2iLy3RzXw8fh0sYm3d5kzH1U1Hny-YpQ" />
@@ -245,7 +245,7 @@ const SEO = ({ title, description, image, pathname, article, node }) => (
             TypographyStyle={[ {typography: typography} ]}
             GoogleFont={[ {typography: typography} ]}
           </Helmet>
-        </>
+        
       )
     }}
   />
