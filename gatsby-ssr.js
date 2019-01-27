@@ -13,7 +13,6 @@ import Projects from './src/components/Projects'
 import Contact from './src/components/Contact'
 
 export const onRenderBody = ({ setHeadComponents }) => {
-  const helmet = Helmet.renderStatic()
 
   setHeadComponents([
     <link
@@ -22,10 +21,8 @@ export const onRenderBody = ({ setHeadComponents }) => {
       href="https://www.google-analytics.com"
     />,
 
-    renderToString(<Helmet />)
-  ])
-
-  renderToString(<Helmet />)
+    renderToString(<Helmet />),
+    Helmet.renderStatic()
 }
 
 /*export const replaceRenderer = ({ replaceBodyHTMLString }) => {
