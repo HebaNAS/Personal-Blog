@@ -20,8 +20,6 @@ export const onRenderBody = ({ setHeadComponents }) => {
       key="dns-prefetch-google-analytics"
       href="https://www.google-analytics.com"
     />
-
-    renderToString(<Helmet />)
 }
 
 /*export const replaceRenderer = ({ replaceBodyHTMLString }) => {
