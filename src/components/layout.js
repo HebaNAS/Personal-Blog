@@ -24,7 +24,7 @@ const Layout = ({ children, location }) => (
     `}
     render={ data => (
       <>
-        <SEO />
+        
         <Header menuLinks={data.site.siteMetadata.menuLinks}/>
         <div
           style={{
