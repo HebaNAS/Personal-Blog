@@ -21,8 +21,7 @@ export const onRenderBody = ({ setHeadComponents }) => {
       href="https://www.google-analytics.com"
     />,
 
-    renderToString(<Helmet />),
-    Helmet.renderStatic()
+    renderToString(<Helmet />)
 }
 
 /*export const replaceRenderer = ({ replaceBodyHTMLString }) => {
