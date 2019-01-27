@@ -14,7 +14,7 @@ class IndexPage extends Component {
         <Animation />
         <About />
         <Projects />
-        
+        <Contact />
         <a href="/">
           <FontAwesomeIcon icon={faArrowAltCircleUp} size="2x" className="up-arrow light is-hidden" />
         </a>
