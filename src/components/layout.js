@@ -5,7 +5,7 @@ import { StaticQuery, graphql } from 'gatsby'
 import '../scss/main.scss'
 import Header from './Header'
 import Footer from './Footer'
-import SEO from './SEO/SEO'
+import stringSEO from './SEO/SEO'
 
 const Layout = ({ children, location }) => (
   <StaticQuery
@@ -25,7 +25,7 @@ const Layout = ({ children, location }) => (
     render={ data => {
       return (
       <>
-        <SEO/>
+        <stringSEO />
         <Header menuLinks={data.site.siteMetadata.menuLinks}/>
         <div
           style={{
