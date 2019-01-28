@@ -4,13 +4,11 @@
  * See: https://www.gatsbyjs.org/docs/ssr-apis/
  */
 
-import Helmet from 'react-helmet'
 import React from 'react'
+import Helmet from 'react-helmet'
 import { renderToString } from 'react-dom/server'
 
 import Layout from './src/components/layout'
 
-export const replaceRenderer = ({ bodyComponent, replaceBodyHTMLString }) => {
-  replaceBodyHTMLString(renderToString(<Layout />))
-  const helmet = Helmet.renderStatic()
-}
+renderToString(<Layout />)
+export const helmet = Helmet.renderStatic()

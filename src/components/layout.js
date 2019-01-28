@@ -22,9 +22,10 @@ const Layout = ({ children, location }) => (
         }
       }
     `}
-    render={ data => (
-      <div>
-        <SEO />
+    render={ data => {
+      return (
+      <>
+        <SEO/>
         <Header menuLinks={data.site.siteMetadata.menuLinks}/>
         <div
           style={{
@@ -37,8 +38,9 @@ const Layout = ({ children, location }) => (
           {children}
         </div>
         <Footer />
-      </div>
-    )}
+      </>
+      )}
+    }
   />
 )
 

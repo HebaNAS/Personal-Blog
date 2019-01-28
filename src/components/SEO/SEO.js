@@ -4,7 +4,8 @@ import ReactDOMServer from 'react-dom/server'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 
-import typography from '../../utils/typography'
+//import typography from '../../utils/typography'
+//import { helmet } from '../../../gatsby-ssr'
 
 const SEO = ({ title, description, image, pathname, article, node }) => (
   <StaticQuery
@@ -180,78 +181,161 @@ const SEO = ({ title, description, image, pathname, article, node }) => (
         itemListElement,
       }
 
+        //console.log(helmet)
       return (
         <>
-          <Helmet title={seo.title} titleTemplate={titleTemplate}>
-            <html lang={siteLanguage} />
-            <meta name="google-site-verification" content="PPalbOeBMAS2iLy3RzXw8fh0sYm3d5kzH1U1Hny-YpQ" />
-            <meta name="image" content={seo.image} />
-            <meta name="description" content={seo.description} />
-            <meta name="image" content={seo.image} />
-            <link rel="canonical" href="https://www.hebaelshimy.com/blog" />
-            {seo.url && <meta property="og:url" content={seo.url} />}
-            {(article ? true : null) && (
-              <meta property="og:type" content="article" />
-            )}
-            {seo.title && <meta property="og:title" content={seo.title} />}
-            {seo.description && (
-              <meta property="og:description" content={seo.description} />
-            )}
-            {seo.image && <meta property="og:image" content={seo.image} />}
-            <meta name="twitter:card" content="summary_large_image" />
-            {twitterUsername && (
-              <meta name="twitter:creator" content={twitterUsername} />
-            )}
-            {seo.title && <meta name="twitter:title" content={seo.title} />}
-            {seo.description && (
-              <meta name="twitter:description" content={seo.description} />
-            )}
-            {seo.image && <meta name="twitter:image" content={seo.image} />}
-            {/* Insert schema.org data conditionally (webpage/article) + everytime (breadcrumbs) */}
-            {!article && <script type="application/ld+json">{JSON.stringify(schemaOrgWebPage)}</script>}
-            {article && <script type="application/ld+json">{JSON.stringify(schemaArticle)}</script>}
-            <script type="application/ld+json">{JSON.stringify(breadcrumb)}</script>
-            <meta name="keywords" content="data science, machine learning, AI, deep learning, portfolio, blog" />
-            <meta name="theme-color" content="#d99e8e" />
-            <meta name="viewport" content="width=device-width, initial-scale=1" />
-            <meta httpEquiv="cleartype" content="on" />
-            <meta name="HandheldFriendly" content="True" />
-            <meta name="MobileOptimized" content="320" />
-            <meta name="apple-mobile-web-app-title" content={seo.title} />
-            <meta name="apple-mobile-web-app-capable" content="Yes" />
-            <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-            <meta charSet="utf-8" />
-            <link rel="shortcut icon" href={seo.image} />
-            <link rel={data.site.siteMetadata.launchIcons[0].name} media={data.site.siteMetadata.launchIcons[0].media} href={data.site.siteMetadata.launchIcons[0].link} />
-            <link rel={data.site.siteMetadata.launchIcons[1].name} media={data.site.siteMetadata.launchIcons[1].media} href={data.site.siteMetadata.launchIcons[1].link} />
-            <link rel={data.site.siteMetadata.launchIcons[2].name} media={data.site.siteMetadata.launchIcons[2].media} href={data.site.siteMetadata.launchIcons[2].link} />
-            <link rel={data.site.siteMetadata.launchIcons[3].name} media={data.site.siteMetadata.launchIcons[3].media} href={data.site.siteMetadata.launchIcons[3].link} />
-            <link rel={data.site.siteMetadata.launchIcons[4].name} media={data.site.siteMetadata.launchIcons[4].media} href={data.site.siteMetadata.launchIcons[4].link} />
-            <link rel={data.site.siteMetadata.launchIcons[5].name} media={data.site.siteMetadata.launchIcons[5].media} href={data.site.siteMetadata.launchIcons[5].link} />
-            <link rel={data.site.siteMetadata.launchIcons[6].name} media={data.site.siteMetadata.launchIcons[6].media} href={data.site.siteMetadata.launchIcons[6].link} />
-            <link rel={data.site.siteMetadata.touchIcons[0].type} href={data.site.siteMetadata.touchIcons[0].href} />
-            <link rel={data.site.siteMetadata.touchIcons[1].type} size={data.site.siteMetadata.touchIcons[1].size} href={data.site.siteMetadata.touchIcons[1].href} />
-            <link rel={data.site.siteMetadata.touchIcons[2].type} size={data.site.siteMetadata.touchIcons[2].size} href={data.site.siteMetadata.touchIcons[2].href} />
-            <link rel={data.site.siteMetadata.touchIcons[3].type} size={data.site.siteMetadata.touchIcons[3].size} href={data.site.siteMetadata.touchIcons[3].href} />
-            <link rel={data.site.siteMetadata.touchIcons[4].type} size={data.site.siteMetadata.touchIcons[4].size} href={data.site.siteMetadata.touchIcons[4].href} />
-            <link rel={data.site.siteMetadata.touchIcons[5].type} size={data.site.siteMetadata.touchIcons[5].size} href={data.site.siteMetadata.touchIcons[5].href} />
-            <link rel={data.site.siteMetadata.touchIcons[6].type} size={data.site.siteMetadata.touchIcons[6].size} href={data.site.siteMetadata.touchIcons[6].href} />
-            <link rel="preload" as="script" href="/scripts/mobileMenu.js" />
-            <link rel="preload" as="image" href="/assets/main-bg.png" />
-            <link rel="preload" as="image" href="/assets/blue-hue-bg.png" />
-            <link rel="preload" as="image" href="/assets/logo.svg" />
-            <link rel="preload" as="image" href="/assets/brain.svg" />
-            ]}
-            TypographyStyle={[ {typography: typography} ]}
-            GoogleFont={[ {typography: typography} ]}
-          </Helmet>
-        </>
+        <Helmet 
+          title={seo.title}
+          titleTemplate={titleTemplate}
+          meta={[
+            { name: 'google-site-verification', content: 'PPalbOeBMAS2iLy3RzXw8fh0sYm3d5kzH1U1Hny-YpQ' },
+            { name: 'image', content: seo.image },
+            { name: 'description', content: seo.description },
+            { name: 'image', content: seo.image },
+            { name: 'keywords', content: 'data science, machine learning, AI, deep learning, portfolio, blog' },
+            { name: 'theme-color', content: '#d99e8e' },
+            { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+            { httpEquiv: 'cleartype', content: 'on' },
+            { name: 'HandheldFriendly', content: 'True' },
+            { name: 'MobileOptimized', content: '320' },
+            { name: 'apple-mobile-web-app-title', content: seo.title },
+            { name: 'apple-mobile-web-app-capable', content: 'Yes' },
+            { name: 'apple-mobile-web-app-status-bar-style', content: 'black' },
+            { name: 'charSet', content: 'utf-8' },
+            seo.url && { property: 'og:url', content: seo.url },
+            (article ? true : null) && (
+              { property: 'og:type', content: 'article' }
+            ),
+            seo.title && { property: 'og:title', content: seo.title },
+            seo.description && (
+              { property: 'og:description', content: seo.description }
+            ),
+            seo.image && { property: 'og:image', content: seo.image },
+            { name: 'twitter:card', content: 'summary_large_image' },
+            twitterUsername && (
+              { name: 'twitter:creator', content: twitterUsername }
+            ),
+            seo.title && { name: 'twitter:title', content: seo.title },
+            seo.description && (
+              { name: 'twitter:description', content: seo.description }
+            ),
+            seo.image && { name: 'twitter:image', content: seo.image },
+          ]}
+          script={[
+            !article && { type: 'application/ld+json', innerHTML:JSON.stringify(schemaOrgWebPage) },
+            article && { type: 'application/ld+json', innerHTML: JSON.stringify(schemaArticle) },
+            { type: 'application/ld+json', innerHTML: JSON.stringify(breadcrumb) },
+          ]}
+          link={[
+            { rel: 'canonical', href: 'https://www.hebaelshimy.com/blog' },
+            { rel: 'shortcut icon', href: seo.image },
+            { rel: data.site.siteMetadata.launchIcons[0].name,
+              media: data.site.siteMetadata.launchIcons[0].media,
+              href: data.site.siteMetadata.launchIcons[0].link,
+            },
+            {
+              rel: data.site.siteMetadata.launchIcons[1].name,
+              media: data.site.siteMetadata.launchIcons[1].media,
+              href: data.site.siteMetadata.launchIcons[1].link,
+            },
+            {
+              rel: data.site.siteMetadata.launchIcons[2].name,
+              media: data.site.siteMetadata.launchIcons[2].media,
+              href: data.site.siteMetadata.launchIcons[2].link,
+            },
+            {
+              rel: data.site.siteMetadata.launchIcons[3].name,
+              media: data.site.siteMetadata.launchIcons[3].media,
+              href: data.site.siteMetadata.launchIcons[3].link,
+            },
+            {
+              rel: data.site.siteMetadata.launchIcons[4].name,
+              media: data.site.siteMetadata.launchIcons[4].media,
+              href: data.site.siteMetadata.launchIcons[4].link,
+            },
+            {
+              rel: data.site.siteMetadata.launchIcons[5].name,
+              media: data.site.siteMetadata.launchIcons[5].media,
+              href: data.site.siteMetadata.launchIcons[5].link,
+            },
+            {
+              rel: data.site.siteMetadata.launchIcons[6].name,
+              media: data.site.siteMetadata.launchIcons[6].media,
+              href: data.site.siteMetadata.launchIcons[6].link,
+            },
+            {
+              rel: data.site.siteMetadata.touchIcons[0].type,
+              href: data.site.siteMetadata.touchIcons[0].href,
+            },
+            {
+              rel: data.site.siteMetadata.touchIcons[1].type,
+              size: data.site.siteMetadata.touchIcons[1].size,
+              href: data.site.siteMetadata.touchIcons[1].href,
+            },
+            {
+              rel: data.site.siteMetadata.touchIcons[2].type,
+              size: data.site.siteMetadata.touchIcons[2].size,
+              href: data.site.siteMetadata.touchIcons[2].href,
+            },
+            {
+              rel: data.site.siteMetadata.touchIcons[3].type,
+              size: data.site.siteMetadata.touchIcons[3].size,
+              href: data.site.siteMetadata.touchIcons[3].href,
+            },
+            {
+              rel: data.site.siteMetadata.touchIcons[4].type,
+              size: data.site.siteMetadata.touchIcons[4].size,
+              href: data.site.siteMetadata.touchIcons[4].href,
+            },
+            {
+              rel: data.site.siteMetadata.touchIcons[5].type,
+              size: data.site.siteMetadata.touchIcons[5].size,
+              href: data.site.siteMetadata.touchIcons[5].href,
+            },
+            {
+              rel: data.site.siteMetadata.touchIcons[6].type,
+              size: data.site.siteMetadata.touchIcons[6].size,
+              href: data.site.siteMetadata.touchIcons[6].href,
+            },
+            { rel: 'preload', as: 'script', href: '/scripts/mobileMenu.js' },
+            { rel: 'preload', as: 'image', href: '/assets/main-bg.png' },
+            { rel: 'preload', as: 'image', href: '/assets/blue-hue-bg.png' },
+            { rel: 'preload', as: 'image', href: '/assets/logo.svg' },
+            { rel: 'preload', as: 'image', href: '/assets/brain.svg' },
+          ]}
+        >
+          <html lang="en" />
+          {/*TypographyStyle={[ {typography: typography} ]}
+          GoogleFont={[ {typography: typography} ]}*/}
+        </Helmet>
+      </>  
       )
     }}
   />
 )
 
-export default SEO
+const stringSEO = ReactDOMServer.renderToString(SEO)
+const helmet = Helmet.renderStatic()
+console.log(helmet)
+export default stringSEO
+
+SEO.propTypes = {
+  title: PropTypes.string,
+  description: PropTypes.string,
+  image: PropTypes.string,
+  pathname: PropTypes.string,
+  article: PropTypes.bool,
+  node: PropTypes.object,
+}
+
+SEO.defaultProps = {
+  title: null,
+  description: null,
+  image: null,
+  pathname: null,
+  article: false,
+  node: null,
+}
 
 const query = graphql`
   query data {
@@ -282,21 +366,3 @@ const query = graphql`
     }
   }
 `
-
-SEO.propTypes = {
-  title: PropTypes.string,
-  description: PropTypes.string,
-  image: PropTypes.string,
-  pathname: PropTypes.string,
-  article: PropTypes.bool,
-  node: PropTypes.object,
-}
-
-SEO.defaultProps = {
-  title: null,
-  description: null,
-  image: null,
-  pathname: null,
-  article: false,
-  node: null,
-}

@@ -3,10 +3,11 @@
  *
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
+import './src/scss/main.scss'
 
-const anchorate = require('anchorate')
+import anchorate from 'anchorate'
 
-exports.onRouteUpdate = (location) => {
+export const onRouteUpdate = (location) => {
   if (location.hash) {
     console.log(location.hash)
     anchorate({ 
