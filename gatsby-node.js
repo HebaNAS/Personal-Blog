@@ -24,7 +24,10 @@ exports.onCreateWebpackConfig = ({ actions }) => {
     node : {
       fs : "empty"
     },
-    externals: ['react-helmet']
+    externals: [
+      'react-helmet',
+      'react-fontawesome',
+    ]
   })
 }
 
