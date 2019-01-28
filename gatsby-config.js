@@ -13,39 +13,39 @@ module.exports = {
     logo: '/static/assets/logo.svg',
     launchIcons: [
       {
-        name: 'apple-touch-startup-image',
+        nom: 'apple-touch-startup-image',
         media: '(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)',
-        link: '/static/images/launch/apple-touch-startup-image-640x1136.png'
+        icon: '/static/images/launch/apple-touch-startup-image-640x1136.png'
       },
       {
-        name: 'apple-touch-startup-image',
+        nom: 'apple-touch-startup-image',
         media: '(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)',
-        link: '/static/images/launch/apple-touch-startup-image-750x1334.png'
+        icon: '/static/images/launch/apple-touch-startup-image-750x1334.png'
       },
       {
-        name: 'apple-touch-startup-image',
+        nom: 'apple-touch-startup-image',
         media: '(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)',
-        link: '/static/images/launch/apple-touch-startup-image-1242x2208.png'
+        icon: '/static/images/launch/apple-touch-startup-image-1242x2208.png'
       },
       {
-        name: 'apple-touch-startup-image',
+        nom: 'apple-touch-startup-image',
         media: '(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)',
-        link: '/static/images/launch/apple-touch-startup-image-1125x2436.png'
+        icon: '/static/images/launch/apple-touch-startup-image-1125x2436.png'
       },
       {
-        name: 'apple-touch-startup-image',
+        nom: 'apple-touch-startup-image',
         media: '(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)',
-        link: '/static/images/launch/apple-touch-startup-image-1536x2048.png'
+        icon: '/static/images/launch/apple-touch-startup-image-1536x2048.png'
       },
       {
-        name: 'apple-touch-startup-image',
+        nom: 'apple-touch-startup-image',
         media: '(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)',
-        link: '/static/images/launch/apple-touch-startup-image-1668x2224.png'
+        icon: '/static/images/launch/apple-touch-startup-image-1668x2224.png'
       },
       {
-        name: 'apple-touch-startup-image',
+        nom: 'apple-touch-startup-image',
         media: '(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)',
-        link: '/static/images/launch/apple-touch-startup-image-2048x2732.png'
+        icon: '/static/images/launch/apple-touch-startup-image-2048x2732.png'
       },
     ],
     touchIcons: [
