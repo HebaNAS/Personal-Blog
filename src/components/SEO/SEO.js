@@ -317,7 +317,7 @@ const SEO = ({ title, description, image, pathname, article, node }) => (
 const stringSEO = ReactDOMServer.renderToString(SEO)
 const helmet = Helmet.renderStatic()
 console.log(helmet)
-export default stringSEO
+export default SEO
 
 SEO.propTypes = {
   title: PropTypes.string,
