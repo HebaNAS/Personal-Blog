@@ -4,6 +4,8 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
+const reactHelmet = require('react-helmet')
+
 exports.onCreatePage = async ({ page, actions }) => {
   const { createPage } = actions
 
@@ -24,7 +26,7 @@ exports.onCreateWebpackConfig = ({ actions }) => {
     node : {
       fs : "empty"
     },
-    //externals: ['react-helmet']
+    externals: [reactHelmet]
   })
 }
 
