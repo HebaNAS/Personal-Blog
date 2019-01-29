@@ -1,13 +1,16 @@
 import React from 'react'
+import Helmet from 'react-helmet'
+//import ReactDOMServer from 'react-dom/server'
+import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 //import { TypographyStyle, GoogleFont } from 'react-typography'
 
 import '../scss/main.scss'
 import Header from './Header'
 import Footer from './Footer'
-import stringSEO from './SEO/SEO'
+//import stringSEO from './SEO/SEO'
 
-const Layout = ({ children, location }) => (
+const Layout = ({ children, location, title, description, image, pathname, article, node }) => (
   <StaticQuery
     query={query}
     render={ data => ({
