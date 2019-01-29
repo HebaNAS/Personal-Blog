@@ -6,83 +6,83 @@ module.exports = {
     author: `Heba El-Shimy`,
     url: `https://www.hebaelshimy.com`,
     description: `Heba El-Shimy is a Data Scientist, passionate about AI and experienced in Machine Learning. This website is a Personal Portfolio & Blog`,
-    image: '/static/assets/heba.png',
+    image: '/assets/heba.png',
     owner: 'Heba El-Shimy',
     twitterUsername: '@heba_el_shimy',
     siteLanguage: 'en',
-    logo: '/static/assets/logo.svg',
+    logo: '/assets/logo.svg',
     launchIcons: [
       {
         nom: 'apple-touch-startup-image',
         media: '(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)',
-        icon: '/static/images/launch/apple-touch-startup-image-640x1136.png'
+        icon: '/images/launch/apple-touch-startup-image-640x1136.png'
       },
       {
         nom: 'apple-touch-startup-image',
         media: '(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)',
-        icon: '/static/images/launch/apple-touch-startup-image-750x1334.png'
+        icon: '/images/launch/apple-touch-startup-image-750x1334.png'
       },
       {
         nom: 'apple-touch-startup-image',
         media: '(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)',
-        icon: '/static/images/launch/apple-touch-startup-image-1242x2208.png'
+        icon: '/images/launch/apple-touch-startup-image-1242x2208.png'
       },
       {
         nom: 'apple-touch-startup-image',
         media: '(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)',
-        icon: '/static/images/launch/apple-touch-startup-image-1125x2436.png'
+        icon: '/images/launch/apple-touch-startup-image-1125x2436.png'
       },
       {
         nom: 'apple-touch-startup-image',
         media: '(device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)',
-        icon: '/static/images/launch/apple-touch-startup-image-1536x2048.png'
+        icon: '/images/launch/apple-touch-startup-image-1536x2048.png'
       },
       {
         nom: 'apple-touch-startup-image',
         media: '(device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)',
-        icon: '/static/images/launch/apple-touch-startup-image-1668x2224.png'
+        icon: '/images/launch/apple-touch-startup-image-1668x2224.png'
       },
       {
         nom: 'apple-touch-startup-image',
         media: '(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)',
-        icon: '/static/images/launch/apple-touch-startup-image-2048x2732.png'
+        icon: '/images/launch/apple-touch-startup-image-2048x2732.png'
       },
     ],
     touchIcons: [
       {
         type: 'apple-touch-icon',
         size: '',
-        href: '/static/images/touch/apple-touch-icon.png'
+        href: '/images/touch/apple-touch-icon.png'
       },
       {
         type: 'apple-touch-icon',
         size: '57x57',
-        href: '/static/images/touch/apple-touch-icon-57x57.png'
+        href: '/images/touch/apple-touch-icon-57x57.png'
       },
       {
         type: 'apple-touch-icon',
         size: '72x72',
-        href: '/static/images/touch/apple-touch-icon-72x72.png'
+        href: '/images/touch/apple-touch-icon-72x72.png'
       },
       {
         type: 'apple-touch-icon',
         size: '114x114',
-        href: '/static/images/touch/apple-touch-icon-114x114.png'
+        href: '/images/touch/apple-touch-icon-114x114.png'
       },
       {
         type: 'apple-touch-icon',
         size: '120x120',
-        href: '/static/images/touch/apple-touch-icon-120x120.png'
+        href: '/images/touch/apple-touch-icon-120x120.png'
       },
       {
         type: 'apple-touch-icon',
         size: '144x144',
-        href: '/static/images/touch/apple-touch-icon-144x144.png'
+        href: '/images/touch/apple-touch-icon-144x144.png'
       },
       {
         type: 'apple-touch-icon',
         size: '152x152',
-        href: '/static/images/touch/apple-touch-icon-152x152.png'
+        href: '/images/touch/apple-touch-icon-152x152.png'
       },
     ],
     menuLinks: [
@@ -151,8 +151,15 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `images`,
+        name: `assets`,
         path: `${__dirname}/static/assets`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/static/images`,
       },
     },
     {
@@ -189,52 +196,52 @@ module.exports = {
         background_color: `#000000`,
         icons: [
           {
-            src: 'favicon.ico',
+            src: '/assets/favicon.ico',
             sizes: '16x16 24x24 32x32 64x64',
             type: 'image/x-icon'
           },
           {
-            src: 'images/touch/favicon-16x16.ico',
+            src: '/images/touch/favicon-16x16.ico',
             sizes: '16x16',
             type: 'image/x-icon',
           },
           {
-            src: 'images/touch/favicon-24x24.ico',
+            src: '/images/touch/favicon-24x24.ico',
             sizes: '24x24',
             type: 'image/x-icon',
           },
           {
-            src: 'images/touch/favicon-32x32.ico',
+            src: '/images/touch/favicon-32x32.ico',
             sizes: '32x32',
             type: 'image/x-icon',
           },
           {
-            src: 'images/touch/favicon-64x64.ico',
+            src: '/images/touch/favicon-64x64.ico',
             sizes: '64x64',
             type: 'image/x-icon',
           },
           {
-            src: 'images/touch/chrome-touch-icon-1x.png',
+            src: '/images/touch/chrome-touch-icon-1x.png',
             sizes: '48x48',
             type: 'image/png',
           },
           {
-            src: 'images/touch/chrome-touch-icon-2x.png',
+            src: '/images/touch/chrome-touch-icon-2x.png',
             sizes: '96x96',
             type: 'image/png',
           },
           {
-            src: 'images/touch/chrome-touch-icon-3x.png',
+            src: '/images/touch/chrome-touch-icon-3x.png',
             sizes: '144x144',
             type: 'image/png',
           },
           {
-            src: 'images/touch/chrome-touch-icon-4x.png',
+            src: '/images/touch/chrome-touch-icon-4x.png',
             sizes: '192x192',
             type: 'image/png',
           },
           {
-            src: 'images/touch/ms-touch-icon-144x144-precomposed.png',
+            src: '/images/touch/ms-touch-icon-144x144-precomposed.png',
             sizes: '144x144',
             type: 'image/png',
           }
