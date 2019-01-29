@@ -6,7 +6,7 @@ module.exports = {
     author: `Heba El-Shimy`,
     url: `https://www.hebaelshimy.com`,
     description: `Heba El-Shimy is a Data Scientist, passionate about AI and experienced in Machine Learning. This website is a Personal Portfolio & Blog`,
-    image: '/assets/heba.png',
+    image: '/assets/logo.svg',
     owner: 'Heba El-Shimy',
     twitterUsername: '@heba_el_shimy',
     siteLanguage: 'en',

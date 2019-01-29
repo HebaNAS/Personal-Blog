@@ -1,6 +1,5 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-//import ReactDOMServer from 'react-dom/server'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 //import { TypographyStyle, GoogleFont } from 'react-typography'
@@ -8,12 +7,11 @@ import { StaticQuery, graphql } from 'gatsby'
 import '../scss/main.scss'
 import Header from './Header'
 import Footer from './Footer'
-//import stringSEO from './SEO/SEO'
 
 const Layout = ({ children, location, title, description, image, pathname, article, node }) => (
   <StaticQuery
     query={query}
-    render={ data => ({
+    render={({
         site: {
           buildTime,
           siteMetadata: {
@@ -27,20 +25,9 @@ const Layout = ({ children, location, title, description, image, pathname, artic
             logo,
             siteLanguage,
             twitterUsername,
-            menuLinks: {
-              name,
-              link,
-            },
-            launchIcons: {
-              nom,
-              media,
-              icon,
-            },
-            touchIcons: {
-              type,
-              size,
-              href,
-            },
+            menuLinks,
+            launchIcons,
+            touchIcons,
           },
         },
       }) => {
@@ -49,6 +36,9 @@ const Layout = ({ children, location, title, description, image, pathname, artic
           description: description || defaultDescription,
           image: `${siteUrl}${image || defaultImage}`,
           url: `${siteUrl}${pathname || '/'}`,
+          launchIcons: launchIcons,
+          touchIcons: touchIcons,
+          menuLinks: menuLinks,
         }
   
         const schemaOrgWebPage = {
@@ -131,54 +121,54 @@ const Layout = ({ children, location, title, description, image, pathname, artic
   
         let schemaArticle = null
   
-        if (article) {
-          schemaArticle = {
-            '@context': 'http://schema.org',
-            '@type': 'Article',
-            author: {
-              '@type': 'Person',
-              name: author,
-            },
-            copyrightHolder: {
-              '@type': 'Person',
-              name: author,
-            },
-            copyrightYear: '2019',
-            creator: {
-              '@type': 'Person',
-              name: author,
-            },
-            publisher: {
-              '@type': 'Organization',
-              name: author,
-              logo: {
-                '@type': 'ImageObject',
-                url: `${siteUrl}${logo}`,
-              },
-            },
-            datePublished: node.first_publication_date,
-            dateModified: node.last_publication_date,
-            description: seo.description,
-            headline: seo.title,
-            inLanguage: 'en',
-            url: seo.url,
-            name: seo.title,
-            image: {
-              '@type': 'ImageObject',
-              url: seo.image,
-            },
-            mainEntityOfPage: seo.url,
-          }
-          // Push current blogpost into breadcrumb list
-          itemListElement.push({
-            '@type': 'ListItem',
-            item: {
-              '@id': seo.url,
-              name: seo.title,
-            },
-            position: 6,
-          })
-        }
+        // if (article) {
+        //   schemaArticle = {
+        //     '@context': 'http://schema.org',
+        //     '@type': 'Article',
+        //     author: {
+        //       '@type': 'Person',
+        //       name: author,
+        //     },
+        //     copyrightHolder: {
+        //       '@type': 'Person',
+        //       name: author,
+        //     },
+        //     copyrightYear: '2019',
+        //     creator: {
+        //       '@type': 'Person',
+        //       name: author,
+        //     },
+        //     publisher: {
+        //       '@type': 'Organization',
+        //       name: author,
+        //       logo: {
+        //         '@type': 'ImageObject',
+        //         url: `${siteUrl}${logo}`,
+        //       },
+        //     },
+        //     //datePublished: node.first_publication_date,
+        //     //dateModified: node.last_publication_date,
+        //     description: seo.description,
+        //     headline: seo.title,
+        //     inLanguage: 'en',
+        //     url: seo.url,
+        //     name: seo.title,
+        //     image: {
+        //       '@type': 'ImageObject',
+        //       url: seo.image,
+        //     },
+        //     mainEntityOfPage: seo.url,
+        //   }
+        //   // Push current blogpost into breadcrumb list
+        //   itemListElement.push({
+        //     '@type': 'ListItem',
+        //     item: {
+        //       '@id': seo.url,
+        //       name: seo.title,
+        //     },
+        //     position: 6,
+        //   })
+        // }
   
         const breadcrumb = {
           '@context': 'http://schema.org',
@@ -207,10 +197,10 @@ const Layout = ({ children, location, title, description, image, pathname, artic
           { name: 'apple-mobile-web-app-capable', content: 'Yes' },
           { name: 'apple-mobile-web-app-status-bar-style', content: 'black' },
           { name: 'charSet', content: 'utf-8' },
-          seo.url && { property: 'og:url', content: seo.url },
-          (article ? true : null) && (
-            { property: 'og:type', content: 'article' }
-          ),
+          // seo.url && { property: 'og:url', content: seo.url },
+          // (article ? true : null) && (
+          //   { property: 'og:type', content: 'article' }
+          // ),
           seo.title && { property: 'og:title', content: seo.title },
           seo.description && (
             { property: 'og:description', content: seo.description }
@@ -227,82 +217,81 @@ const Layout = ({ children, location, title, description, image, pathname, artic
           seo.image && { name: 'twitter:image', content: seo.image },
         ]}
         script={[
-          !article && { type: 'application/ld+json', innerHTML:JSON.stringify(schemaOrgWebPage) },
-          article && { type: 'application/ld+json', innerHTML: JSON.stringify(schemaArticle) },
+          //!article && { type: 'application/ld+json', innerHTML:JSON.stringify(schemaOrgWebPage) },
+          //article && { type: 'application/ld+json', innerHTML: JSON.stringify(schemaArticle) },
           { type: 'application/ld+json', innerHTML: JSON.stringify(breadcrumb) },
         ]}
         link={[
           { rel: 'canonical', href: 'https://www.hebaelshimy.com/blog' },
           { rel: 'shortcut icon', href: seo.image },
-          { rel: data.site.siteMetadata.launchIcons[0].nom,
-            media: data.site.siteMetadata.launchIcons[0].media,
-            href: data.site.siteMetadata.launchIcons[0].icon,
+          { rel: seo.launchIcons[0].nom,
+            media: seo.launchIcons[0].media,
+            href: seo.launchIcons[0].icon,
           },
           {
-            rel: data.site.siteMetadata.launchIcons[1].nom,
-            media: data.site.siteMetadata.launchIcons[1].media,
-            href: data.site.siteMetadata.launchIcons[1].icon,
+            rel: seo.launchIcons[1].nom,
+            media: seo.launchIcons[1].media,
+            href: seo.launchIcons[1].icon,
           },
           {
-            rel: data.site.siteMetadata.launchIcons[2].nom,
-            media: data.site.siteMetadata.launchIcons[2].media,
-            href: data.site.siteMetadata.launchIcons[2].icon,
+            rel: seo.launchIcons[2].nom,
+            media: seo.launchIcons[2].media,
+            href: seo.launchIcons[2].icon,
           },
           {
-            rel: data.site.siteMetadata.launchIcons[3].nom,
-            media: data.site.siteMetadata.launchIcons[3].media,
-            href: data.site.siteMetadata.launchIcons[3].icon,
+            rel: seo.launchIcons[3].nom,
+            media: seo.launchIcons[3].media,
+            href: seo.launchIcons[3].icon,
           },
           {
-            rel: data.site.siteMetadata.launchIcons[4].nom,
-            media: data.site.siteMetadata.launchIcons[4].media,
-            href: data.site.siteMetadata.launchIcons[4].icon,
+            rel: seo.launchIcons[4].nom,
+            media: seo.launchIcons[4].media,
+            href: seo.launchIcons[4].icon,
           },
           {
-            rel: data.site.siteMetadata.launchIcons[5].nom,
-            media: data.site.siteMetadata.launchIcons[5].media,
-            href: data.site.siteMetadata.launchIcons[5].icon,
+            rel: seo.launchIcons[5].nom,
+            media: seo.launchIcons[5].media,
+            href: seo.launchIcons[5].icon,
           },
           {
-            rel: data.site.siteMetadata.launchIcons[6].nom,
-            media: data.site.siteMetadata.launchIcons[6].media,
-            href: data.site.siteMetadata.launchIcons[6].icon,
+            rel: seo.launchIcons[6].nom,
+            media: seo.launchIcons[6].media,
+            href: seo.launchIcons[6].icon,
           },
           {
-            rel: data.site.siteMetadata.touchIcons[0].type,
-            href: data.site.siteMetadata.touchIcons[0].href,
+            rel: seo.touchIcons[0].type,
+            href: seo.touchIcons[0].href,
           },
           {
-            rel: data.site.siteMetadata.touchIcons[1].type,
-            size: data.site.siteMetadata.touchIcons[1].size,
-            href: data.site.siteMetadata.touchIcons[1].href,
+            rel: seo.touchIcons[1].type,
+            size: seo.touchIcons[1].size,
+            href: seo.touchIcons[1].href,
           },
           {
-            rel: data.site.siteMetadata.touchIcons[2].type,
-            size: data.site.siteMetadata.touchIcons[2].size,
-            href: data.site.siteMetadata.touchIcons[2].href,
+            rel: seo.touchIcons[2].type,
+            size: seo.touchIcons[2].size,
+            href: seo.touchIcons[2].href,
           },
           {
-            rel: data.site.siteMetadata.touchIcons[3].type,
-            size: data.site.siteMetadata.touchIcons[3].size,
-            href: data.site.siteMetadata.touchIcons[3].href,
+            rel: seo.touchIcons[3].type,
+            size: seo.touchIcons[3].size,
+            href: seo.touchIcons[3].href,
           },
           {
-            rel: data.site.siteMetadata.touchIcons[4].type,
-            size: data.site.siteMetadata.touchIcons[4].size,
-            href: data.site.siteMetadata.touchIcons[4].href,
+            rel: seo.touchIcons[4].type,
+            size: seo.touchIcons[4].size,
+            href: seo.touchIcons[4].href,
           },
           {
-            rel: data.site.siteMetadata.touchIcons[5].type,
-            size: data.site.siteMetadata.touchIcons[5].size,
-            href: data.site.siteMetadata.touchIcons[5].href,
+            rel: seo.touchIcons[5].type,
+            size: seo.touchIcons[5].size,
+            href: seo.touchIcons[5].href,
           },
           {
-            rel: data.site.siteMetadata.touchIcons[6].type,
-            size: data.site.siteMetadata.touchIcons[6].size,
-            href: data.site.siteMetadata.touchIcons[6].href,
+            rel: seo.touchIcons[6].type,
+            size: seo.touchIcons[6].size,
+            href: seo.touchIcons[6].href,
           },
-          { rel: 'preload', as: 'script', href: '/scripts/mobileMenu.js' },
           { rel: 'preload', as: 'image', href: '/assets/main-bg.png' },
           { rel: 'preload', as: 'image', href: '/assets/blue-hue-bg.png' },
           { rel: 'preload', as: 'image', href: '/assets/logo.svg' },
@@ -313,7 +302,7 @@ const Layout = ({ children, location, title, description, image, pathname, artic
         {/*TypographyStyle={[ {typography: typography} ]}
         GoogleFont={[ {typography: typography} ]}*/}
       </Helmet>
-        <Header menuLinks={data.site.siteMetadata.menuLinks}/>
+        <Header menuLinks={seo.menuLinks}/>
         <div
           style={{
             margin: '-1rem auto',
@@ -338,8 +327,8 @@ Layout.propTypes = {
   description: PropTypes.string,
   image: PropTypes.string,
   pathname: PropTypes.string,
-  article: PropTypes.bool,
-  node: PropTypes.object,
+  //article: PropTypes.object,
+  //node: PropTypes.object,
 }
 
 Layout.defaultProps = {
@@ -347,12 +336,12 @@ Layout.defaultProps = {
   description: null,
   image: null,
   pathname: null,
-  article: false,
-  node: null,
+  //article: null,
+  //node: null,
 }
 
 const query = graphql`
-  query data {
+  query SEOQuery{
     site {
       buildTime(formatString: "YYYY-MM-DD")
       siteMetadata {
