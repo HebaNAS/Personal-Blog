@@ -25,9 +25,9 @@ const SEO = ({ title, description, image, pathname, article, node }) => (
           siteLanguage,
           twitterUsername,
           launchIcons: {
-            name,
+            nom,
             media,
-            link,
+            icon,
           },
           touchIcons: {
             type,
@@ -228,39 +228,39 @@ const SEO = ({ title, description, image, pathname, article, node }) => (
           link={[
             { rel: 'canonical', href: 'https://www.hebaelshimy.com/blog' },
             { rel: 'shortcut icon', href: seo.image },
-            { rel: data.site.siteMetadata.launchIcons[0].name,
+            { rel: data.site.siteMetadata.launchIcons[0].nom,
               media: data.site.siteMetadata.launchIcons[0].media,
-              href: data.site.siteMetadata.launchIcons[0].link,
+              href: data.site.siteMetadata.launchIcons[0].icon,
             },
             {
-              rel: data.site.siteMetadata.launchIcons[1].name,
+              rel: data.site.siteMetadata.launchIcons[1].nom,
               media: data.site.siteMetadata.launchIcons[1].media,
-              href: data.site.siteMetadata.launchIcons[1].link,
+              href: data.site.siteMetadata.launchIcons[1].icon,
             },
             {
-              rel: data.site.siteMetadata.launchIcons[2].name,
+              rel: data.site.siteMetadata.launchIcons[2].nom,
               media: data.site.siteMetadata.launchIcons[2].media,
-              href: data.site.siteMetadata.launchIcons[2].link,
+              href: data.site.siteMetadata.launchIcons[2].icon,
             },
             {
-              rel: data.site.siteMetadata.launchIcons[3].name,
+              rel: data.site.siteMetadata.launchIcons[3].nom,
               media: data.site.siteMetadata.launchIcons[3].media,
-              href: data.site.siteMetadata.launchIcons[3].link,
+              href: data.site.siteMetadata.launchIcons[3].icon,
             },
             {
-              rel: data.site.siteMetadata.launchIcons[4].name,
+              rel: data.site.siteMetadata.launchIcons[4].nom,
               media: data.site.siteMetadata.launchIcons[4].media,
-              href: data.site.siteMetadata.launchIcons[4].link,
+              href: data.site.siteMetadata.launchIcons[4].icon,
             },
             {
-              rel: data.site.siteMetadata.launchIcons[5].name,
+              rel: data.site.siteMetadata.launchIcons[5].nom,
               media: data.site.siteMetadata.launchIcons[5].media,
-              href: data.site.siteMetadata.launchIcons[5].link,
+              href: data.site.siteMetadata.launchIcons[5].icon,
             },
             {
-              rel: data.site.siteMetadata.launchIcons[6].name,
+              rel: data.site.siteMetadata.launchIcons[6].nom,
               media: data.site.siteMetadata.launchIcons[6].media,
-              href: data.site.siteMetadata.launchIcons[6].link,
+              href: data.site.siteMetadata.launchIcons[6].icon,
             },
             {
               rel: data.site.siteMetadata.touchIcons[0].type,
@@ -352,9 +352,9 @@ const query = graphql`
         siteLanguage
         twitterUsername
         launchIcons {
-          name
+          nom
           media
-          link
+          icon
         }
         touchIcons {
           type
