@@ -85,13 +85,6 @@ module.exports = {
         href: '/static/images/touch/apple-touch-icon-152x152.png'
       },
     ],
-    nav: [
-      { path: 'https://medium.com/@heba.n.elshimy', name: 'Blog', hidden: true },
-      { path: '/#about', name: 'About' },
-      { path: '/#projects', name: 'Projects' },
-      { path: '/blog', name: 'Blog' },
-      { path: '/#contact', name: 'Contact' },
-    ],
     menuLinks: [
       {
         name:'home',
