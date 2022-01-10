@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Img from 'gatsby-image'
 import { StaticQuery, graphql } from 'gatsby'
 import { TweenMax } from 'gsap'
-import detectIt from 'detect-it'
+import { supportsPassiveEvents } from 'detect-it'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons'
 
@@ -16,7 +16,7 @@ class Project extends Component {
           document.getElementById('projects').scrollIntoView({behavior: "smooth", block: "start"})
           resolve()
         }
-      }, detectIt.passiveEvents ? {passive:true} : false)
+      }, supportsPassiveEvents ? {passive:true} : false)
     }))
     toplevel.then(() => {
       TweenMax.fromTo(document.getElementById('projects'), 0.6, {opacity:0, scale:0.75, delay:0.35}, {opacity:1, scale:1, delay:1.3})
@@ -26,7 +26,7 @@ class Project extends Component {
       if (event.deltaY < 0) {
         document.getElementById('about').scrollIntoView({behavior: "smooth", block: "start"})
       }
-    }, detectIt.passiveEvents ? {passive:true} : false)
+    }, supportsPassiveEvents ? {passive:true} : false)
   }
 
   render() {

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { TweenMax } from 'gsap'
-import detectIt from 'detect-it'
+import { supportsPassiveEvents } from 'detect-it'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faTwitter, faYoutube, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 
@@ -27,7 +27,7 @@ class Contact extends Component {
           document.getElementById('contact').scrollIntoView({behavior: "smooth", block: "start"})
           resolve()
         }
-      }, detectIt.passiveEvents ? {passive:true} : false)
+      }, supportsPassiveEvents ? {passive:true} : false)
     }))
     toplevel.then(() => {
       TweenMax.fromTo(document.getElementById('contact'), 0.6, {opacity:0, scale:0.75, delay:0.35}, {opacity:1, scale:1, delay:1.3})
@@ -37,7 +37,7 @@ class Contact extends Component {
       if (event.deltaY < 0) {
         document.getElementById('projects').scrollIntoView({behavior: "smooth", block: "start"})
       }
-    }, detectIt.passiveEvents ? {passive:true} : false)
+    }, supportsPassiveEvents ? {passive:true} : false)
 
     let scrollObject = {};
     window.onscroll = getScrollPosition;
@@ -87,7 +87,7 @@ class Contact extends Component {
 
     document.getElementsByClassName('form-div')[0].addEventListener('click', (event) => {
       event.target.classList.add('active')
-    }, detectIt.passiveEvents ? {passive:true} : false)
+    }, supportsPassiveEvents ? {passive:true} : false)
     
     document.getElementsByClassName('submit')[0].addEventListener('click', (event) => {
       let name = document.forms["contact"]["name"]
@@ -101,7 +101,7 @@ class Contact extends Component {
       // setTimeout(() => {
       //   document.getElementsByClassName('ok-message')[0].classList.add('active')
       // }, 1200)
-    }, detectIt.passiveEvents ? {passive:true} : false)
+    }, supportsPassiveEvents ? {passive:true} : false)
     
     // document.getElementsByClassName('ok-message')[0].addEventListener('click', (event) => {
     //   event.target.classList.remove('active')

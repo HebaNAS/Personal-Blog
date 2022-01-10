@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import detectIt from 'detect-it'
+import { supportsPassiveEvents } from 'detect-it'
 import { TweenMax, TimelineMax, Circ } from 'gsap'
 
 // Butterfly Logo
@@ -28,7 +28,7 @@ class Logo extends Component {
             e.preventDefault()
             logoAnimation.add([rightWingTimeline, leftWingTimeline])
             logoAnimation.play()
-        }, detectIt.passiveEvents ? {passive:true} : false)
+        }, supportsPassiveEvents ? {passive:true} : false)
     }
     
     render() {

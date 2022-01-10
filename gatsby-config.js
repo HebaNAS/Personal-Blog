@@ -137,7 +137,7 @@ module.exports = {
       options: { 
         name: `pages`,
         path: `${__dirname}/src/pages`,
-        ignore: `[**/.*]`,
+        ignore: [`[**/.*]`],
       },
     },
     {
@@ -145,7 +145,7 @@ module.exports = {
       options: { 
         name: `blogposts`,
         path: `${__dirname}/src/blogposts`,
-        ignore: `[**/.*]`,
+        ignore: [`[**/.*]`],
       },
     },
     {
@@ -249,6 +249,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-offline`,
-    `gatsby-plugin-netlify`,
+    // `gatsby-plugin-netlify`,
   ],
 };
