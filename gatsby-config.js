@@ -115,7 +115,25 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
-          `gatsby-remark-prismjs`,
+          {
+            resolve: `gatsby-remark-katex`,
+            options: {
+              strict: `ignore`,
+              displayMode: true
+            },
+          },
+          {
+            resolve: `gatsby-remark-embed-snippet`,
+            options: {
+              directory: `${__dirname}/static/snippets/`
+            },
+          },
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              classPrefix: 'language-',
+            }
+          },
           `gatsby-remark-images`,
           `gatsby-remark-responsive-iframe`,
           `gatsby-remark-copy-linked-files`,
@@ -124,7 +142,6 @@ module.exports = {
       }
     },
     `gatsby-plugin-catch-links`,
-    `gatsby-plugin-sass`,
     `gatsby-plugin-postcss`,
     {
       resolve: `gatsby-plugin-typography`,
@@ -143,8 +160,8 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem', 
       options: { 
-        name: `blogposts`,
-        path: `${__dirname}/src/blogposts`,
+        name: `blog`,
+        path: `${__dirname}/src/blog`,
         ignore: [`[**/.*]`],
       },
     },
@@ -177,6 +194,7 @@ module.exports = {
         }
       }
     },
+    `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -192,7 +210,7 @@ module.exports = {
         name: `Heba El-Shimy Porfolio & Blog`,
         start_url: `./index.html?launcher=true`,
         display: `standalone`,
-        theme_color: `#d99e8e`,
+        theme_color: `#000000`,//`#d99e8e`,
         background_color: `#000000`,
         icons: [
           {

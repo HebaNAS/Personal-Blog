@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1473px" height="498px" viewBox="0 0 1473 498" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51 (57462) - http://www.bohemiancoding.com/sketch -->
+    <title>Artboard</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <circle id="path-1" cx="592" cy="482" r="406"></circle>
+        <filter x="-1.9%" y="-1.8%" width="104.6%" height="104.6%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="3" dy="4" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="5.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.295296932 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <circle id="path-3" cx="592.5" cy="482.5" r="293.5"></circle>
+        <filter x="-2.6%" y="-2.5%" width="106.3%" height="106.3%" filterUnits="objectBoundingBox" id="filter-4">
+            <feOffset dx="3" dy="4" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="5.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.295296932 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <circle id="path-5" cx="592" cy="500" r="219"></circle>
+        <filter x="-3.5%" y="-3.3%" width="108.4%" height="108.4%" filterUnits="objectBoundingBox" id="filter-6">
+            <feOffset dx="3" dy="4" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="5.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feComposite in="shadowBlurOuter1" in2="SourceAlpha" operator="out" result="shadowBlurOuter1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.295296932 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <radialGradient cx="50%" cy="50%" fx="50%" fy="50%" r="55.7170798%" id="radialGradient-7">
+            <stop stop-color="#2D213F" stop-opacity="0.186215608" offset="0%"></stop>
+            <stop stop-color="#D99D8C" stop-opacity="0.734242315" offset="100%"></stop>
+        </radialGradient>
+        <circle id="path-8" cx="591.5" cy="493.5" r="180.5"></circle>
+        <filter x="-4.3%" y="-4.0%" width="110.2%" height="110.2%" filterUnits="objectBoundingBox" id="filter-9">
+            <feOffset dx="3" dy="4" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="5.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.295296932 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <text id="text-10" font-family="Montserrat-SemiBold, Montserrat" font-size="36" font-weight="500" letter-spacing="2.83999991" fill="#FFFFFF">
+            <tspan x="438.016001" y="442">Deep Learnin</tspan>
+            <tspan x="720.999999" y="442">g</tspan>
+        </text>
+        <filter x="-1.6%" y="-11.4%" width="104.5%" height="131.8%" filterUnits="objectBoundingBox" id="filter-11">
+            <feOffset dx="2" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <path d="M752.164494,359.60856 L1066.82776,184.692802 L1071.63496,182.020566 L1076.97943,191.634961 L1072.17224,194.307198 L757.508967,369.222956 C761.895699,382.417678 756.430237,397.281427 743.832905,404.284062 C729.592761,412.199906 711.631783,407.073049 703.715938,392.832905 C695.800094,378.592761 700.926951,360.631783 715.167095,352.715938 C727.764427,345.713304 743.273608,348.917619 752.164494,359.60856 Z" id="path-12"></path>
+        <filter x="-4.6%" y="-7.3%" width="109.3%" height="115.5%" filterUnits="objectBoundingBox" id="filter-13">
+            <feMorphology radius="1" operator="erode" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="1" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="6" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.271254387 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <text id="text-14" font-family="Montserrat-SemiBold, Montserrat" font-size="36" font-weight="500" letter-spacing="2.83999991" fill="#FFFFFF">
+            <tspan x="503.338" y="253">Machine</tspan>
+            <tspan x="499.182" y="297">Learning</tspan>
+        </text>
+        <filter x="-2.7%" y="-5.7%" width="107.4%" height="115.9%" filterUnits="objectBoundingBox" id="filter-15">
+            <feOffset dx="2" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <text id="text-16" font-family="Montserrat-SemiBold, Montserrat" font-size="36" font-weight="500" letter-spacing="2.83999991" fill="#FFFFFF">
+            <tspan x="500.002" y="125">Artificial</tspan>
+            <tspan x="465.160001" y="169">Intelligence</tspan>
+        </text>
+        <filter x="-2.0%" y="-5.7%" width="105.5%" height="115.9%" filterUnits="objectBoundingBox" id="filter-17">
+            <feOffset dx="2" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <text id="text-18" font-family="Montserrat-SemiBold, Montserrat" font-size="36" font-weight="500" letter-spacing="2.83999991" fill="#FFFFFF">
+            <tspan x="1142.402" y="165">Neural</tspan>
+            <tspan x="1112.148" y="209">Networks</tspan>
+        </text>
+        <filter x="-2.5%" y="-5.7%" width="107.0%" height="115.9%" filterUnits="objectBoundingBox" id="filter-19">
+            <feOffset dx="2" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Oval-Copy-2">
+            <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+            <use fill="#FFD1C1" fill-rule="evenodd" xlink:href="#path-1"></use>
+        </g>
+        <g id="Oval-Copy">
+            <use fill="black" fill-opacity="1" filter="url(#filter-4)" xlink:href="#path-3"></use>
+            <use fill="#F3B8A8" fill-rule="evenodd" xlink:href="#path-3"></use>
+        </g>
+        <g id="Oval-Copy-3">
+            <use fill="black" fill-opacity="1" filter="url(#filter-6)" xlink:href="#path-5"></use>
+            <use fill-opacity="0.462227199" fill="#2D213F" fill-rule="evenodd" xlink:href="#path-5"></use>
+        </g>
+        <g id="Oval">
+            <use fill="black" fill-opacity="1" filter="url(#filter-9)" xlink:href="#path-8"></use>
+            <use fill="url(#radialGradient-7)" fill-rule="evenodd" xlink:href="#path-8"></use>
+        </g>
+        <g id="Deep-Learning" fill="#FFFFFF" fill-opacity="1">
+            <use filter="url(#filter-11)" xlink:href="#text-10"></use>
+            <use xlink:href="#text-10"></use>
+        </g>
+        <g id="Line" fill-rule="nonzero">
+            <use fill="black" fill-opacity="1" filter="url(#filter-13)" xlink:href="#path-12"></use>
+            <use fill="#FFFFFF" style="mix-blend-mode: screen;" xlink:href="#path-12"></use>
+        </g>
+        <g id="Machine-Learning" fill="#FFFFFF" fill-opacity="1">
+            <use filter="url(#filter-15)" xlink:href="#text-14"></use>
+            <use xlink:href="#text-14"></use>
+        </g>
+        <g id="Artificial-Intellige" fill="#FFFFFF" fill-opacity="1">
+            <use filter="url(#filter-17)" xlink:href="#text-16"></use>
+            <use xlink:href="#text-16"></use>
+        </g>
+        <g id="Neural-Networks" fill="#FFFFFF" fill-opacity="1">
+            <use filter="url(#filter-19)" xlink:href="#text-18"></use>
+            <use xlink:href="#text-18"></use>
+        </g>
+    </g>
+</svg>

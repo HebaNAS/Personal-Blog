@@ -1,0 +1,46 @@
+.is-transparent {
+  background-color: rgba(0, 0, 0, 0) !important;
+}
+
+.brand-font {
+  font-size: 2rem;
+  color: var(--text-color);
+  font-weight: 400;
+}
+
+.navbar-color {
+  color: var(--brand-color-pink);
+  font-family: 'Dosis', sans-serif;
+}
+
+.navbar-color:hover {
+  color: var(--brand-color-pink-lighten-20) !important;
+  background: radial-gradient(70px 10px at center 78%,
+  rgba(255, 255, 255, 0.55) 1%,
+  rgba(0, 0, 0, 0) 40%) !important;
+}
+
+.navbar-menu-position {
+  position: fixed;
+  right: 1.0875rem;
+  top: 0.5rem;
+  z-index: 4;
+}
+
+.navbar-padding {
+  padding: 1rem;
+}
+
+.margin-left-05rem {
+  margin-left: 0.5rem;
+}
+
+.padding-top-1rem {
+  padding-top: 1rem;
+}
+
+@media (max-width: 768px) {
+  .navbar-menu-position {
+    position: static;
+  }
+}

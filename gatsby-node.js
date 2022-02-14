@@ -3,42 +3,65 @@
  *
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
+const path = require('path')
+const { createFilePath } = require('gatsby-source-filesystem')
 
-// exports.onCreatePage = async ({ page, actions }) => {
-//   const { createPage } = actions
+exports.onCreateNode = ({ node, getNode, actions }) => {
+  const { createNodeField } = actions
+ 
+  if (node.internal.type === 'MarkdownRemark') {
+    const slug = createFilePath({ node, getNode, basePath: 'pages' })
+ 
+    createNodeField({
+      node,
+      name: 'slug',
+      value: slug,
+    })
+  }
+}
 
-//   // page.matchPath is a special key that's used for matching pages
-//   // only on the client.
-//   if (page.path.match(/^\/app/)) {
-//    page.matchPath = "/app/*"
+exports.createPages = async ({ graphql, actions }) => {
+  const { createPage } = actions
+  const result = await graphql(`
+    query {
+      allMarkdownRemark {
+        edges {
+          node {
+            fields {
+              slug
+            }
+          }
+        }
+      }
+    }
+  `)
 
-//     // Update the page.
-//     createPage(page)
-//   }
-// }
+  result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+    createPage({
+      path: 'blog' + node.fields.slug,
+      component: path.resolve('./src/templates/blogpost.js'),
+      context: {
+        slug: node.fields.slug,
+      },
+    })
+  })
+}
 
+exports.onCreateWebpackConfig = ({ actions, stage }) => {
+  actions.setWebpackConfig({
+    resolve: {
+      fallback: {
+        fs: false,
+      }
+    }
+  })
 
-
-// exports.onCreateWebpackConfig = ({ actions }) => {
-//   actions.setWebpackConfig({
-//     node : {
-//       fs : "empty"
-//     },
-//     // externals: [
-//     //   'react-helmet'
-//     // ]
-//   })
-// }
-
-// exports.onCreateWebpackConfig = ({ getConfig, actions }) => {
-//   const config = getConfig()
-
-//   const newConfig = {
-//     ...config,
-//     module: {
-//       ...config.module,
-//       rules: config.module.rules.map(processRule),
-//     },
-//   }
-//   actions.replaceWebpackConfig(newConfig)
-// }
+  if (stage === 'build-html' || stage === 'develop-html') {
+    actions.setWebpackConfig({
+      optimization: {
+          sideEffects: true,
+          providedExports: true
+      }
+    })
+  }
+}

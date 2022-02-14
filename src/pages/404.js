@@ -1,14 +1,29 @@
-import React, { Component } from 'react'
+import * as React from 'react'
 import Helmet from 'react-helmet'
 import $ from 'jquery'
 
 import typography from '../utils/typography'
 
-import '../scss/main.scss'
-import '../scss/error.scss'
+import {
+  box,
+  boxGhost,
+  symbol,
+  boxGhostContainer,
+  boxGhostEyes,
+  boxEyeLeft,
+  boxEyeRight,
+  boxGhostBottom,
+  boxGhostBottomChild,
+  boxGhostShadow,
+  boxDescription,
+  boxDescriptionContainer,
+  boxDescriptionTitle,
+  boxDescriptionText,
+  boxButton,
+} from './error.module.css'
 
-class NotFoundPage extends Component {
-  componentDidMount() {
+const NotFoundPage = () => {
+  React.useEffect(() => {
     let pageX = $(document).width()
     let pageY = $(document).height()
     let mouseY = 0
@@ -16,70 +31,69 @@ class NotFoundPage extends Component {
     let yAxis = 0
     let xAxis = 0
 
-    $(document).mousemove(function( event ) {
+    $(document).mousemove(( event ) => {
       mouseY = event.pageY
       yAxis = (pageY / 2 - mouseY) / pageY * 300
 
       mouseX = event.pageX / -pageX
       xAxis = -mouseX * 100 - 100
 
-      $('.box__ghost-eyes').css({ 'transform': 'translate(' + xAxis + '%,-' + yAxis + '%)' }) 
+      $('div[class*="box-ghost-eyes"]').css({ 'transform': 'translate(' + xAxis + '%,-' + yAxis + '%)' }) 
     })
-  }
+  }, [])
 
-  render() {
-    return(
-      <div>
-        <Helmet
-            TypographyStyle={[ {typography: typography} ]}
-            GoogleFont={[ {typography: typography} ]}
-          />
-          <div
-            style={{
-              margin: '0 auto',
-              maxWidth: 1100,
-            }}
-          >
-            <div className="box">
-              <div className="box__ghost">
-                <div className="symbol"></div>
-                <div className="symbol"></div>
-                <div className="symbol"></div>
-                <div className="symbol"></div>
-                <div className="symbol"></div>
-                <div className="symbol"></div>
-                
-                <div className="box__ghost-container">
-                  <div className="box__ghost-eyes">
-                    <div className="box__eye-left"></div>
-                    <div className="box__eye-right"></div>
-                  </div>
-                  <div className="box__ghost-bottom">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                  </div>
+  return(
+    <div>
+      <Helmet
+          TypographyStyle={[ {typography: typography} ]}
+          GoogleFont={[ {typography: typography} ]}
+        />
+        <div
+          style={{
+            margin: '0 auto',
+            maxWidth: 1100,
+            boxSizing: 'border-box'
+          }}
+        >
+          <div className={box}>
+            <div className={boxGhost}>
+              <div className={symbol}></div>
+              <div className={symbol}></div>
+              <div className={symbol}></div>
+              <div className={symbol}></div>
+              <div className={symbol}></div>
+              <div className={symbol}></div>
+              
+              <div className={boxGhostContainer}>
+                <div className={boxGhostEyes}>
+                  <div className={boxEyeLeft}></div>
+                  <div className={boxEyeRight}></div>
                 </div>
-                <div className="box__ghost-shadow"></div>
+                <div className={boxGhostBottom}>
+                  <div className={boxGhostBottomChild}></div>
+                  <div className={boxGhostBottomChild}></div>
+                  <div className={boxGhostBottomChild}></div>
+                  <div className={boxGhostBottomChild}></div>
+                  <div ></div>
+                </div>
+              </div>
+              <div className={boxGhostShadow}></div>
+            </div>
+            
+            <div className={boxDescription}>
+              <div className={boxDescriptionContainer}>
+                <div className={boxDescriptionTitle}>Whoops!</div>
+                <div className={boxDescriptionText}>It seems like we couldn't find the page you were looking for</div>
               </div>
               
-              <div className="box__description">
-                <div className="box__description-container">
-                  <div className="box__description-title">Whoops!</div>
-                  <div className="box__description-text">It seems like we couldn't find the page you were looking for</div>
-                </div>
-                
-                <a href="/" className="box__button">Go back</a>
-                
-              </div>
+              <a href="/" className={boxButton}>Go back</a>
               
             </div>
+            
           </div>
         </div>
-    )
-  }
+      </div>
+  )
 }
 
 export default NotFoundPage

@@ -1,12 +1,20 @@
-import React, { Component } from 'react'
+import * as React from 'react'
 import { Link } from 'gatsby'
 import $ from 'jquery'
 
 import Logo from '../Logo/'
-import '../../scss/header.scss';
+import { 
+  isTransparent,
+  brandFont,
+  navbarColor,
+  navbarMenuPosition,
+  navbarPadding,
+  marginLeft05rem,
+  paddingTop1rem
+} from './header.module.css'
 
-class Header extends Component {
-  componentDidMount() {
+const Header = (props) => {
+  React.useEffect(() => {
     // Mobile menu functionality
     const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0)
 
@@ -21,7 +29,6 @@ class Header extends Component {
         })
       })
     }
-
 
     if ($(window).width() > 768) {
       // Hide menu on scroll
@@ -42,10 +49,10 @@ class Header extends Component {
       })
     }
 
-    function hideNav() {
+    const hideNav = () => {
       $("[data-nav-status='toggle']").removeClass("is-visible").addClass("is-hidden")
     }
-    function showNav() {
+    const showNav = () => {
       $("[data-nav-status='toggle']").removeClass("is-hidden").addClass("is-visible")
     }
 
@@ -64,48 +71,46 @@ class Header extends Component {
       })
     }
 
-    function hideArrow() {
+    const hideArrow = () => {
       $(".up-arrow").removeClass("is-visible").addClass("is-hidden")
     }
-    function showArrow() {
+    const showArrow = () => {
       $(".up-arrow").removeClass("is-hidden").addClass("is-visible")
     }
-  }
+  }, [props]);
 
-  render() {
-    return(
-      <nav className="navbar is-black is-transparent margin-top-minus-05rem" id="nav">
-        <div className="navbar-brand">
-          <Link className="navbar-item" to={this.props.menuLinks[0].link}>
-            <Logo/>
-            <h1 className="brand brand-font margin-left-05rem margin-top-1-5rem is-primary is-bold">Heba El-Shimy</h1>
+  return(
+    <nav className={`${isTransparent} ${paddingTop1rem} navbar`} id="nav">
+      <div className="navbar-brand">
+        <Link className={`${navbarPadding} navbar-item`} to={props.menuLinks[0].link}>
+          <Logo/>
+          <h1 className={`${brandFont} ${marginLeft05rem}`}>Heba El-Shimy</h1>
+        </Link>
+        <div className="navbar-burger burger" data-target="navbarMobile">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+
+      <div id="navbarMobile" className={`${navbarMenuPosition} mt-3 navbar-menu`} data-nav-status="toggle">
+        <div className="navbar-end">
+          <a className={`${navbarColor} ${navbarPadding} navbar-item`} href={props.menuLinks[1].link}>
+            About
+          </a>
+          <a className={`${navbarColor} ${navbarPadding} navbar-item`} href={props.menuLinks[2].link}>
+            Projects
+          </a>
+          <Link className={`${navbarColor} ${navbarPadding} navbar-item`} to={props.menuLinks[3].link}>
+            Blog
           </Link>
-          <div className="navbar-burger burger" data-target="navbarMobile">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
+          <a className={`${navbarColor} ${navbarPadding} navbar-item`} href={props.menuLinks[4].link}>
+            Contact Me
+          </a>
         </div>
-
-        <div id="navbarMobile" className="navbar-menu" data-nav-status="toggle">
-          <div className="navbar-end">
-            <a className="navbar-item" href={this.props.menuLinks[1].link}>
-              About
-            </a>
-            <a className="navbar-item" href={this.props.menuLinks[2].link}>
-              Projects
-            </a>
-            <Link className="navbar-item" to={this.props.menuLinks[3].link}>
-              Blog
-            </Link>
-            <a className="navbar-item" href={this.props.menuLinks[4].link}>
-              Contact Me
-            </a>
-          </div>
-        </div>
-      </nav>
-    )
-  }
+      </div>
+    </nav>
+  )
 }
 
 export default Header

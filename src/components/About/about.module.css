@@ -1,0 +1,47 @@
+.about-section {
+  color: var(--text-color);
+}
+
+.branded-title {
+  color: var(--brand-color-pink);
+}
+
+.personal-photo {
+  box-shadow: 0 15px 15px -6px rgba(0, 0, 0, 1);
+  border: 3px solid rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+}
+
+.highlight, .highlight-less {
+  padding: 0.15rem 0.35rem;
+  border-radius: 0.1rem;
+  text-shadow: 1px 1px 0 rgba(40, 40, 40, 1);
+}
+
+.highlight {
+  background-color: rgba(217, 158, 142, 0.9);
+}
+
+.highlight-less {
+  background-color: rgba(217, 158, 142, 0.7);
+}
+
+.tools {
+  color: var(--brand-color-pink-lighten-10);
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 1);
+}
+
+.separator {
+  max-width: 750px;
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0px -1px 1px rgba(0, 0, 0, 0.2);
+  margin: 100px auto 20px auto;
+}
+
+.padding-top-1rem {
+  padding-top: 1rem;
+}
+
+.padding-bottom-1rem {
+  padding-bottom: 1rem;
+}

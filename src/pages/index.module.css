@@ -1,0 +1,14 @@
+.up-arrow {
+    position: fixed;
+    right: 1.5rem;
+    bottom: 1.5rem;
+}
+
+.light {
+    color: rgba(255, 255, 255, 0.5);
+    animation: bounce 6s infinite ease-in-out;
+}
+
+.light:hover {
+    color: rgba(255, 255, 255, 0.8);
+}

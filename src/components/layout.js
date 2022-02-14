@@ -4,9 +4,9 @@ import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 //import { TypographyStyle, GoogleFont } from 'react-typography'
 
-import '../scss/main.scss'
 import Header from './Header'
 import Footer from './Footer'
+import * as styles from './layout.module.css'
 
 const Layout = ({ children, location, title, description, image, pathname, article, node }) => (
   <StaticQuery
@@ -39,39 +39,6 @@ const Layout = ({ children, location, title, description, image, pathname, artic
           launchIcons: launchIcons,
           touchIcons: touchIcons,
           menuLinks: menuLinks,
-        }
-  
-        const schemaOrgWebPage = {
-          '@context': 'http://schema.org',
-          '@type': 'WebPage',
-          url: siteUrl,
-          inLanguage: siteLanguage,
-          mainEntityOfPage: siteUrl,
-          description: defaultDescription,
-          name: defaultTitle,
-          author: {
-            '@type': 'Person',
-            name: author,
-          },
-          copyrightHolder: {
-            '@type': 'Person',
-            name: owner,
-          },
-          copyrightYear: '2019',
-          creator: {
-            '@type': 'Person',
-            name: author,
-          },
-          publisher: {
-            '@type': 'Person',
-            name: owner,
-          },
-          datePublished: '2019-01-23T10:30:00+01:00',
-          dateModified: buildTime,
-          image: {
-            '@type': 'ImageObject',
-            url: `${siteUrl}${logo}`,
-          },
         }
   
         // Initial breadcrumb list
@@ -119,57 +86,6 @@ const Layout = ({ children, location, title, description, image, pathname, artic
           },
         ]
   
-        let schemaArticle = null
-  
-        // if (article) {
-        //   schemaArticle = {
-        //     '@context': 'http://schema.org',
-        //     '@type': 'Article',
-        //     author: {
-        //       '@type': 'Person',
-        //       name: author,
-        //     },
-        //     copyrightHolder: {
-        //       '@type': 'Person',
-        //       name: author,
-        //     },
-        //     copyrightYear: '2019',
-        //     creator: {
-        //       '@type': 'Person',
-        //       name: author,
-        //     },
-        //     publisher: {
-        //       '@type': 'Organization',
-        //       name: author,
-        //       logo: {
-        //         '@type': 'ImageObject',
-        //         url: `${siteUrl}${logo}`,
-        //       },
-        //     },
-        //     //datePublished: node.first_publication_date,
-        //     //dateModified: node.last_publication_date,
-        //     description: seo.description,
-        //     headline: seo.title,
-        //     inLanguage: 'en',
-        //     url: seo.url,
-        //     name: seo.title,
-        //     image: {
-        //       '@type': 'ImageObject',
-        //       url: seo.image,
-        //     },
-        //     mainEntityOfPage: seo.url,
-        //   }
-        //   // Push current blogpost into breadcrumb list
-        //   itemListElement.push({
-        //     '@type': 'ListItem',
-        //     item: {
-        //       '@id': seo.url,
-        //       name: seo.title,
-        //     },
-        //     position: 6,
-        //   })
-        // }
-  
         const breadcrumb = {
           '@context': 'http://schema.org',
           '@type': 'BreadcrumbList',
@@ -197,10 +113,6 @@ const Layout = ({ children, location, title, description, image, pathname, artic
           { name: 'apple-mobile-web-app-capable', content: 'Yes' },
           { name: 'apple-mobile-web-app-status-bar-style', content: 'black' },
           { name: 'charSet', content: 'utf-8' },
-          // seo.url && { property: 'og:url', content: seo.url },
-          // (article ? true : null) && (
-          //   { property: 'og:type', content: 'article' }
-          // ),
           seo.title && { property: 'og:title', content: seo.title },
           seo.description && (
             { property: 'og:description', content: seo.description }
@@ -217,12 +129,10 @@ const Layout = ({ children, location, title, description, image, pathname, artic
           seo.image && { name: 'twitter:image', content: seo.image },
         ]}
         script={[
-          //!article && { type: 'application/ld+json', innerHTML:JSON.stringify(schemaOrgWebPage) },
-          //article && { type: 'application/ld+json', innerHTML: JSON.stringify(schemaArticle) },
           { type: 'application/ld+json', innerHTML: JSON.stringify(breadcrumb) },
         ]}
         link={[
-          { rel: 'canonical', href: 'https://www.hebaelshimy.com/blog' },
+          { rel: 'canonical', href: 'https://www.hebaelshimy.com' },
           { rel: 'shortcut icon', href: seo.image },
           { rel: seo.launchIcons[0].nom,
             media: seo.launchIcons[0].media,
@@ -310,6 +220,7 @@ const Layout = ({ children, location, title, description, image, pathname, artic
             padding: '0px 1.0875rem 1.45rem',
             paddingTop: 0,
           }}
+          className={styles}
         >
           {children}
         </div>
@@ -326,18 +237,14 @@ Layout.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
   image: PropTypes.string,
-  pathname: PropTypes.string,
-  //article: PropTypes.object,
-  //node: PropTypes.object,
+  pathname: PropTypes.string
 }
 
 Layout.defaultProps = {
   title: null,
   description: null,
   image: null,
-  pathname: null,
-  //article: null,
-  //node: null,
+  pathname: null
 }
 
 const query = graphql`

@@ -3,7 +3,11 @@
  *
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
-import './src/scss/main.scss'
+import './node_modules/bulma/css/bulma.min.css'
+import './node_modules/prismjs/themes/prism-tomorrow.css'
+import './node_modules/prismjs/plugins/line-numbers/prism-line-numbers.css'
+import './node_modules/prismjs/plugins/line-highlight/prism-line-highlight.css'
+
 
 import anchorate from 'anchorate'
 
@@ -19,11 +23,3 @@ export const onRouteUpdate = (location) => {
     })
   }
 }
-
-// exports.onRouteUpdate = (location) => {
-//   if (location.hash) {
-//     setTimeout(() => {
-//       document.querySelector(`${location.hash}`).scrollIntoView();
-//     }, 0)
-//   }
-// }

@@ -1,73 +1,82 @@
-import React, { Component } from 'react'
+import * as React from 'react'
 import Helmet from 'react-helmet'
-import { navigate } from '@reach/router'
+import { navigate } from 'gatsby'
 
 import typography from '../utils/typography'
 
-import '../scss/main.scss'
-import '../scss/thankyou.scss'
+import {
+  thanksMessage,
+  redirect,
+  mailContainer,
+  lineContainer,
+  line,
+  mail,
+  box,
+  boxDescription,
+  boxButton,
+  line1,
+  line2,
+  line3,
+  line4,
+  line5
+} from './thankyou.module.css'
 
-class ThankYou extends Component {
-  constructor(props) {
-    super(props)
-    this.timer = this.timer.bind(this)
-    this.counter = React.createRef()
-    this.t = 10
-  }
+const ThankYou = () => {
+  const counter = React.useRef()
+  let t = 10
 
-  componentDidMount() {
+  React.useEffect(() => {
     setInterval(() => {
-      if (this.t >= 0 && this.counter.current) {
-        this.counter.current.innerHTML = this.t
-        this.t--
+      if (t >= 0 && counter.current) {
+        counter.current.innerHTML = t
+        t--
       }
     }, 1000)
-  }
 
-  timer(time) {
-    if (typeof window !== 'undefined') {
-      let timer = time
-      setTimeout(() => {
-        navigate(`/`)
-      }, timer)
+    const timer = time => {
+      if (typeof window !== 'undefined') {
+        let timer = time
+        setTimeout(() => {
+          navigate('/', {replace:true})
+        }, timer)
+      }
     }
-  }
-
-  render() {
-    this.timer(10000)
-    return(
-      <div>
-        <Helmet
-            TypographyStyle={[ {typography: typography} ]}
-            GoogleFont={[ {typography: typography} ]}
-          />
-          <div
-            style={{
-              margin: '0 auto',
-              maxWidth: 1100,
-            }}
-          >
-            <div id="mail-container">
-              <div id="line-container">
-                  <div className="line line-1"></div>
-                  <div className="line line-4"></div>
-                  <div className="line line-2"></div>
-                  <div className="line line-5"></div>
-                  <div className="line line-3"></div>
-              </div>
-              <div id="mail"></div>
+  
+    timer(10000)
+  }, [t])
+  
+  return(
+    <div>
+      <Helmet
+          TypographyStyle={[ {typography: typography} ]}
+          GoogleFont={[ {typography: typography} ]}
+        />
+        <div
+          style={{
+            margin: '0 auto',
+            maxWidth: 1100,
+          }}
+        >
+          <div className={mailContainer} id="mail-container">
+            <div className={lineContainer} id="line-container">
+                <div className={`${line} ${line1}`}></div>
+                <div className={`${line} ${line4}`}></div>
+                <div className={`${line} ${line2}`}></div>
+                <div className={`${line} ${line5}`}></div>
+                <div className={`${line} ${line3}`}></div>
             </div>
-            <p className="thanks-message is-size-2">Your message has been sent!</p>
-            <div className="box">
-              <div className="box__description">
-                <a href="/" className="box__button">Go back</a>
-              </div>
-            </div>
-            <p className="redirect is-size-6">You will be redirected in <span className="timer" ref={this.counter}>{this.t}</span> seconds.</p>
+            <div className={mail} id="mail"></div>
           </div>
-      </div>
-    )
-  }
+          <p className={`${thanksMessage} is-size-2`}>Your message has been sent!</p>
+          <div className={box}>
+            <div className={boxDescription}>
+              <a href="/" className={boxButton}>Go back</a>
+            </div>
+          </div>
+          <p className={`${redirect} is-size-5`}>You will be redirected in <span ref={counter}>{t}</span> seconds.</p>
+        </div>
+    </div>
+  )
 }
 
 export default ThankYou

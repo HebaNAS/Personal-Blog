@@ -1,0 +1,26 @@
+.thepost h1, .thepost h2, .thepost h3, .thepost h4, .thepost h5, .thepost h6 {
+    text-decoration: underline;
+    font-family: 'Dosis', sans-serif;
+    font-weight: 700;
+    font-size: 1.25em;
+    color: white;
+}
+
+.thepost>div:first-child {
+    max-width: 100vw !important;
+    margin: 0 !important;
+    overflow: hidden;
+    flex-grow: 0 !important;
+}
+
+.thepost {
+    text-align: justify;
+}
+
+.blog-page-link {
+    color: var(--brand-color-pink);
+  }
+  
+.blog-page-link:hover {
+    color: var(--brand-color-pink-lighten-20);
+}

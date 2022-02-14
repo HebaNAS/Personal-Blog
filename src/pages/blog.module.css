@@ -1,0 +1,103 @@
+:root {
+  --brand-color-pink: #d99d8c;
+  --brand-color-pink-darken-10: #c08575;
+  --brand-color-pink-lighten-10: #f3b8a8;
+  --brand-color-pink-lighten-20: #ffd1c1;
+  --text-color: #dddddd;
+  --text-color-darken-20: #aaaaaa;
+  --text-color-darken-30: #919191;
+  --navbar-height: 5rem;
+  --link: var(--brand-color-pink);
+  --column-gap: 0.25rem;
+}
+
+.margin-left-05rem {
+  margin-left: 0.5rem;
+}
+
+.margin-top-1-5rem {
+  margin-top: 1.5rem;
+}
+
+.padding-top-1rem {
+  padding-top: 1rem;
+}
+
+.padding-bottom-1rem {
+  padding-bottom: 1rem;
+}
+
+.margin-top-minus-05rem {
+  margin-top: -0.5rem;
+}
+
+.blog-page {
+  color: var(--text-color);
+}
+
+.blog-page-link {
+  color: var(--brand-color-pink);
+}
+
+.blog-page-link:hover {
+  color: var(--brand-color-pink-lighten-20);
+}
+
+.branded-title {
+  color: var(--brand-color-pink);
+}
+
+.blog-head-image {
+  height: 500px;
+  width: 100vw;
+  box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.25);
+  border-top: 1px solid rgba(217, 157, 140, 0.5);
+}
+
+.card-hover:hover * > .underline {
+  text-decoration: underline !important;
+}
+
+.card-hover:hover.dark-background {
+  background-color:rgba(255, 255, 255, 0.02);
+  box-shadow: 0 0.5em 1em -0.125em rgb(255 255 255 / 3%), 0 0 0 1px rgb(255 255 255 / 2%)
+}
+
+.on-top {
+  position: absolute;
+  z-index: 5;
+  top: 5px;
+  left: 5px;
+  box-shadow: 1px 1px 4px 2px rgba(0, 0, 0, 0.5);
+}
+
+.dark-background {
+  background-color:rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0.5em 1em -0.125em rgb(255 255 255 / 2%), 0 0 0 1px rgb(255 255 255 / 1%);
+  transition: all 0.3s ease-in-out;
+}
+
+.posts {
+  margin-top: 5rem !important;
+  display: grid;
+  grid-column-gap: 15px;
+  -ms-grid-column-gap: 15px;
+  -webkit-grid-column-gap: 15px;
+  grid-row-gap: 40px;
+  -ms-grid-row-gap: 40px;
+  -webkit-row-column-gap: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
+
+.blogpost {
+  height: 450px;
+  max-width: 420px;
+}
+
+@media (max-width: 1320px) {
+  .blog-head-image {
+    height: 500px;
+    width: 120vw;
+    transform: translateX(-15%);
+  }
+}
