@@ -4,7 +4,9 @@
   "version": "1.0.0",
   "author": "Heba El-Shimy <heba@hebaelshimy.com>",
   "homepage": "https://www.hebaelshimy.com",
-  "node":">=14.15.0",
+  "engines": {
+    "node":">=14.15.0"
+  },
   "dependencies": {
     "anchorate": "^1.2.4",
     "autoprefixer": "^10.4.2",
