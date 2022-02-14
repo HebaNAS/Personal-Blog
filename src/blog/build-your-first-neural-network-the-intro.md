@@ -28,7 +28,7 @@ A neural network is one type of machine learning algorithms that is inspired by 
 <br/>
 <br/>
 
-Our brains consist of billions of neurons connected together via axons. Neurons transfer information in the form of electric signals. A neuron receives an electric signal as input through the movement of some chemicals from the synapse of the axon of the sending neuron to the synapse on the dendrites of the receiving neuron. A nneuron only fires if the signal it receives exceeds a certain threshold.
+Our brains consist of billions of neurons connected together via axons. Neurons transfer information in the form of electric signals. A neuron receives an electric signal as input through the movement of some chemicals from the synapse of the axon of the sending neuron to the synapse on the dendrites of the receiving neuron. A neuron only fires if the signal it receives exceeds a certain threshold.
 
 <br/>
 <br/>
@@ -41,7 +41,7 @@ Our brains consist of billions of neurons connected together via axons. Neurons 
 <br/>
 <br/>
 
-In a somewhat similar manner, artificial neural networks (ANNs) are composed of of neurons (nodes/units) that receive inputs, each input has a certain "weight" for its connection (edge) with the neuron determining its importance with regards to the ouput. Inside the neuron a calculation is made on the weighted inputs, basically summing them and adding a "bias" (intercept) input as shown in Fig. 3.  The result of that calculation is passed through an activation function to determine whether the neuron should "fire" or not and that gives us our output as in Eq. 1. The output of a neuron is received by a consecutive neuron in most cases.
+In a somewhat similar manner, artificial neural networks (ANNs) are composed of neurons (nodes/units) that receive inputs, each input has a certain "weight" for its connection (edge) with the neuron determining its importance with regards to the ouput. Inside the neuron a calculation is made on the weighted inputs, basically summing them and adding a "bias" (intercept) input as shown in Fig. 3.  The result of that calculation is passed through an activation function to determine whether the neuron should "fire" or not and that gives us our output as in Eq. 1. The output of a neuron is received by a consecutive neuron in most cases.
   
 <br/>
 <br/>
@@ -64,7 +64,7 @@ $$
 
 <br/>
 <br/>
-This is too abstract to understand and code. It's better to implement this with an example. For this, I downloaded a small dataset for car evaluation from <a href="https://archive-beta.ics.uci.edu/ml/datasets/car+evaluation">UC Irvine Machine Learning Repository</a>. The dataset contains 6 features (attributes) and 1 field for labels. For simplicity, I edited this datasets so it has 2 possible classes as output (instead of 5 originally). Below are the first rows of the dataset.
+This is too abstract to understand and code. It's better to implement this with an example. For this, I downloaded a small dataset for car evaluation from <a href="https://archive-beta.ics.uci.edu/ml/datasets/car+evaluation">UC Irvine Machine Learning Repository</a>. The dataset contains 6 features (attributes) and 1 field for labels. For simplicity, I edited this dataset so it has 2 possible classes as output (instead of 5 originally). Below are the first rows of the dataset.
 
 <br/>
 
@@ -140,7 +140,7 @@ This is too abstract to understand and code. It's better to implement this with 
 
 <br/>
 <br/>
-We have 6 input features x1, ..., x6 and 1 class (y). The input features which are the buying price, maintenance cost, number of doors, number of perople, lug boot and safety all determine the outcome, is a car acceptable or not. Class labels are either 0 (car not acceptable) or 1 (car is acceptable). We want to know which of the input features have more influence on a car's acceptability, thus we will need to learn a set of parameters w1, ..., w6 and b as in Eq.2.
+We have 6 input features x1, ..., x6 and 1 for the class (y). The input features which are the buying price, maintenance cost, number of doors, number of perople, lug boot and safety all determine the outcome: is a car acceptable or not. Class labels are either 0 (car not acceptable) or 1 (car is acceptable). We want to know which of the input features have more influence on a car's acceptability, thus we will need to learn a set of parameters w1, ..., w6 and b as in Eq.2.
 
 <br/>
 <br/>
@@ -169,7 +169,7 @@ After transforming our categorical features to one-hot encoded, we have now more
 
 <br/>
 <br/>
-The code for this first part is easy, we need to initialise a weights array with random numbers, preferably a small value between -0.5 and 0.5. There are many other methods to initialise weights, but they are out of scope for this blog post. Weight initialization is an important step because initializing the weights with zeros will make the neuron dead and no learning shall take place. We need to initialize the bias as well, but this value can be any value; I will initialize it with zero. We have only one bias value because we have only one neuron so far. We will implement the formula shown in Eq. 2.
+The code for this first part is easy, we need to initialise a weights array with random numbers, preferably a small value between -0.5 and 0.5. There are many other methods to initialise weights, but they are out of scope for this blog post. Weight initialization is an important step because initializing the weights with zeros will make the neuron dead and no learning shall take place. We need to initialize the bias as well, but this can be any value; I will initialize it with zero. We have only one bias value because we have only one neuron so far. We will implement the formula shown in Eq. 2.
 
 <br/>
 <br/>
@@ -225,10 +225,10 @@ Z = np.add(np.matmul(x, W), b)
 <br/>
 <br/>
 
-We need to pass the weighted sum through an activation function. The activation function's purpose is to decide whether the neuron should fire or not. There are many activation function that are commonly used based on the problem we're trying to solve. But for the sake of simplicity in this blog post and as it is not the topic today, we will only mention the sigmoid function which we are going to use. Sigmoid function takes a real number and squishes it between 0 and 1 (Fig. 5). Sigmoid is used as activation function when we have a binary classification problem (among other use cases) where we have 2 classes only on the output, as in this problem. The sigmoid function is able to turn the neuron's pre-activated output into a probability of each data point belonging to class 1 (in binary classification with one node on the output). In other terms, for a data point, if the output of the neuron (after activation with sigmoid) is 0.8, then this data point has a high probability of belonging to class 1. The same logic if the output is 0.1, then the corresponding data point has a low probability of belonging to class 1, hence it has a high probability (1 - 0.1 = 0.9) of belonging to class 0.
+We need to pass the weighted sum through an activation function. The activation function's purpose is to decide whether the neuron should fire or not. There are many activation functions that are commonly used based on the problem we're trying to solve. But for the sake of simplicity in this blog post and as it is not the topic today, we will only mention the sigmoid function which we are going to use. Sigmoid function takes a real number and squishes it between 0 and 1 (Fig. 5). Sigmoid is used as activation function when we have a binary classification problem (among other use cases) where we have 2 classes only on the output, as in this problem. The sigmoid function is able to turn the neuron's pre-activated output into a probability of each data point belonging to class 1 (in binary classification with one node on the output). In other terms, for a data point, if the output of the neuron (after activation with sigmoid) is 0.8, then this data point has a high probability of belonging to class 1. The same logic if the output is 0.1, then the corresponding data point has a low probability of belonging to class 1, hence it has a high probability (1 - 0.1 = 0.9) of belonging to class 0.
 <br/>
 <br/>
-Activation functions are important because they introduce non-linearity to our algorithm, without it, all neuron calculations will be linear and learning of complex functions is not possible no matter how many layers we stack in a neural network. The effect for our example here is minimal since we are working with only one neuron, however, its one of the basis of neural network implementations, so it's best practice that we include it even for this simple example.
+Activation functions are important because they introduce non-linearity to our algorithm, without it, all neuron calculations will be linear and learning of complex functions is not possible no matter how many layers we stack in a neural network. 
 
 <br/>
 <br/>
@@ -243,7 +243,7 @@ Activation functions are important because they introduce non-linearity to our a
 <br/>
 <br/>
 
-Sigmoid function can be calculated as in Eq. 3. following the formula is how we implement it in python and calculate the activation for our weighted sums.
+Sigmoid function can be calculated as in Eq. 3. Following the formula is how we implement it in python and calculate the activation for our weighted sums.
 
 <br/>
 <br/>
@@ -283,6 +283,7 @@ Great! We're done with the structure of our neuron. But, how will this neuron _l
 ### The Learning Process: What does the algorithm actually learn when it sees the data? 
 
 <br/>
+
 Every algorithm has a set of _parameters_. These are basically a set of weights, every weight influences the importance of its corresponding input with regards to the output. A large weight strengthens the connection between a certain input and the output, i.e., this input feature is detrimental to the output. Another parameter is the bias which gives more flexibility for the algorithm.
 
 <br/>
@@ -293,10 +294,12 @@ For a learning algorithm to learn, it needs a method to _quantify_ its mistakes,
 
 ### Cost Function
 <br/>
-A cost function is one type of objective functions which we need to optimise to reach a minimum value. It's also known as a loss function, however, the term "loss function" can be better used to describe the loss (error) for one data point, while cost is a more general term that is used to calculate the total loss over a whole dataset and that can include other compoenets such as regularization terms. One important requirement for a cost function to be used for deep learning is for it to be _differentiable_ and we'll see why in the following sections.
+
+A cost function is one type of objective functions which we need to optimise to reach a minimum value. It's also known as a loss function, however, the term "loss function" can be better used to describe the loss (error) for one data point, while cost is a more general term that is used to calculate the total loss over a whole dataset and that can include other components such as regularization terms. One important requirement for a cost function to be used for deep learning is for it to be _differentiable_ and we'll see why in the following sections.
 
 <br/>
-There are many cost functions that are common in the field of deep learning and they differ based mainly on the problem (classification or regression). As we we have a classification problem in this example, we are going to use a suitable cost function called log loss or cross-entropy loss and since we are working with 2 classes only in our dataset, then we will use Binary Cross-Entropy cost function. This function basically compares the probability output by the neuron with the true label. The output of the cost function will be closer to 0 if the predicted output is close to the true label and keeps increasing as the difference between the prediction and the true label increases until it reaches infinity when the difference is equal to 1 (prediction is the complete opposite of the true label). Below is the binary cross-entropy cost function in Eq. 4 averaged over all the samples in our dataset (N).
+
+There are many cost functions that are common in the field of deep learning and they differ based mainly on the problem (classification or regression). As we have a classification problem in this example, we are going to use a suitable cost function called cross-entropy loss and since we are working with 2 classes only in our dataset, then we will use Binary Cross-Entropy cost function. This function basically compares the probability output by the neuron with the true label. The output of the cost function will be closer to 0 if the predicted output is close to the true label and keeps increasing as the difference between the prediction and the true label increases until it reaches infinity when the difference is equal to 1 (prediction is the complete opposite of the true label). Below is the binary cross-entropy cost function in Eq. 4 averaged over all the samples in our dataset (N).
 
 <br/>
 <br/>
@@ -326,9 +329,9 @@ print('Cost averaged for all samples: ', J)
 
 ### Gradient Descent
 <br/>
-Finally, for the last ingredient in our learning process, we need a method for the learning algorithm to tune its parameters so that the next time it sees the data, it can predict an output that is closer to the true one, hence, decrease the loss.
+Finally, for the last ingredient in our learning process, we need a method for the learning algorithm to tune its parameters so that the next time it sees the data, it can predict an output that is closer to the true one, hence, decrease the cost.
 
-If we draw a diagram representing the relationship between the algorithm's parameters and the loss, we might get a graph like in figure 6. When our algorithm is learning, it is basicaly navigating the parameter space, trying to find the lowest point, the "global minimum", where we can say the algorithm has the best (optimal) set of parameters achieving the lowest possible error. When the algorithm is navigating the parameter space, we need a means to know the direction it's moving towards, is it moving towards the global minimum, which is what we need, or away from it towards a higher error? To get the direction of the algorithm, we need to calculate the _gradient_ of the current step in time. The gradient can be calculated by getting the derivative of the current loss with respect to the set of weights and bias. Using the gradient, we can adjust the value of the weights and bias either negatively or positively to nudge the algorithm towards the best values for weights and bias that achieve the minimum loss. This is called the _Gradient Descent Algorithm_ and is the backbone of training neural networks.
+If we draw a diagram representing the relationship between the algorithm's parameters and the cost, we might get a graph like in figure 6. When our algorithm is learning, it is basicaly navigating the parameter space, trying to find the lowest point, the "global minimum", where we can say the algorithm has the best (optimal) set of parameters achieving the lowest possible error. When the algorithm is navigating the parameter space, we need a means to know the direction it's moving towards, is it moving towards the global minimum, which is what we need, or away from it towards a higher error? To get the direction of the algorithm, we need to calculate the _gradient_ of the current step in time. The gradient can be calculated by getting the derivative of the current cost with respect to the set of weights and bias. Using the gradient, we can adjust the value of the weights and bias either negatively or positively to nudge the algorithm towards the best values for weights and bias that achieve the minimum cost. This is called the _Gradient Descent Algorithm_ and is the backbone of training neural networks.
 
 <br/>
 <br/>
@@ -338,7 +341,7 @@ If we draw a diagram representing the relationship between the algorithm's param
 <br/>
 <br/>
 
-Understanding the technicalities of how gradient decsent algorithm works needs delving into some math. The starting point of calculating the gradients will be the cost function. In the cost error as we saw before, we calculate the error of our learning algorithm, i.e., how far off it is in its predictions. We want to send that valuable information back to the beginning of our caculations to adjust and re-calculate our set of weights and bias so that the algorithm can get a closer prediction to the true label this time around. Sending the error signal back is called _Backpropagation_, and it is a very important concept in deep learning. To convert the cost we calculated into an error signal then to information to hint to the algorithm which way to go in the parameter space, i.e., should w1 be increased or decrease and by how much, same goes for w2, w3, ..., until w21. Hence, we need to calculate the gradient for each weight separately as well as for the bias. So, we need to take the derivative of the cost function once with respect to w1, then w.r.t. w2, and so on till we get the gradients for all our weights and bias. However, there are multiple steps in our caclulations and there is no direct way to calculate the derivate of our cost function w.r.t. the weights, thus, we will need to take partial derivatives and apply the _chain rule_. Let's see how this is formulated mathematically.
+Understanding the technicalities of how gradient decsent algorithm works needs delving into some math. The starting point of calculating the gradients will be the cost function. In the cost function as we saw before, we calculate the error of our learning algorithm, i.e., how far off it is in its predictions. We want to send that valuable information back to the beginning of our caculations to adjust and re-calculate our set of weights and bias so that the algorithm can get a closer prediction to the true label this time around. Sending the error signal back is called _Backpropagation_, and it is a very important concept in deep learning. To convert the cost we calculated into an error signal then to information to hint to the algorithm which way to go in the parameter space, i.e., should w1 be increased or decreased and by how much, same goes for w2, w3, ..., until w21. Hence, we need to calculate the gradient for each weight separately as well as for the bias. So, we need to take the derivative of the cost function once with respect to w1, then w.r.t. w2, and so on till we get the gradients for all our weights and bias. However, there are multiple steps in our caclulations and there is no direct way to calculate the derivate of our cost function w.r.t. the weights, thus, we will need to take partial derivatives and apply the _chain rule_. Let's see how this is formulated mathematically.
 
 <br/>
 <br/>
@@ -456,7 +459,7 @@ $$
 <br/>
 <br/>
 
-Let's code these equations. I'm going to write vectorised code to avoid any for loops. Vectorised code is simply using NumPy package to operate on whole matrices instead of element-by-element. This is much more efficient during run time and also easier to code.
+Let's code these equations. I'm going to write vectorised code to avoid any for loops. Vectorised code is simply leveraging NumPy package to operate on whole matrices instead of element-by-element. This is much more efficient during runtime and also easier to code.
 
 <br/>
 <br/>
@@ -490,12 +493,12 @@ print('New bias for epoch {}: {}'.format(j, b[0, :10]))
 <br/>
 <br/>
 
-We need to repeat the learning process for multiple iterations, with each iteration the algorithm gets to see the full data and tries to predict the outputs. With every iteration, a good algorithm should have a decreasing cost and its accuracy in predciting the true labels should be improved, until it reaches a point of convergence, which is ideally the global minimum in our parameter space againt the cost, i.e. we reached the optimum set of weights and bias that achieve the minimum cost. Once we have this optimal set of parameters we can say that we have a trained model, and we can use it for inference, i.e. produce predictions on new, unseen data.
+We need to repeat the learning process for multiple iterations, with each iteration the algorithm gets to see the full data and tries to predict the outputs. With every iteration, a good algorithm should have a decreasing cost and its accuracy in predciting the true labels should be improved, until it reaches a point of convergence, which is ideally the global minimum in our parameter space against the cost, i.e. we reached the optimum set of weights and bias that achieve the minimum cost. Once we have this optimal set of parameters we can say that we have a trained model and we can use it for inference, i.e. produce predictions on new, unseen data.
 
 <br/>
 <br/>
 
-The full code can be found on my GitHub repo at: [https://github.com/HebaNAS/Personal-Blog/notebooks/build_nn_part1.ipynb](https://github.com/HebaNAS/Personal-Blog/notebooks/build_nn_part1.ipynb)
+The full code can be found on my GitHub repo at: [https://github.com/HebaNAS/Personal-Blog/blob/master/notebooks/build_nn_part1.ipynb](https://github.com/HebaNAS/Personal-Blog/blob/master/notebooks/build_nn_part1.ipynb)
 
 <br/>
 <br/>
