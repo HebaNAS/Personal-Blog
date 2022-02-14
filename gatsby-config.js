@@ -124,9 +124,6 @@ module.exports = {
           },
           {
             resolve: `gatsby-remark-embed-snippet`,
-            options: {
-              directory: `${__dirname}/static/snippets/`
-            },
           },
           {
             resolve: `gatsby-remark-prismjs`,
