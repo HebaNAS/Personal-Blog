@@ -5,7 +5,7 @@
   "author": "Heba El-Shimy <heba@hebaelshimy.com>",
   "homepage": "https://www.hebaelshimy.com",
   "engines": {
-    "node":"^12 || ^14 || >=16"
+    "node": "^12 || ^14 || >=16"
   },
   "dependencies": {
     "anchorate": "^1.2.4",
@@ -25,6 +25,7 @@
     "gatsby-plugin-google-analytics": "^4.4.0",
     "gatsby-plugin-image": "^2.6.0",
     "gatsby-plugin-manifest": "^4.5.0",
+    "gatsby-plugin-netlify": "^4.1.0",
     "gatsby-plugin-nprogress": "^4.4.0",
     "gatsby-plugin-offline": "^5.4.0",
     "gatsby-plugin-postcss": "^5.4.0",
