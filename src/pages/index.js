@@ -1,4 +1,5 @@
 import * as React from 'react'
+import AOS from 'aos'
 import Layout from '../components/layout'
 import Animation from '../components/Animation'
 import About from '../components/About'
@@ -11,17 +12,25 @@ import {
   upArrow,
   light
 } from './index.module.css'
+import 'aos/dist/aos.css';
 
-const IndexPage = () => (
-  <Layout>
-    <Animation />
-    <About />
-    <Projects />
-    <Contact />
-    <a href="/">
-      <FontAwesomeIcon icon={faArrowAltCircleUp} size="2x" className={`${upArrow} ${light} is-hidden`} />
-    </a>
-  </Layout>
-)
+const IndexPage = () => {
+  React.useEffect(() => {
+    AOS.init()
+    AOS.refresh()
+  }, [])
+
+  return(
+    <Layout>
+      <Animation />
+      <About />
+      <Projects />
+      <Contact />
+      <a href="/" data-aos="fade-up">
+        <FontAwesomeIcon icon={faArrowAltCircleUp} size="2x" className={`${upArrow} ${light}`} />
+      </a>
+    </Layout>
+  )
+}
 
 export default IndexPage
