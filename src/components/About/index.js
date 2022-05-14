@@ -21,9 +21,7 @@ const About = () => {
     query {
       heba: file(relativePath: { eq: "heba.png" }) {
         childImageSharp {
-          fixed(width: 220, height: 220) {
-            ...GatsbyImageSharpFixed_withWebp
-          }
+          gatsbyImageData(layout: FIXED, width: 220, height: 220)
         }
       }
     }
@@ -31,7 +29,17 @@ const About = () => {
   render = {data => (
     <section className={`${aboutSection} ${paddingTop1rem} ${paddingBottom1rem} has-text-centered is-size-4`} id="about">
       <h1 className={`${brandedTitle} title is-2`}>About</h1>
-      <GatsbyImage fixed={data.heba.childImageSharp.fixed} alt="Personal photo" backgroundColor="lightgray" className={personalPhoto} />
+      <div
+        style={{
+          display: `inline-flex`,
+          justifyContent: `center`,
+          flexWrap: `wrap`,
+          marginBottom: 10,
+          alignItems: `center`,
+        }}
+      >
+        <GatsbyImage image={data.heba.childImageSharp.gatsbyImageData} alt="Personal photo" backgroundColor="lightgray" className={personalPhoto} />
+      </div>
       <p>Hi, my name is Heba. I'm a Data Scientist. I spend my time mining data and extracting nuggets of <span className="is-size-4" role="img" aria-label="gold">💰</span>. I use them and my knowledge of Machine Learning and Deep Learning methods to build Artificially Intelligent applications.</p>
       <p>During my free time I love to read, drive or tinker with a new library on some side project.</p>
       <p>I speak:<br></br>

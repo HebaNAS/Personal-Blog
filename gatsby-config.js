@@ -138,7 +138,6 @@ module.exports = {
         ]
       }
     },
-    `gatsby-plugin-catch-links`,
     `gatsby-plugin-postcss`,
     {
       resolve: `gatsby-plugin-typography`,
