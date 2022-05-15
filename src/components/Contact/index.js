@@ -28,7 +28,7 @@ const encode = (data) => {
       .join("&")
 }
 
-const Contact = () => {
+const Contact = ({ location }) => {
   const [state, setState] = React.useState({ name: "", email: "", message: "" })
   const formD = React.useRef()
 
@@ -67,12 +67,14 @@ const Contact = () => {
         return this
       } 
       
-      if((scrollObject.y > 1500) || (document.documentElement.clientWidth <= 768 && scrollObject.y > 3200)) {
-        document.querySelector('div[class*="form-div"]').pseudoStyle('after', 'visibility', 'visible')
-        document.querySelector('div[class*="form-div"]').pseudoStyle('before', 'visibility', 'visible')
-      } else {
-        document.querySelector('div[class*="form-div"]').pseudoStyle('after', 'visibility', 'hidden')
-        document.querySelector('div[class*="form-div"]').pseudoStyle('before', 'visibility', 'hidden')
+      if (location.hash === '#contact') {
+        if((scrollObject.y > 1500) || (document.documentElement.clientWidth <= 768 && scrollObject.y > 3200)) {
+          document.querySelector('div[class*="form-div"]').pseudoStyle('after', 'visibility', 'visible')
+          document.querySelector('div[class*="form-div"]').pseudoStyle('before', 'visibility', 'visible')
+        } else {
+          document.querySelector('div[class*="form-div"]').pseudoStyle('after', 'visibility', 'hidden')
+          document.querySelector('div[class*="form-div"]').pseudoStyle('before', 'visibility', 'hidden')
+        }
       }
     }
 
@@ -92,7 +94,7 @@ const Contact = () => {
         event.target.parentNode.parentNode.parentNode.style.visibility = 'hidden'
       }
     }, supportsPassiveEvents ? {passive:true} : false)
-  }, [])
+  })
 
   const handleSubmit = (e) => {
     fetch("/", {

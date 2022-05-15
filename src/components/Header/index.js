@@ -101,9 +101,9 @@ const Header = (props) => {
           <a className={`${navbarColor} ${navbarPadding} navbar-item`} href={props.menuLinks[2].link}>
             Projects
           </a>
-          <Link className={`${navbarColor} ${navbarPadding} navbar-item`} to={props.menuLinks[3].link}>
+          <a className={`${navbarColor} ${navbarPadding} navbar-item`} href={props.menuLinks[3].link}>
             Blog
-          </Link>
+          </a>
           <a className={`${navbarColor} ${navbarPadding} navbar-item`} href={props.menuLinks[4].link}>
             Contact Me
           </a>

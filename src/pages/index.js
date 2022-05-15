@@ -14,7 +14,7 @@ import {
 } from './index.module.css'
 import 'aos/dist/aos.css';
 
-const IndexPage = () => {
+const IndexPage = ({ location }) => {
   React.useEffect(() => {
     AOS.init()
     AOS.refresh()
@@ -25,7 +25,7 @@ const IndexPage = () => {
       <Animation />
       <About />
       <Projects />
-      <Contact />
+      <Contact location={ location } />
       <a href="/" data-aos="fade-up">
         <FontAwesomeIcon icon={faArrowAltCircleUp} size="2x" className={`${upArrow} ${light}`} />
       </a>

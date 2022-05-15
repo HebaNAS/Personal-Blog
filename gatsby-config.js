@@ -131,9 +131,14 @@ module.exports = {
               classPrefix: 'language-',
             }
           },
-          `gatsby-remark-images`,
+          {
+            resolve: `gatsby-remark-copy-linked-files`,
+            options: {
+              ignoreFileExtensions: [],
+            },
+          },
+          // `gatsby-remark-images`,
           `gatsby-remark-responsive-iframe`,
-          `gatsby-remark-copy-linked-files`,
           `gatsby-remark-autolink-headers`
         ]
       }

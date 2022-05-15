@@ -304,24 +304,24 @@ const Blog = ({ location, data }) => {
       <div className="container is-max-widescreen">
         <Link to={location.href + data.first.post[0].fields.slug.substring(1)}>
           <div className={`${darkBackground} ${cardHover} card columns is-tablet has-text-white`}>
-            <div className="column is-half">
+            <div className="column is-5">
               <div className="card-image">
                 <span className={`${onTop} tag is-medium has-text-weight-semibold`}>
                   Featured
                 </span>
                 <figure className="image">
-                  <GatsbyImage image={data.first.post[0].frontmatter.thumbnail.childImageSharp.gatsbyImageData} alt="Featured post" loading="lazy" />
+                  <GatsbyImage image={data.first.post[0].frontmatter.thumbnail.childImageSharp.gatsbyImageData} alt="Featured post" />
                 </figure>
               </div>
             </div>
             <div className="column">
               <div className="card-content">
-                <div className="card-header">
+                <div className="card-header ml-0">
                   <p className={`card-header-title has-text-white is-size-4 ${underline}`}>
                     {data.first.post[0].frontmatter.title}
                   </p>
                   <br/>
-                  <p className="subtitle has-text-white is-size-5">
+                  <p className="subtitle has-text-white is-size-6">
                     {data.first.post[0].frontmatter.date}
                   </p>
                 </div>
@@ -336,12 +336,12 @@ const Blog = ({ location, data }) => {
       </div>
       <div className={`container ${posts} mt-5`}>
         {data.blog.posts ?
-          data.blog.posts.map(post => (
+          data.blog.posts.map((post, i) => (
             <Link to={location.href + data.first.post[0].fields.slug.substring(1)}>
               <div className={`${darkBackground} ${cardHover} card ${blogpost} has-text-white`}>
                 <div className="card-image">
                   <figure className="image">
-                    <GatsbyImage image={post.frontmatter.thumbnail.childImageSharp.gatsbyImageData} alt="Blog post" loading="lazy" />
+                    <GatsbyImage image={post.frontmatter.thumbnail.childImageSharp.gatsbyImageData} alt="Blog post" />
                   </figure>
                 </div>
                 <div className="card-content">
@@ -350,7 +350,7 @@ const Blog = ({ location, data }) => {
                       {post.frontmatter.title}
                     </p>
                     <br/>
-                    <p className="subtitle has-text-white is-size-5">
+                    <p className="subtitle has-text-white is-size-6 mt-4">
                       {post.frontmatter.date}
                     </p>
                   </div>
@@ -417,7 +417,7 @@ export const pageQuery = graphql`
           author
           thumbnail {
             childImageSharp {
-              gatsbyImageData(width: 1200, height: 600)
+              gatsbyImageData(width: 1200, height: 600, formats: [WEBP])
             }
           }
         }
@@ -436,7 +436,7 @@ export const pageQuery = graphql`
           author
           thumbnail {
             childImageSharp {
-              gatsbyImageData(width: 1200, height: 600)
+              gatsbyImageData(width: 1200, height: 600, formats: [WEBP])
             }
           }
         }
@@ -449,7 +449,7 @@ export const pageQuery = graphql`
     }
     blogHead: file(relativePath: { eq: "blog-head.jpeg" }) {
       childImageSharp {
-        gatsbyImageData
+        gatsbyImageData(layout: FULL_WIDTH, transformOptions: {fit: COVER, cropFocus: ATTENTION}, formats: [WEBP])
       }
     }
   }`
