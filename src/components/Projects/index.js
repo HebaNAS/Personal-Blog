@@ -28,47 +28,47 @@ const Project = (props) => {
       query {
         project1: file(relativePath: { eq: "project1.png" }) {
           childImageSharp {
-            gatsbyImageData(layout: CONSTRAINED, height: 180, formats: [WEBP])
+            gatsbyImageData(layout: CONSTRAINED, transformOptions: {fit: COVER, cropFocus: ATTENTION}, aspectRatio: 1.778, height: 180, formats: [WEBP])
           }
         }
         project2: file(relativePath: { eq: "project2.png" }) {
           childImageSharp {
-            gatsbyImageData(layout: CONSTRAINED, height: 180, formats: [WEBP])
+            gatsbyImageData(layout: CONSTRAINED, transformOptions: {fit: COVER, cropFocus: ATTENTION}, aspectRatio: 1.778, height: 180, formats: [WEBP])
           }
         }
         project3: file(relativePath: { eq: "project3.png" }) {
           childImageSharp {
-            gatsbyImageData(layout: CONSTRAINED, height: 180, formats: [WEBP])
+            gatsbyImageData(layout: CONSTRAINED, transformOptions: {fit: COVER, cropFocus: ATTENTION}, aspectRatio: 1.778, height: 180, formats: [WEBP])
           }
         }
         project4: file(relativePath: { eq: "project4.png" }) {
           childImageSharp {
-            gatsbyImageData(layout: CONSTRAINED, height: 180, formats: [WEBP])
+            gatsbyImageData(layout: CONSTRAINED, transformOptions: {fit: COVER, cropFocus: ATTENTION}, aspectRatio: 1.778, height: 180, formats: [WEBP])
           }
         }
         project5: file(relativePath: { eq: "project5.png" }) {
           childImageSharp {
-            gatsbyImageData(layout: CONSTRAINED, height: 180, formats: [WEBP])
+            gatsbyImageData(layout: CONSTRAINED, transformOptions: {fit: COVER, cropFocus: ATTENTION}, aspectRatio: 1.778, height: 180, formats: [WEBP])
           }
         }
         project6: file(relativePath: { eq: "project6.png" }) {
           childImageSharp {
-            gatsbyImageData(layout: CONSTRAINED, height: 180, formats: [WEBP])
+            gatsbyImageData(layout: CONSTRAINED, transformOptions: {fit: COVER, cropFocus: ATTENTION}, aspectRatio: 1.778, height: 180, formats: [WEBP])
           }
         }
         project7: file(relativePath: { eq: "project7.png" }) {
           childImageSharp {
-            gatsbyImageData(layout: CONSTRAINED, height: 180, formats: [WEBP])
+            gatsbyImageData(layout: CONSTRAINED, transformOptions: {fit: COVER, cropFocus: ATTENTION}, aspectRatio: 1.778, height: 180, formats: [WEBP])
           }
         }
         project8: file(relativePath: { eq: "project8.png" }) {
           childImageSharp {
-            gatsbyImageData(layout: CONSTRAINED, height: 180, formats: [WEBP])
+            gatsbyImageData(layout: CONSTRAINED, transformOptions: {fit: COVER, cropFocus: ATTENTION}, aspectRatio: 1.778, height: 180, formats: [WEBP])
           }
         }
         project9: file(relativePath: { eq: "project9.png" }) {
           childImageSharp {
-            gatsbyImageData(layout: CONSTRAINED, height: 180, formats: [WEBP])
+            gatsbyImageData(layout: CONSTRAINED, transformOptions: {fit: COVER, cropFocus: ATTENTION}, aspectRatio: 1.778, height: 180, formats: [WEBP])
           }
         }
       }
