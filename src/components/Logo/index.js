@@ -26,9 +26,7 @@ const Logo = () => {
         logoAnimation.add([rightWingTimeline, leftWingTimeline])
 
         butterfly.current.addEventListener('mouseenter', (e) => {
-            e.preventDefault()
-            logoAnimation.add([rightWingTimeline, leftWingTimeline])
-            logoAnimation.play()
+            logoAnimation.play(0.15, false)
         })
     })
     
