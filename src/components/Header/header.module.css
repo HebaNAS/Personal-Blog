@@ -39,6 +39,30 @@
   padding-top: 1rem;
 }
 
+.up-arrow {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 1.5rem;
+}
+
+.light {
+  color: rgba(255, 255, 255, 0.5);
+  animation: bounce 6s infinite ease-in-out;
+}
+
+.light:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+@keyframes bounce {
+  50% {
+    transform: translateY(-12px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
 @media (max-width: 768px) {
   .navbar-menu-position {
     position: static;

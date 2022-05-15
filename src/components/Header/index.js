@@ -1,6 +1,8 @@
 import * as React from 'react'
 import { Link } from 'gatsby'
 import $ from 'jquery'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowAltCircleUp } from '@fortawesome/free-solid-svg-icons'
 
 import Logo from '../Logo/'
 import { 
@@ -10,7 +12,9 @@ import {
   navbarMenuPosition,
   navbarPadding,
   marginLeft05rem,
-  paddingTop1rem
+  paddingTop1rem,
+  upArrow,
+  light
 } from './header.module.css'
 
 const Header = (props) => {
@@ -32,20 +36,20 @@ const Header = (props) => {
 
     if ($(window).width() > 768) {
       // Hide menu on scroll
-      let previousScroll = 0
+      // let previousScroll = 0
 
       $(window).scroll(function(){
         let currentScroll = $(this).scrollTop()
 
-        if (currentScroll > 0 && currentScroll < $(document).height() - $(window).height()) {
-          if (currentScroll > previousScroll) {
+        if (currentScroll > 600) {  // $(document).height() - $(window).height()) {
+          // if (currentScroll > previousScroll) {
             window.setTimeout(hideNav, 300)
           } else {
             window.setTimeout(showNav, 300)
           }
 
-          previousScroll = currentScroll
-        }
+          // previousScroll = currentScroll
+        //}
       })
     }
 
@@ -61,7 +65,7 @@ const Header = (props) => {
       $(window).scroll(function(){
         let currentScroll = $(this).scrollTop()
 
-        if (currentScroll > $(this).height() - 200) {
+        if (currentScroll > 1200) {// $(this).height() - 200) {
           window.setTimeout(showArrow, 300)
         } else {
           window.setTimeout(hideArrow, 300)
@@ -72,12 +76,12 @@ const Header = (props) => {
     }
 
     const hideArrow = () => {
-      $(".up-arrow").removeClass("is-visible").addClass("is-hidden")
+      $("#up-arrow").removeClass("is-visible").addClass("is-hidden")
     }
     const showArrow = () => {
-      $(".up-arrow").removeClass("is-hidden").addClass("is-visible")
+      $("#up-arrow").removeClass("is-hidden").addClass("is-visible")
     }
-  }, [props]);
+  });
 
   return(
     <nav className={`${isTransparent} ${paddingTop1rem} navbar`} id="nav">
@@ -92,6 +96,9 @@ const Header = (props) => {
           <span></span>
         </div>
       </div>
+      <a href={props.location.pathname} className={`is-hidden`} id="up-arrow">
+        <FontAwesomeIcon icon={faArrowAltCircleUp} size="2x" className={`${upArrow} ${light}`} />
+      </a>
 
       <div id="navbarMobile" className={`${navbarMenuPosition} mt-3 navbar-menu`} data-nav-status="toggle">
         <div className="navbar-end">

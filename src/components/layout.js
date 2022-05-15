@@ -94,6 +94,7 @@ const Layout = ({ children, location, title, description, image, pathname, artic
           name: 'Breadcrumbs',
           itemListElement,
         }
+      
       return (
       <>
       <Helmet 
@@ -213,7 +214,7 @@ const Layout = ({ children, location, title, description, image, pathname, artic
         <TypographyStyle typography={typography} />
         <GoogleFont typography={typography} />
       </Helmet>
-        <Header menuLinks={seo.menuLinks}/>
+        <Header menuLinks={seo.menuLinks} location={location} />
         <div
           style={{
             margin: '-1rem auto',

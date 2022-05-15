@@ -6,11 +6,11 @@ import Layout from '../components/layout'
 import { thepost, blogPageLink } from './blogpost.module.css'
 require(`katex/dist/katex.min.css`)
 
-const BlogPost = ({ data }) => {
+const BlogPost = ({ data, location }) => {
   const post = data.markdownRemark
 
   return (
-    <Layout>
+    <Layout location={location}>
       <section className="hero is-fullheight has-text-white">
         <div className="hero-head" style={{marginTop: '7.5rem'}}>
           <div className="block">

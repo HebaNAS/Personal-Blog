@@ -294,7 +294,7 @@ const Blog = ({ location, data }) => {
       fontFamily: "'Dosis', sans-serif",
       fontSize: "1.2rem"}} />
   </Helmet>
-  <Header menuLinks={seo.menuLinks}/>
+  <Header menuLinks={seo.menuLinks} location={location} />
   <section className={`hero ${blogPage}`}>
     <div className="hero-head mt-4 mb-5">
       <GatsbyImage image={data.blogHead.childImageSharp.gatsbyImageData} alt="Library" loading="lazy" className={blogHeadImage} />
