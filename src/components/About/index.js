@@ -21,7 +21,7 @@ const About = () => {
     query {
       heba: file(relativePath: { eq: "heba.png" }) {
         childImageSharp {
-          gatsbyImageData(layout: FIXED, width: 220, height: 220)
+          gatsbyImageData(layout: FIXED, width: 220, height: 220, formats: [WEBP])
         }
       }
     }
