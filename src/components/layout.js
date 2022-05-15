@@ -2,7 +2,8 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
-// import { TypographyStyle, GoogleFont } from 'react-typography'
+import typography from '/src/utils/typography'
+import { TypographyStyle, GoogleFont } from 'react-typography'
 
 import Header from './Header'
 import Footer from './Footer'
@@ -209,8 +210,8 @@ const Layout = ({ children, location, title, description, image, pathname, artic
         ]}
       >
         <html lang="en" />
-        {/*TypographyStyle={[ {typography: typography} ]}
-        GoogleFont={[ {typography: typography} ]}*/}
+        <TypographyStyle typography={typography} />
+        <GoogleFont typography={typography} />
       </Helmet>
         <Header menuLinks={seo.menuLinks}/>
         <div

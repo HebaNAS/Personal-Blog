@@ -22,7 +22,7 @@ A neural network is one type of machine learning algorithms that is inspired by 
 
 <br/>
 <br/>
-<img src="../../static/images/blog/NN.svg" alt="AI Landscape" class="is-shadowless" />
+<img src="../../static/images/blog/NN.png" alt="AI Landscape" class="is-shadowless" />
 <p class="is-size-5 has-text-centered">Figure 1. Artificial Intelligence Landscape</p>
 <br/>
 <br/>
@@ -52,7 +52,7 @@ Let's start by drawing and coding one neuron, which is synonymous with a logisti
 
 <br/>
 <br/>
-<img src="../../static/images/blog/math-neuron.svg" alt="Artificial Neuron" class="is-shadowless" />
+<img src="../../static/images/blog/math-neuron.png" alt="Artificial Neuron" class="is-shadowless" />
 <p class="is-size-5 has-text-centered">Figure 3. An artificial neuron</p>
 <br/>
 <br/>
@@ -234,7 +234,7 @@ Activation functions are important because they introduce non-linearity to our a
 <br/>
 
 <div class="is-flex-direction-row">
-    <img src="../../static/images/blog/sigmoid.svg" alt="Sigmoid function graph" style="margin: 0 6.25%;" />
+    <img src="../../static/images/blog/sigmoid.png" alt="Sigmoid function graph" />
 </div>
 <p class="is-size-5 has-text-centered">Figure 5. Sigmoid Function</p>
 <p class="is-size-6 mt-0 has-text-centered">Image Credit: DeepAI.org</p>
@@ -420,11 +420,11 @@ Step 5: Applying the chain rule to get the weights gradients, i.e. the change in
 
 $$
 \begin{align}
-dw_1 &= \frac{\partial{J(y, \hat{y})}}{\partial{w_1}} \\
-&= \frac{\partial{J(y, \hat{y})}}{\partial{\hat{y}}} \cdot \frac{\partial{\hat{y}}}{\partial{z}} \cdot \frac{\partial{z}}{\partial{w_1}} \\
-&= \frac{\hat{y} - y}{\hat{y}(1 - \hat{y})} \cdot \hat{y}(1 - \hat{y}) \cdot x_1 \\
-&= x_1 \cdot (\hat{y} - y) \tag{Eq. 12}
-\end{align}
+dw_1 &= \frac{\partial{J(y, \hat{y})}}{\partial{w_1}} \notag{} \\
+&= \frac{\partial{J(y, \hat{y})}}{\partial{\hat{y}}} \cdot \frac{\partial{\hat{y}}}{\partial{z}} \cdot \frac{\partial{z}}{\partial{w_1}} \notag{} \\
+&= \frac{\hat{y} - y}{\hat{y}(1 - \hat{y})} \cdot \hat{y}(1 - \hat{y}) \cdot x_1 \notag{} \\
+&= x_1 \cdot (\hat{y} - y) 
+\end{align} \tag{Eq. 12}
 $$
 
 <br/>
@@ -434,11 +434,11 @@ Step 6: Apply the chain rule to get the bias gradient, i.e. the change in bias <
 
 $$
 \begin{align}
-db &= \frac{\partial{J(y, \hat{y})}}{\partial{b}} \\
-&= \frac{\partial{J(y, \hat{y})}}{\partial{\hat{y}}} \cdot \frac{\partial{\hat{y}}}{\partial{z}} \cdot \frac{\partial{z}}{\partial{b}} \\
-&= \frac{\hat{y} - y}{\hat{y}(1 - \hat{y})} \cdot \hat{y}(1 - \hat{y}) \cdot 1 \\
-&= \hat{y} - y \tag{Eq. 13}
-\end{align}
+db &= \frac{\partial{J(y, \hat{y})}}{\partial{b}} \notag{} \\
+&= \frac{\partial{J(y, \hat{y})}}{\partial{\hat{y}}} \cdot \frac{\partial{\hat{y}}}{\partial{z}} \cdot \frac{\partial{z}}{\partial{b}} \notag{} \\
+&= \frac{\hat{y} - y}{\hat{y}(1 - \hat{y})} \cdot \hat{y}(1 - \hat{y}) \cdot 1 \notag{} \\
+&= \hat{y} - y
+\end{align}  \tag{Eq. 13}
 $$
 
 <br/>

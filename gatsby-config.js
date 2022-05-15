@@ -134,10 +134,19 @@ module.exports = {
           {
             resolve: `gatsby-remark-copy-linked-files`,
             options: {
-              ignoreFileExtensions: [],
+              ignoreFileExtensions: [`png`, `jpg`, `jpeg`],
             },
           },
-          // `gatsby-remark-images`,
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              withWebp: true,
+              maxWidth: 800,
+              wrapperStyle: `width: 100%, margin: 0 auto;`,
+              backgroundColor: `transparent`,
+              quality: 80
+            }
+          },
           `gatsby-remark-responsive-iframe`,
           `gatsby-remark-autolink-headers`
         ]
