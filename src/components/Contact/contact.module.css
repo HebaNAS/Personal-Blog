@@ -217,7 +217,7 @@ p > .f-name, p > .f-email, p > .f-message {
 	position: absolute;
   width: 0px;
   height: 0px;
-	visibility: hidden;
+	visibility: visible;
 	left: 50%;
 	transform: translateX(-50%);
   z-index: 100;
