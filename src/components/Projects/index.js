@@ -125,9 +125,9 @@ const Project = (props) => {
         </div>
         <div className="columns is-desktop">
           <div className={`${brandedTitle} column`}>
-            <a href="https://github.com/HebaNAS/Gradient-Descent/blob/master/GradientDescent.ipynb" rel="external noopener noreferrer" target="_blank">
-              <GatsbyImage image={data.project7.childImageSharp.gatsbyImageData} alt="Gradient Descent" backgroundColor="lightgray" className={`${project} ${overlay}`} />
-              <div className={`${label}`}>Gradient Descent &nbsp; 
+            <a href="https://github.com/HebaNAS/Traffic-Sign-Classifier/blob/master/Traffic_Sign_Classifier.ipynb" rel="external noopener noreferrer" target="_blank">
+              <GatsbyImage image={data.project7.childImageSharp.gatsbyImageData} alt="Computer Vision: Traffic Sign Classifier" backgroundColor="lightgray" className={`${project} ${overlay}`} />
+              <div className={`${label}`}>Computer Vision: Traffic Sign Classifier &nbsp; 
               <FontAwesomeIcon icon={faExternalLinkAlt} className="external" size="xs" /></div>
             </a>
           </div>
@@ -139,9 +139,9 @@ const Project = (props) => {
             </a>
           </div>
           <div className={`${column} column`}>
-            <a href="https://github.com/HebaNAS/BreakIntoAI-Tools/blob/master/Break%20into%20AI.ipynb" rel="external noopener noreferrer" target="_blank">
-              <GatsbyImage image={data.project9.childImageSharp.gatsbyImageData} alt="Machine Learning libraries tutorial" backgroundColor="lightgray" className={`${project} ${overlay}`} />
-              <div className={`${label}`}>Machine Learning Libraries Tutorial &nbsp; 
+            <a href="https://github.com/HebaNAS/Patent-Similarity-Check/blob/master/notebooks/Training%20Pipeline%20Final.ipynb" rel="external noopener noreferrer" target="_blank">
+              <GatsbyImage image={data.project9.childImageSharp.gatsbyImageData} alt="NLP: Patent Similarity Detector" backgroundColor="lightgray" className={`${project} ${overlay}`} />
+              <div className={`${label}`}>NLP: Patent Similarity Detector &nbsp; 
               <FontAwesomeIcon icon={faExternalLinkAlt} className="external" size="xs" /></div>
             </a>
           </div>
