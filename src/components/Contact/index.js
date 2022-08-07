@@ -3,6 +3,7 @@ import { gsap } from 'gsap'
 import { supportsPassiveEvents } from 'detect-it'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub, faTwitter, faYoutube, faLinkedin } from '@fortawesome/free-brands-svg-icons'
+import { navigate } from 'gatsby'
 
 import {
   contactSection,
@@ -28,57 +29,21 @@ const encode = (data) => {
       .join("&")
 }
 
-const Contact = ({ location }) => {
-  const [state, setState] = React.useState({ name: "", email: "", message: "" })
-  const formD = React.useRef()
+class Contact extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {name: '', email: '', message: ''}
+    this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
+    this.getScrollPosition = this.getScrollPosition.bind(this)
+  }
 
-  React.useEffect(() => {
+  componentDidMount() {
     gsap.fromTo(document.getElementById('contact'), {opacity:0, scale:0.75, delay:0.35}, {duration:0.6, opacity:1, scale:1, delay:1.3})
 
-    let scrollObject = {};
-    window.onscroll = getScrollPosition;
+    window.onscroll = this.getScrollPosition;
 
-    function getScrollPosition() {
-      scrollObject = {
-        x: window.pageXOffset,
-        y: window.pageYOffset
-      }
-
-      let UID = {
-        _current: 0,
-        getNew: function() {
-          this._current++
-          return this._current
-        }
-      };
-      
-      HTMLElement.prototype.pseudoStyle = function(element, prop, value) {
-        let _this = this
-        let _sheetId = 'pseudoStyles'
-        let _head = document.head || document.getElementsByTagName('head')[0]
-        let _sheet = document.getElementById(_sheetId) || document.createElement('style')
-        _sheet.id = _sheetId
-        let className = 'pseudoStyle' + UID.getNew()
-        
-        _this.className +=  ' ' + className
-        
-        _sheet.innerHTML += ' .' + className + ':' + element + '{' + prop + ':' + value + '}'
-        _head.appendChild(_sheet)
-        return this
-      } 
-      
-      if (location.hash === '#contact') {
-        if((scrollObject.y > 1500) || (document.documentElement.clientWidth <= 768 && scrollObject.y > 3200)) {
-          document.querySelector('div[class*="form-div"]').pseudoStyle('after', 'visibility', 'visible')
-          document.querySelector('div[class*="form-div"]').pseudoStyle('before', 'visibility', 'visible')
-        } else {
-          document.querySelector('div[class*="form-div"]').pseudoStyle('after', 'visibility', 'hidden')
-          document.querySelector('div[class*="form-div"]').pseudoStyle('before', 'visibility', 'hidden')
-        }
-      }
-    }
-
-    getScrollPosition()
+    this.getScrollPosition()
   
     document.querySelector('div[class*="form-div"]').addEventListener('click', (event) => {
       event.target.classList.add(active)
@@ -94,24 +59,71 @@ const Contact = ({ location }) => {
         event.target.parentNode.parentNode.parentNode.style.visibility = 'hidden'
       }
     }, supportsPassiveEvents ? {passive:true} : false)
-  })
+  }
 
-  const handleSubmit = (e) => {
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "contact", ...state })
-    })
-      .then(() => alert("Success!"))
-      .catch(error => alert(error))
+  getScrollPosition() {
+    let scrollObject = {};
 
+    scrollObject = {
+      x: window.pageXOffset,
+      y: window.pageYOffset
+    }
+
+    let UID = {
+      _current: 0,
+      getNew: function() {
+        this._current++
+        return this._current
+      }
+    };
+    
+    HTMLElement.prototype.pseudoStyle = function(element, prop, value) {
+      let _this = this
+      let _sheetId = 'pseudoStyles'
+      let _head = document.head || document.getElementsByTagName('head')[0]
+      let _sheet = document.getElementById(_sheetId) || document.createElement('style')
+      _sheet.id = _sheetId
+      let className = 'pseudoStyle' + UID.getNew()
+      
+      _this.className +=  ' ' + className
+      
+      _sheet.innerHTML += ' .' + className + ':' + element + '{' + prop + ':' + value + '}'
+      _head.appendChild(_sheet)
+      return this
+    } 
+    
+    if (this.props.location.hash === '#contact') {
+      if((scrollObject.y > 1500) || (document.documentElement.clientWidth <= 768 && scrollObject.y > 3200)) {
+        document.querySelector('div[class*="form-div"]').pseudoStyle('after', 'visibility', 'visible')
+        document.querySelector('div[class*="form-div"]').pseudoStyle('before', 'visibility', 'visible')
+      } else {
+        document.querySelector('div[class*="form-div"]').pseudoStyle('after', 'visibility', 'hidden')
+        document.querySelector('div[class*="form-div"]').pseudoStyle('before', 'visibility', 'hidden')
+      }
+    }
+  }
+
+  handleSubmit(e) {
+    if (this.state.name !== '' && this.state.email !== '' && this.state.message !== '') {
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({ "form-name": "contact", ...this.state })
+      })
+        .then(() => navigate('/thankyou/'))
+        .catch(error => alert(error))
+    } else {
+      alert('Please fill out all form fields')
+    }
     e.preventDefault()
   }
 
-  const handleChange = (e) => {
-    setState({ [e.target.name]: e.target.value })
+  handleChange(e) {
+    e.preventDefault()
+    this.setState({[e.target.name]: e.target.value})
   }
-
+  
+  render() {
   return (
     <section className={`${contactSection} ${paddingTop1rem} ${paddingBottom1rem} has-text-centered is-size-4`} id="contact">
       <h1 className={`${brandedTitle} title is-2`}>Let's Connect</h1>
@@ -142,30 +154,32 @@ const Contact = ({ location }) => {
       <p>Or send me a message below <span role="img" aria-label="smile">😀</span></p>
 
       <div className={formMain}>
-        <div className={formDiv} ref={formD}>
+        {/* <div className={formDiv} ref={formD}> */}
+        <div className={formDiv}>
           <form name="contact" id="contactform" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thankyou">
             <input type="hidden" name="form-name" value="contact" />
             <p className="is-hidden">
               <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
             </p>
             <p className="form-name">
-              <input type="text" className={`${feedbackInput} ${bgLight} ${fName}`} placeholder="Name" id="name" name="name" value={state.name} onChange={handleChange} required />
+              <input key="1" type="text" className={`${feedbackInput} ${bgLight} ${fName}`} placeholder="Name" id="name" name="name" value={this.state.name || ''} onChange={this.handleChange} required />
             </p>
             <p className="form-email">
-              <input type="email" className={`${feedbackInput} ${bgLight} ${fEmail}`} id="email" placeholder="Email" name="email" value={state.email} onChange={handleChange} required />
+              <input key="2" type="email" className={`${feedbackInput} ${bgLight} ${fEmail}`} id="email" placeholder="Email" name="email" value={this.state.email || ''} onChange={this.handleChange} required />
             </p>
             <p className={formMessage}>
-                <textarea type="message" name="message" className={`${feedbackInput} ${bgLight} ${fMessage}`} id="message" rows="3" cols="40" maxLength="500" placeholder="Maximum of 500 characters" value={state.message} onChange={handleChange} required
+                <textarea key="3" type="message" name="message" className={`${feedbackInput} ${bgLight} ${fMessage}`} id="message" rows="3" cols="40" maxLength="500" placeholder="Maximum of 500 characters" value={this.state.message || ''} onChange={this.handleChange} required
                 ></textarea>
             </p>
             <div className="submit">
-              <input type="submit" className={`${buttonBrand} is-size-4`} value="Send" id="button-brand" onClick={handleSubmit} />
+              <input type="submit" className={`${buttonBrand} is-size-4`} value="Send" id="button-brand" onClick={this.handleSubmit} />
             </div>
           </form>
         </div>
       </div>
     </section>
     )
+  }
 }
 
 export default Contact

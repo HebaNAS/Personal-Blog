@@ -38,7 +38,7 @@ const About = () => {
           alignItems: `center`,
         }}
       >
-        <GatsbyImage image={data.heba.childImageSharp.gatsbyImageData} alt="Personal photo" backgroundColor="lightgray" className={personalPhoto} />
+        <GatsbyImage imgStyle={{ borderRadius: '50%' }} image={data.heba.childImageSharp.gatsbyImageData} alt="Personal photo" backgroundColor="lightgray" className={personalPhoto} />
       </div>
       <p>Hi, my name is Heba. I'm a Data Scientist. I spend my time mining data and extracting nuggets of <span className="is-size-4" role="img" aria-label="gold">💰</span>. I use them and my knowledge of Machine Learning and Deep Learning methods to build Artificially Intelligent applications.</p>
       <p>During my free time I love to read, drive or tinker with a new library on some side project.</p>
